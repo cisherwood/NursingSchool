@@ -3,12 +3,39 @@
     Layout = null;
 }
 
+@*<script>
+        $(document).ready(function () {
+            $('#progress-student-course-add-link').click();
+        })
+    </script>
+
+    @Ajax.ActionLink(" ",
+                                    "ProgressStudentCoursesAdd",
+                                    new { },
+                                    new AjaxOptions
+                                    {
+                                        UpdateTargetId = "progress-student-courses-add",
+                                        InsertionMode = InsertionMode.Replace,
+                                        HttpMethod = "GET"
+                                    },
+                                    new { @id = "progress-student-course-add-link" })*@
 
 <ul class="nav nav-tabs">
     <li class="active"><a href="#">@Session["CurrentSemesterString"]</a></li>
     @foreach (Semester s in ViewBag.StudentSemesters)
     {
-        <li><a href="#">@s.Season @s.Year</a></li>
+        <li>
+            @Ajax.ActionLink(@s.Season + " " + @s.Year,
+                                         "ProgressStudentCoursesUpdate",
+                                         new { sem = @s.SemesterId },
+                                         new AjaxOptions
+                                         {
+                                             UpdateTargetId = "progress-student-courses-body",
+                                             InsertionMode = InsertionMode.Replace,
+                                             HttpMethod = "GET"
+                                         },
+                                         new { @id = "progress-student-course-add-link" })
+        </li>
     }
 </ul>
 
@@ -20,8 +47,8 @@
             <th>Description</th>
         </tr>
     </thead>
-    <tbody>
-    @foreach (Course c in ViewBag.StudentCurrentClasses)
+    <tbody id="progress-student-courses-body">
+        @foreach (Course c in ViewBag.StudentCurrentClasses)
         {
             <tr>
                 <td>@c.CourseString</td>
@@ -32,3 +59,4 @@
 
     </tbody>
 </table>
+

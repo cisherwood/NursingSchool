@@ -1,0 +1,31 @@
+﻿@using Development.Models;
+@{
+    ViewBag.Title = "ProgressStudentCoursesAdd";
+}
+@{ 
+    Layout = null;
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Course</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Course c in ViewBag.ProgressStudentCoursesAdd)
+        {
+            <tr>
+                <td>@c.CourseString</td>
+                <td>@c.Title</td>
+                <td>@c.Description</td>
+                <td>[ ]</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

@@ -280,7 +280,7 @@
     <Content Include="Views\Application\Progress\ProgressStudent.cshtml" />
     <Content Include="Views\Application\Progress\ProgressStudentCourses.cshtml" />
     <Content Include="Views\Application\Progress\ProgressStudentTable.cshtml" />
-    <Content Include="Views\Application\Progress\ProgressStudentTableUpdate.cshtml" />
+    <Content Include="Views\Application\Progress\ProgressStudentCoursesUpdate.cshtml" />
     <Content Include="Views\Courses\Create.cshtml" />
     <Content Include="Views\Courses\Delete.cshtml" />
     <Content Include="Views\Courses\Details.cshtml" />
@@ -322,6 +322,7 @@
     <Content Include="Views\Students\Edit.cshtml" />
     <Content Include="Views\Students\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Application\Progress\ProgressStudentCoursesAdd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

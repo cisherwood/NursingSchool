@@ -54,9 +54,12 @@ namespace Development.Controllers
         }
 
         // AJAX
-        // Course column of progress area
+        // Registerd course column of progress area
         public ActionResult ProgressStudentCourses(int id)
         {
+            // Set selected student to session variable
+            Session["ProgressStudentCurrentStudent"] = id;
+
             // Get current semester ID from session variable
             int currentSemesterId = Convert.ToInt32(Session["CurrentSemesterId"]);
 
@@ -71,23 +74,57 @@ namespace Development.Controllers
             // List of classes in the current semester
             ViewBag.StudentCurrentClasses = enrollments.Where(x => x.SemesterId == currentSemesterId).Select(x => x.Course);
 
+            // List of classes
+            ViewBag.ProgressStudentCourses = db.Course.ToList();
+
 
 
             return View("~/Views/Application/Progress/ProgressStudentCourses.cshtml", enrollments);
         }
 
-
-        public ActionResult ProgressStudentCoursesCurrent(int id, int sem)
+        // AJAX
+        // Update course column of progress area with selected semester
+        public ActionResult ProgressStudentCoursesUpdate(int sem)
         {
+            // Get selected student id
+            int currentStudentId = Convert.ToInt32(Session["ProgressStudentCurrentStudent"]);
+
+            // Get current semester ID from session variable
+            int currentSemesterId = Convert.ToInt32(Session["CurrentSemesterId"]);
+
+            // Get enrollment data about selected student
             List<Enrollment> enrollments = new List<Enrollment>(from en in db.Enrollment
-                                                                where en.StudentId == id &&
-                                                                      en.SemesterId == sem
+                                                                where en.StudentId == currentStudentId
                                                                 select en);
 
-            ViewBag.StudentSemesters = enrollments.Select(x => x.Semester).Distinct();
+            // List of semesters that the selected student has taken classes
+            ViewBag.StudentSemesters = enrollments.Where(x => x.SemesterId != currentSemesterId).Select(x => x.Semester).Distinct();
 
-            return View("~/Views/Application/Progress/ProgressStudentCoursesCurrent.cshtml", enrollments);
+            // List of classes in the current semester
+            ViewBag.StudentCurrentClasses = enrollments.Where(x => x.SemesterId == sem).Select(x => x.Course);
+
+            return View("~/Views/Application/Progress/ProgressStudentCoursesUpdate.cshtml", enrollments);
         }
+
+        // AJAX
+        // Add course column of progress area
+        public ActionResult ProgressStudentCoursesAdd()
+        {
+            List<Course> courses = new List<Course>(from c in db.Course
+                                                                select c);
+
+            ViewBag.ProgressStudentCoursesAdd = courses;
+
+            return View("~/Views/Application/Progress/ProgressStudentCoursesAdd.cshtml", courses);
+        }
+
+
+
+
+
+
+
+
 
         public ActionResult ProgressStudentTable(int id)
         {
