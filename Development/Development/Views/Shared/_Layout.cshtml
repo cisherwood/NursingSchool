@@ -4,8 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    @RenderSection("css", required: false)
+    @RenderSection("scripts", required: false)
+
+
+    <link href="~/Content/Layout.css" rel="stylesheet" />
+
+
 
 </head>
 <body>
@@ -17,28 +30,61 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="@Url.Action("Index", "Application")" class="navbar-brand" >School of Nursing</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <!-- <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+-->
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
+    <div id="container" class="container-fluid body-content">
+
+        <div class="row"> 
+            <div class="col-xs-12">
+                <ul id="navigation" class="nav nav-pills">
+                    <li role="presentation" class="active">@Ajax.ActionLink("HOME",
+                                                         "Home",
+                                                         new AjaxOptions
+                                                         {
+                                                             UpdateTargetId = "content",
+                                                             InsertionMode = InsertionMode.Replace,
+                                                             HttpMethod = "GET"
+                                                         })
+                    </li>
+                    <li role="presentation"><a href="#">NEWS</a></li>
+                    <li role="presentation"><a href="#">REPORTS</a></li>
+                    <li role="presentation">@Ajax.ActionLink("PROGRESS",
+                                                         "Progress",
+                                                         new AjaxOptions
+                                                         {
+                                                             UpdateTargetId = "content",
+                                                             InsertionMode = InsertionMode.Replace,
+                                                             HttpMethod = "GET"
+                                                         })
+                    </li>
+                    <li role="presentation"><a href="#">ADVISING</a></li>
+                    <li role="presentation"><a href="#">ACCOUNT</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div id="panel-content" class="panel panel-default">
+            <div id="content" class="panel-body">
+                @RenderBody()
+            </div>
+        </div>
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - University of Louisville</p>
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    
 </body>
 </html>

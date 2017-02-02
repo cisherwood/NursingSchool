@@ -1,0 +1,136 @@
+﻿@using Development.Models;
+@model IEnumerable<Student>
+@section css{
+
+}
+
+@section scripts{
+
+}
+@{ 
+    Layout = null;
+}
+
+<div class="col-xs-6">
+    <div id="progress-student-sp" class="panel panel-default">
+        <table class="panel-body table table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var m in Model)
+                {
+                    <tr>
+                        <td>@m.FirstName</td>
+                        <td>@m.LastName</td>
+                        <td>@Ajax.ActionLink("Classes",
+                                "ProgressStudentCourses",
+                                new { id = m.StudentId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "progress-student-courses",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET"
+                                },
+                                new { @class = "btn btn-default btn-lg glyphicon glyphicon-list-alt" })
+                                                    </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@*<div class="container-fluid">
+        <div class="row">
+            <div class="well">
+                <div class="row col-xs-12">
+                        <div class="col-xs-6">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h2 class="text-center">Students</h2>
+                                    <ul class="list-group col-xs-12">
+                                        @foreach (var s in Model)
+                                        {
+                                            @Ajax.ActionLink(s.FirstName + " " + s.LastName,
+                                "ProgressStudentTable",
+                                new { id = s.StudentId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "progress-student-table",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET"
+                                },
+                                new { @class = "list-group-item" })
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h2 class="text-center">Semesters</h2>
+                                    <ul class="list-group col-xs-12">
+                                        @foreach (var s in Model)
+                                        {
+                                            @Ajax.ActionLink(s.FirstName + " " + s.LastName,
+                                "ProgressStudentTable",
+                                new { id = s.StudentId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "progress-student-table",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET"
+                                },
+                                new { @class = "list-group-item" })
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row col-xs-12">
+                        <div class="col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h2 class="text-center">Courses</h2>
+                                    <ul class="list-group col-xs-12">
+                                        @foreach (var s in Model)
+                                        {
+                                            @Ajax.ActionLink(s.FirstName + " " + s.LastName,
+                                "ProgressStudentTable",
+                                new { id = s.StudentId },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "progress-student-table",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET"
+                                },
+                                new { @class = "list-group-item" })
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+*@
+<div class="col-xs-6">
+    <div id="progress-student-table" class="panel panel-default">
+        <div id="progress-student-courses" class="panel-body">
+            TEST
+        </div>
+    </div>
+</div>

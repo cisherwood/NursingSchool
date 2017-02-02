@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<h1>Progress</h1>
+<hr />
+@Ajax.ActionLink(" ",
+    "ProgressStudent",
+    new { },
+    new AjaxOptions
+    {
+        UpdateTargetId = "progress-content",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET"
+    },
+    new { @class = "btn btn-default btn-lg glyphicon glyphicon-user" })
+
+@Ajax.ActionLink(" ",
+    "ProgressRoster",
+    new { },
+    new AjaxOptions
+    {
+        UpdateTargetId = "progress-content",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET"
+    },
+    new { @class = "btn btn-default btn-lg glyphicon glyphicon-list-alt" })
+
+@Ajax.ActionLink(" ",
+    "ProgressProgram",
+    new { },
+    new AjaxOptions
+    {
+        UpdateTargetId = "progress-content",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET"
+    },
+    new { @class = "btn btn-default btn-lg glyphicon glyphicon-file" })
+
+
+<div id="progress-content">
+
+</div>

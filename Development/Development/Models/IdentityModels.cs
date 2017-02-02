@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Development.Models;
 
 namespace Development.Models
 {
@@ -29,5 +30,15 @@ namespace Development.Models
         {
             return new ApplicationDbContext();
         }
+
+
+        public virtual DbSet<Course> Course { get; set; }
+        public virtual DbSet<Department> Department { get; set; }
+        public virtual DbSet<Enrollment> Enrollment { get; set; }
+        public virtual DbSet<Program> Program { get; set; }
+        public virtual DbSet<ProgramCourse> ProgramCourse { get; set; }
+        public virtual DbSet<Semester> Semester { get; set; }
+        public virtual DbSet<Student> Student { get; set; }
+        public virtual DbSet<StudentProgram> StudentProgram { get; set; }
     }
 }

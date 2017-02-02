@@ -1,0 +1,66 @@
+﻿@using Development.Models;
+@model IEnumerable<Enrollment>
+@{
+    Layout = null;
+}
+
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="progress-student-table-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        @Session["CurrentSemesterString"]
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="progress-student-dd">
+        @foreach (var s in Model.Select(s => s.Semester).Distinct())
+        {
+            <li>
+                        @Ajax.ActionLink(s.SemesterString(),
+                        "ProgressStudentTableUpdate",
+                        new AjaxOptions
+                        {
+                            UpdateTargetId = "progress-student-table-table",
+                            InsertionMode = InsertionMode.Replace,
+                            HttpMethod = "GET"
+                        })
+            </li>
+        }
+    </ul>
+</div>
+
+<table id="progress-student-table-table" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Course</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model.Where(i => i.SemesterId == Convert.ToInt32(Session["CurrentSemesterId"])))
+        {
+                <tr>
+                    <td>@s.Course.Number @s.Course.Department.Name</td>
+                    <td>@s.Course.Title</td>
+                </tr>
+            }
+    </tbody>
+</table>
+
+<hr />
+
+<div id="progress-student-add col-xs-12">
+    @using (Ajax.BeginForm("ProgressStudentAddEnrollment", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "progress-student-table-table" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="col-xs-12">
+            @Html.DropDownList("CourseId", null, htmlAttributes: new { @class = "form-control col-xs-12" }) 
+        </div>
+        <div class="col-xs-12">
+            <input type="submit" value="Add Class" class="btn btn-primary" />
+        </div>
+
+        <br /><br />
+
+    }
+</div>
+
+
+@Ajax.

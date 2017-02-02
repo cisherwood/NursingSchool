@@ -1,0 +1,34 @@
+﻿@using Development.Models;
+@{
+    Layout = null;
+}
+
+
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#">@Session["CurrentSemesterString"]</a></li>
+    @foreach (Semester s in ViewBag.StudentSemesters)
+    {
+        <li><a href="#">@s.Season @s.Year</a></li>
+    }
+</ul>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Course</th>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (Course c in ViewBag.StudentCurrentClasses)
+        {
+            <tr>
+                <td>@c.CourseString</td>
+                <td>@c.Title</td>
+                <td>@c.Description</td>
+            </tr>
+        }
+
+    </tbody>
+</table>

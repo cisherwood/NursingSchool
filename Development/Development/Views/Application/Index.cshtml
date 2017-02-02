@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+        <div class="btn btn-default" aria-label="Left Align">
+            @Ajax.ActionLink("HOME",
+                "HOME",
+                new AjaxOptions
+                {
+                    UpdateTargetId = "content",
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "GET"
+                })
+            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+        </div>

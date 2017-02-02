@@ -1,0 +1,33 @@
+﻿#content{
+    padding-top: 15px;
+
+}
+
+#navigation{
+    display: table;
+    margin: 1% auto;
+
+}
+
+#navigation > li > a{
+    font-size: 1.2em;
+    font-weight: 200;
+}
+
+#navigation > li > a:hover{
+    background-color: rgba(77,77,77,0.3);
+}
+
+#container {
+    background-image: url('Layout/brickwall.png');
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#panel-content{
+    height: 100vh;
+}
+
+#content{
+    padding: 25px;
+}

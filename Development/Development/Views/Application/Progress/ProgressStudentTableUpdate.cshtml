@@ -1,0 +1,25 @@
+﻿@using Development.Models;
+@model IEnumerable<Enrollment>
+@{
+    Layout = null;
+}
+
+<thead>
+    <tr>
+        <th>Course</th>
+        <th>Title</th>
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Course.Number @s.Course.Department.Name</td>
+            <td>@s.Course.Title</td>
+            <td></td>
+        </tr>
+    }
+
+</tbody>
+
