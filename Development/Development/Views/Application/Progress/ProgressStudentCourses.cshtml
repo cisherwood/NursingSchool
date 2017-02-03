@@ -20,26 +20,10 @@
                                     },
                                     new { @id = "progress-student-course-add-link" })*@
 
-<ul class="nav nav-tabs">
-    <li class="active"><a href="#">@Session["CurrentSemesterString"]</a></li>
-    @foreach (Semester s in ViewBag.StudentSemesters)
-    {
-        <li>
-            @Ajax.ActionLink(@s.Season + " " + @s.Year,
-                                         "ProgressStudentCoursesUpdate",
-                                         new { sem = @s.SemesterId },
-                                         new AjaxOptions
-                                         {
-                                             UpdateTargetId = "progress-student-courses-body",
-                                             InsertionMode = InsertionMode.Replace,
-                                             HttpMethod = "GET"
-                                         },
-                                         new { @id = "progress-student-course-add-link" })
-        </li>
-    }
-</ul>
-
-<table class="table table-striped">
+<div class="panel-heading">
+    <h3>Registered Courses</h3>
+</div>
+<table class="table table-striped panel-body">
     <thead>
         <tr>
             <th>Course</th>
@@ -59,4 +43,35 @@
 
     </tbody>
 </table>
+<div class="panel-footer">
 
+    <ul class="nav nav-pills">
+        @foreach (Semester s in ViewBag.StudentSemesters)
+        {
+            <li class="sem-pill" data-sem-id='@s.SemesterId.ToString()'>
+                @Ajax.ActionLink(@s.Season + " " + @s.Year,
+                                         "ProgressStudentCoursesUpdate",
+                                         new { sem = @s.SemesterId },
+                                         new AjaxOptions
+                                         {
+                                             UpdateTargetId = "progress-student-courses-body",
+                                             InsertionMode = InsertionMode.Replace,
+                                             HttpMethod = "GET"
+                                         },
+                                         new { @id = "progress-student-course-add-link" })
+            </li>
+        }
+    </ul>
+</div>
+
+<script>
+    $('.sem-pill[data-sem-id=3]').addClass('active');
+
+    $(function () {
+        $('.sem-pill').click(function () {
+            $('.sem-pill').removeClass('active');
+            $(this).addClass('active');
+
+        })
+    });
+</script>

@@ -42,9 +42,9 @@
             </div>
         </div>
     </div>
-    <div id="container" class="container-fluid body-content">
 
-        <div class="row"> 
+    <div id="container" class="container-fluid body-content">
+        <div id="navbar" class="row"> 
             <div class="col-xs-12">
                 <ul id="navigation" class="nav nav-pills">
                     <li role="presentation" class="active">@Ajax.ActionLink("HOME",
@@ -74,9 +74,11 @@
             </div>
         </div>
 
-        <div id="panel-content" class="panel panel-default">
-            <div id="content" class="panel-body">
-                @RenderBody()
+        <div class="row" id="content-row">
+            <div id="panel-content" class="panel panel-default">
+                <div id="content" class="panel-body">
+                    @RenderBody()
+                </div>
             </div>
         </div>
         <hr />

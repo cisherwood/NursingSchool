@@ -69,7 +69,10 @@ namespace Development.Controllers
                                                                 select en);
 
             // List of semesters that the selected student has taken classes
-            ViewBag.StudentSemesters = enrollments.Where(x => x.SemesterId != currentSemesterId).Select(x => x.Semester).Distinct();
+            var semswithoutcurrent = enrollments.Where(x => x.SemesterId != currentSemesterId).Select(x => x.Semester).Distinct().ToList();
+            var currentsem = db.Semester.Where(x => x.SemesterId == currentSemesterId).ToList();
+            var sems = currentsem.Concat(semswithoutcurrent);
+            ViewBag.StudentSemesters = sems;
 
             // List of classes in the current semester
             ViewBag.StudentCurrentClasses = enrollments.Where(x => x.SemesterId == currentSemesterId).Select(x => x.Course);
@@ -94,14 +97,9 @@ namespace Development.Controllers
 
             // Get enrollment data about selected student
             List<Enrollment> enrollments = new List<Enrollment>(from en in db.Enrollment
-                                                                where en.StudentId == currentStudentId
+                                                                where en.StudentId == currentStudentId &&
+                                                                      en.SemesterId == sem
                                                                 select en);
-
-            // List of semesters that the selected student has taken classes
-            ViewBag.StudentSemesters = enrollments.Where(x => x.SemesterId != currentSemesterId).Select(x => x.Semester).Distinct();
-
-            // List of classes in the current semester
-            ViewBag.StudentCurrentClasses = enrollments.Where(x => x.SemesterId == sem).Select(x => x.Course);
 
             return View("~/Views/Application/Progress/ProgressStudentCoursesUpdate.cshtml", enrollments);
         }

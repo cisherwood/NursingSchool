@@ -29,7 +29,7 @@
                                     <td>@m.FirstName</td>
                                     <td>@m.LastName</td>
                                     <td>
-                                        @Ajax.ActionLink(" Classes",
+                                        @Ajax.ActionLink(" ",
                                 "ProgressStudentCourses",
                                 new { id = m.StudentId },
                                 new AjaxOptions
@@ -38,7 +38,7 @@
                                     InsertionMode = InsertionMode.Replace,
                                     HttpMethod = "GET"
                                 },
-                                new { @class = "btn btn-default btn-sm glyphicon glyphicon-list-alt" })
+                                new { @class = "btn btn-default btn-md glyphicon glyphicon-list-alt" })
                                     </td>
                                 </tr>
                             }
@@ -130,11 +130,8 @@
 
     *@
     <div class="col-xs-6">
-        <div class="panel panel-default">
-            <div class="panel-heading"><h3>Regisered Courses</h3></div>
-            <div id="progress-student-courses" class="panel-body">
-                
-            </div>
+        <div id="progress-student-courses" class="panel panel-default">
+
         </div>
 
         <div class="panel panel-default">

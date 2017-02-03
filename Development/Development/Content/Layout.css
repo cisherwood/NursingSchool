@@ -3,15 +3,29 @@
 
 }
 
+#navbar{
+    background-color: #AD0000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
 #navigation{
     display: table;
     margin: 1% auto;
+
 
 }
 
 #navigation > li > a{
     font-size: 1.2em;
     font-weight: 200;
+    color: white;
+}
+
+#navigation > li.active > a{
+    background-color: #333;
 }
 
 #navigation > li > a:hover{
@@ -20,14 +34,49 @@
 
 #container {
     background-image: url('Layout/brickwall.png');
-    padding-left: 3%;
-    padding-right: 3%;
+    border: 15px;
+    min-height: 100vh;
 }
-
 #panel-content{
-    height: 100vh;
+    margin-top: 100px;
 }
-
 #content{
     padding: 25px;
+
+}
+
+.panel-default > .panel-heading{
+    text-align: center;
+    margin: 3px;
+    background-color: #ddd;
+
+}
+
+.panel-default > .panel-heading > h3{
+    margin: 3px;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+}
+
+
+.nav-pills > li > a{
+    font-size: 1.2em;
+    font-weight: 200;
+    color: #333;
+}
+
+.nav-pills > li.active > a{
+    background-color: #333;
+}
+
+.nav-pills > li.active > a:hover{
+    background-color: #111;
+}
+
+.nav-pills > li.active > a:focus{
+    background-color: #222;
+}
+
+#content-row{
+    padding: 15px;
 }
