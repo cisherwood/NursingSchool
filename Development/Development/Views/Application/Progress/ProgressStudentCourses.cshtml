@@ -19,11 +19,16 @@
                                         HttpMethod = "GET"
                                     },
                                     new { @id = "progress-student-course-add-link" })*@
+<script>
+    $('#progress-student-courses-taken').bootstrapTable({
+
+     });
+</script>
 
 <div class="panel-heading">
     <h3>Registered Courses</h3>
 </div>
-<table class="table table-striped panel-body">
+<table id="progress-student-courses-taken" data-toggle="table" class="table table-striped panel-body">
     <thead>
         <tr>
             <th>Course</th>
@@ -63,6 +68,16 @@
         }
     </ul>
 </div>
+@Ajax.ActionLink(" ADD",
+                                         "ProgressStudentGetAddCourses",
+                                         new {  },
+                                         new AjaxOptions
+                                         {
+                                             UpdateTargetId = "progress-student-courses-add",
+                                             InsertionMode = InsertionMode.Replace,
+                                             HttpMethod = "GET"
+                                         },
+                                         new { @id = "progress-student-course-add-courses-link" })
 
 <script>
     $('.sem-pill[data-sem-id=3]').addClass('active');

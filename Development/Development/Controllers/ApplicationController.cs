@@ -77,12 +77,22 @@ namespace Development.Controllers
             // List of classes in the current semester
             ViewBag.StudentCurrentClasses = enrollments.Where(x => x.SemesterId == currentSemesterId).Select(x => x.Course);
 
-            // List of classes
-            ViewBag.ProgressStudentCourses = db.Course.ToList();
+            
 
 
 
             return View("~/Views/Application/Progress/ProgressStudentCourses.cshtml", enrollments);
+        }
+
+
+        //AJAX
+        // Get class
+        public ActionResult ProgressStudentGetAddCourses()
+        {
+            // List of classes
+            List<Course> courses = db.Course.ToList();
+
+            return View("~/Views/Application/Progress/ProgressStudentGetAddCourses.cshtml", courses);
         }
 
         // AJAX

@@ -10,16 +10,17 @@
 @{
     Layout = null;
 }
+
 <div class="row">
     <div class="col-xs-6">
         <div class="panel panel-default">
             <div class="panel-heading"><h3>Students</h3></div>
-                    <table id="progress-student-sp" class="table table-striped panel-body">
+                    <table id="progress-student-sp" class="table table-striped panel-body" data-toggle="table" data-pagination="true" data-search="true">
                         <thead>
                             <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Link</th>
+                                <th data-field="fname">First Name</th>
+                                <th data-field="lname">Last Name</th>
+                                <th data-field="links">Link</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,6 +45,7 @@
                             }
                         </tbody>
                     </table>
+
                 </div>
             </div>
 
@@ -134,12 +136,15 @@
 
         </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading"><h3>Add Courses</h3></div>
-            <div id="progress-student-courses-add" class="panel-body">
+        <div id="progress-student-courses-add"class="panel panel-default">
 
-            </div>
         </div>
 
    </div>
 </div>
+
+<script>
+    $('#progress-student-sp').bootstrapTable({
+
+        });
+</script>

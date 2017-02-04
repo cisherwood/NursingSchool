@@ -220,6 +220,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap-table-en-US.js" />
     <Content Include="Scripts\bootstrap-table-locale-all.min.js" />
     <Content Include="Scripts\bootstrap-table.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -323,6 +324,7 @@
     <Content Include="Views\Students\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Application\Progress\ProgressStudentCoursesAdd.cshtml" />
+    <Content Include="Views\Application\Progress\ProgressStudentGetAddCourses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
