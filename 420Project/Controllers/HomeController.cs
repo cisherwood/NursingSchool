@@ -10,7 +10,9 @@ namespace _420Project.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Login", "Account", new {
+                returnUrl = "/Dashboard/Index"
+            });
         }
 
         public ActionResult About()
