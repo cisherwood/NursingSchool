@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="@Url.Action("Index", "Application")" class="navbar-brand">School of Nursing</a>
+                <a href="@Url.Action("Index", "Dashboard")" class="navbar-brand">School of Nursing</a>
             </div>
             <div class="navbar-collapse collapse">
                 <!-- <ul class="nav navbar-nav">
@@ -49,27 +49,13 @@
             <div class="col-xs-12">
                 <ul id="navigation" class="nav nav-pills">
                     <li role="presentation" class="active">
-                        @Ajax.ActionLink("HOME",
-                                                         "Home",
-                                                         new AjaxOptions
-                                                         {
-                                                             UpdateTargetId = "content",
-                                                             InsertionMode = InsertionMode.Replace,
-                                                             HttpMethod = "GET"
-                                                         })
+                        <a href="/Dashboard/Index">HOME</a>
                 </li>
                 <li role="presentation"><a href="#">NEWS</a></li>
                 <li role="presentation"><a href="#">REPORTS</a></li>
                 <li role="presentation">
-                    @Ajax.ActionLink("PROGRESS",
-                                                         "Progress",
-                                                         new AjaxOptions
-                                                         {
-                                                             UpdateTargetId = "content",
-                                                             InsertionMode = InsertionMode.Replace,
-                                                             HttpMethod = "GET"
-                                                         })
-            </li>
+                    <a href="/Progress/Index">PROGRESS</a>
+              </li>
             <li role="presentation"><a href="#">ADVISING</a></li>
             <li role="presentation"><a href="#">ACCOUNT</a></li>
         </ul>

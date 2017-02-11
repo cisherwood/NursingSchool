@@ -1,0 +1,92 @@
+﻿@using _420Project.Models;
+@{
+    Layout = null;
+}
+
+@*<script>
+        $(document).ready(function () {
+            $('#progress-student-course-add-link').click();
+        })
+    </script>
+
+    @Ajax.ActionLink(" ",
+                                    "ProgressStudentCoursesAdd",
+                                    new { },
+                                    new AjaxOptions
+                                    {
+                                        UpdateTargetId = "progress-student-courses-add",
+                                        InsertionMode = InsertionMode.Replace,
+                                        HttpMethod = "GET"
+                                    },
+                                    new { @id = "progress-student-course-add-link" })*@
+<script>
+    $('#progress-student-courses-taken').bootstrapTable({
+
+     });
+</script>
+
+<div class="panel-heading">
+    <h3>Registered Courses</h3>
+</div>
+<table id="progress-student-courses-taken" data-toggle="table" class="table table-striped panel-body">
+    <thead>
+        <tr>
+            <th>Course</th>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody id="progress-student-courses-body">
+        @foreach (Course c in ViewBag.StudentCurrentClasses)
+        {
+            <tr>
+                <td>@c.CourseString</td>
+                <td>@c.Title</td>
+                <td>@c.Description</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<div class="panel-footer">
+
+    <ul class="nav nav-pills">
+        @foreach (Semester s in ViewBag.StudentSemesters)
+        {
+            <li class="sem-pill" data-sem-id='@s.SemesterId.ToString()'>
+                @Ajax.ActionLink(@s.Season + " " + @s.Year,
+                                         "StudentCoursesUpdate",
+                                         new { sem = @s.SemesterId },
+                                         new AjaxOptions
+                                         {
+                                             UpdateTargetId = "progress-student-courses-body",
+                                             InsertionMode = InsertionMode.Replace,
+                                             HttpMethod = "GET"
+                                         },
+                                         new { @id = "progress-student-course-add-link" })
+            </li>
+        }
+    </ul>
+</div>
+@Ajax.ActionLink(" ",
+                                         "StudentGetAddCourses",
+                                         new { sem = ViewBag.currentSemesterId },
+                                         new AjaxOptions
+                                         {
+                                             UpdateTargetId = "progress-student-courses-add",
+                                             InsertionMode = InsertionMode.Replace,
+                                             HttpMethod = "GET"
+                                         },
+                                         new { @id = "progress-student-course-add-courses-link", @class="hidden" })
+
+<script>
+    $('.sem-pill[data-sem-id=3]').addClass('active');
+
+    $(function () {
+        $('.sem-pill').click(function () {
+            $('.sem-pill').removeClass('active');
+            $(this).addClass('active');
+
+        })
+    });
+</script>
