@@ -1,5 +1,5 @@
-﻿@using _420Project.Models
-@model IEnumerable<Course>
+﻿@using _420Project.ViewModels
+@model IEnumerable<ProgressStudentAddCourseViewModel>
 @{ 
     Layout = null;
 }
@@ -8,21 +8,36 @@
 <table id="progress-student-courses-add-table" data-toggle="table" class="table table-striped panel-body" data-click-to-select="true">
     <thead>
         <tr>
-            <th data-checkbox="true"></th>
-            <th>Course</th>
+            <th></th>
+            <th data-field="Name">Course</th>
             <th>Title</th>
             <th>Description</th>
         </tr>
     </thead>
     <tbody id="progress-student-courses-body">
-        @foreach (var c in Model)
+        @foreach (ProgressStudentAddCourseViewModel c in Model)
         {
-            <tr class='progress-student-course-row' data-course-id='@c.CourseId'>
-                <td></td>
-                <td>@c.CourseString</td>
-                <td>@c.Title</td>
-                <td>@c.Description</td>
-            </tr>
+            if (c.HasTaken == true)
+            {
+                <tr class='progress-student-course-row danger' data-course-id='@c.CourseId'>
+                    <td>@Html.CheckBoxFor(x => c.IsChecked)</td>
+                    <td>@c.CourseString</td>
+                    <td>@c.Title</td>
+                    <td>@c.Description</td>
+                </tr>
+            }
+            else
+            {
+                <tr class='progress-student-course-row' data-course-id='@c.CourseId'>
+                    <td>@Html.CheckBoxFor(x => c.IsChecked)</td>
+                    <td>@c.CourseString</td>
+                    <td>@c.Title</td>
+                    <td>@c.Description</td>
+                </tr>
+            }
+
+
+
         }
 
     </tbody>
@@ -41,9 +56,6 @@
 
     $(function () {
         $('#student-progress-add-courses-button').click(function () {
-            @{ 
-                List<int> courses = new List<int>();
-            }
             $('.progress-student-course-row').hasClass('selected').each(function () {
 
                 parseInt($(this).attr('data-course-id'));
