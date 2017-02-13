@@ -126,13 +126,7 @@ namespace Development.Controllers
             return View("~/Views/Application/Progress/ProgressStudentCoursesAdd.cshtml", courses);
         }
 
-
-
-
-
-
-
-
+        
 
         public ActionResult ProgressStudentTable(int id)
         {

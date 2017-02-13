@@ -11,9 +11,14 @@ namespace Development.Models
         public int StudentId { get; set; }
         public int CourseId { get; set; }
         public int SemesterId { get; set; }
+        public int ProgramId { get; set; }
+        //Grades
+
 
         public virtual Student Student { get; set; }
         public virtual Course Course { get; set; }
         public virtual Semester Semester { get; set; }
+        public virtual Program Program { get; set; }
+
     }
 }

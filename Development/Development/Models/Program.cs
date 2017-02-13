@@ -10,6 +10,7 @@ namespace Development.Models
         public int ProgramId { get; set; }
         public string Name { get; set; }
 
+
         public virtual ICollection<StudentProgram> StudentPrograms { get; set; }
         public virtual ICollection<ProgramCourse> ProgramCourses { get; set; }
 
