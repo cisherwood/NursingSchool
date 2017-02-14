@@ -220,6 +220,10 @@
     <Compile Include="Migrations\201702112118400_initial.Designer.cs">
       <DependentUpon>201702112118400_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702141742562_AddManualData.cs" />
+    <Compile Include="Migrations\201702141742562_AddManualData.Designer.cs">
+      <DependentUpon>201702141742562_AddManualData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Course.cs" />
@@ -369,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702112118400_initial.resx">
       <DependentUpon>201702112118400_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702141742562_AddManualData.resx">
+      <DependentUpon>201702141742562_AddManualData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
