@@ -242,6 +242,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Layout.css" />
     <Content Include="Content\Layout\brickwall.png" />
+    <Content Include="Content\Progress.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
 
+
+    @RenderSection("css", required: false)
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -12,7 +15,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 
-    @RenderSection("css", required: false)
+ 
     @RenderSection("scripts", required: false)
 
     <!-- Bootstrap table -->
@@ -21,6 +24,9 @@
     <script src="~/Scripts/bootstrap-table-en-US.js"></script>
 
     <link href="~/Content/Layout.css" rel="stylesheet" />
+
+
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
