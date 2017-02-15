@@ -127,6 +127,11 @@ namespace _420Project.Controllers
             return View(courses);
         }
 
+        public ActionResult Roster()
+        {
+            return View();
+        }
+
 
     }
 }

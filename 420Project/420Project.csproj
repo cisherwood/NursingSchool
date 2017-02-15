@@ -206,6 +206,7 @@
     <Compile Include="Controllers\ProgramCoursesController.cs" />
     <Compile Include="Controllers\ProgramsController.cs" />
     <Compile Include="Controllers\ProgressController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\SemestersController.cs" />
     <Compile Include="Controllers\StudentProgramsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
@@ -244,6 +245,10 @@
     <Content Include="Content\bootstrap-table.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\66.gif" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\Layout\logo-nursing_fullcolor.png" />
+    <Content Include="Content\Login.css" />
     <Content Include="Content\Layout.css" />
     <Content Include="Content\Layout\brickwall.png" />
     <Content Include="Content\Progress.css" />
@@ -252,6 +257,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap-table-en-US.js" />
+    <Content Include="Scripts\bootstrap-table-toolbar.min.js" />
     <Content Include="Scripts\bootstrap-table.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -263,6 +269,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -356,6 +363,9 @@
     <Content Include="Views\Progress\StudentCoursesUpdate.cshtml" />
     <Content Include="Views\Progress\StudentCoursesAdd.cshtml" />
     <Content Include="Views\Progress\StudentGetAddCourses.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Progress\Roster.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

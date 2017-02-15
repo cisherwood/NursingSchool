@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script>
+    $(document).ready(function () {
+        $('#nav-reports').addClass('active');
+    })
+</script>
+
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3>Students</h3></div>
+        <table id="report-table" class="panel-body table" data-search="true" data-show-columns="true" data-pagination="true" data-advanced-search="true" data-id-table="advancedTable">
+            <thead>
+                <tr>
+                    <th data-field="fname" data-sortable="true">First Name</th>
+                    <th data-field="lname" data-sortable="true">Last Name</th>
+                    <th data-field="program" data-sortable="true">Program</th>
+                    <th data-field="status" data-sortable="true">Status</th>
+                    <th data-field="year" data-sortable="true">Year</th>
+                    <th data-field="campus" data-sortable="true">Campus</th>
+                    <th data-sortable="false">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Program</td>
+                    <td>Status</td>
+                    <td>Year</td>
+                    <td>Campus</td>
+                    <td><a href="#"><span class="glyphicon glyphicon-book text-center"></span></a>
+                        <a href="#"><span class="glyphicon glyphicon-signal text-center"></span></a>
+                        <a href="/Reports/ReportCard/1" target="_blank"><span class="glyphicon glyphicon-list text-center"></span></a>
+                    </td>
+                </tr>
+
+
+               
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $('#report-table').bootstrapTable({
+        options: {
+            advancedSearch: true
+        }
+    });
+</script>
+

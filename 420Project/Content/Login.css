@@ -3,29 +3,17 @@
 
 }
 
-#logo{
-    max-width: 180px;
-}
-
-.center{
-    margin: 0 auto;
-    display: table;
-}
-
 #navbar{
-    background-color: #444;
+    background-color: #AD0000;
     position: fixed;
     top: 0;
     width: 100%;
-    height: 75px;
-    z-index:1;
-    border-bottom: 5px solid black;
 }
 
 #navigation{
     display: table;
-    margin: 0 auto;
-    margin-top: 15px;
+    margin: 1% auto;
+
 
 }
 
@@ -36,7 +24,7 @@
 }
 
 #navigation > li.active > a{
-    background-color: #000;
+    background-color: #333;
 }
 
 #navigation > li > a:hover{
@@ -56,10 +44,14 @@
 
 }
 
+#content-row{
+
+}
+
 .panel-default > .panel-heading{
     text-align: center;
-    background-color: #333;
-    color: white;
+    margin: 3px;
+    background-color: #ddd;
 
 }
 
@@ -92,4 +84,6 @@
     padding: 15px;
 }
 
-
+body{
+    padding-top: 0px;
+}

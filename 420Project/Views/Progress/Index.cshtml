@@ -7,7 +7,21 @@
 @section css{
     <link href="~/Content/Progress.css" rel="stylesheet" />
 }
+<script>
+    $(document).ready(function () {
+        $('#nav-progress').addClass('active');
+        $('#progress-student-button').click();
 
+        $('#progress-view-student-button').click(function () {
+            $('#progress-student-button').click();
+        })
+
+        $('#progress-view-roster-button').click(function () {
+            $('#progress-roster-button').click();
+        })
+    })
+</script>
+<div class="hidden">
     @Ajax.ActionLink(" Student View",
     "Student",
     new { },
@@ -17,11 +31,11 @@
         InsertionMode = InsertionMode.Replace,
         HttpMethod = "GET"
     },
-    new { @class = "btn btn-default btn-lg glyphicon glyphicon-user" })
+    new { @id = "progress-student-button", @class = "progress-view-link" })
 
 
-@Ajax.ActionLink(" Roster View",
-    "ProgressRoster",
+    @Ajax.ActionLink(" Roster View",
+    "Roster",
     new { },
     new AjaxOptions
     {
@@ -29,11 +43,26 @@
         InsertionMode = InsertionMode.Replace,
         HttpMethod = "GET"
     },
-    new { @class = "btn btn-default btn-lg glyphicon glyphicon-list-alt" })
+    new { @id = "progress-roster-button", @class = "progress-view-link" })
+</div>
 
-<br /><br />
+<div id="progress-view-buttons">
+    <div id="progress-view-student-button" class="btn btn-default">
+        <div class="glyphicon glyphicon-user"></div>
+        <h4>STUDENT VIEW</h4>
+    </div>
 
-<div class="well">
+    <div id="progress-view-roster-button" class="btn btn-default">
+        <div class="glyphicon glyphicon-list"></div>
+        <h4>ROSTER VIEW</h4>
+    </div>
+</div>
+
+<br />
+
+
+
+<div class="well col-xs-12">
     <div id="progress-content">
 
     </div>

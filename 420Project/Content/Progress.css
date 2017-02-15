@@ -2,3 +2,8 @@
     background-color: #444;
     color: white;
 }
+
+#progress-view-buttons > .btn > div{
+    font-size: 1.5em;
+
+}

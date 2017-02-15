@@ -7,6 +7,11 @@
     Layout = null;
 }
 <script>
+    $(document).ready(function () {
+        $(".progress-student-panel").hide();
+        $(".progress-student-panel").removeClass('hidden');
+        $(".progress-student-panel").show('fade', {}, 500);
+    })
     function progressStudentAdd() {
         $('#progress-student-course-add-courses-link').click();
     };
@@ -14,7 +19,7 @@
 
 <div class="row">
     <div class="col-xs-3">
-        <div class="panel panel-default">
+        <div class="panel panel-default hidden progress-student-panel">
             <div class="panel-heading"><h3>Students</h3></div>
                     <table id="progress-student-sp" class="table table-striped panel-body" data-toggle="table" data-pagination="true" data-search="true">
                         <thead>
@@ -133,13 +138,23 @@
 
 
     *@
-    <div class="col-xs-6">
-        <div id="progress-student-courses" class="panel panel-default">
-
+    <div class="col-xs-9">
+        <div id="progress-student-courses" class="panel panel-default hidden progress-student-panel">
+            <div class="panel-heading">
+                <h3>Registered Courses</h3>
+            </div>
+            <div class="panel-body">
+                Select a student...
+            </div>
         </div>
 
-        <div id="progress-student-courses-add"class="panel panel-default">
-
+        <div id="progress-student-courses-add"class="panel panel-default hidden progress-student-panel">
+            <div class="panel-heading">
+                <h3>Add Courses</h3>
+            </div>
+            <div class="panel-body">
+                Select a student...
+            </div>
         </div>
 
    </div>
@@ -147,7 +162,7 @@
 
 <script>
     $('#progress-student-sp').bootstrapTable({
-
+            
         });
 </script>
 
