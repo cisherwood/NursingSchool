@@ -13,5 +13,11 @@ namespace _420Project.Controllers
         {
             return View();
         }
+
+        // GET: Dashboard/Index
+        public ActionResult Development()
+        {
+            return View();
+        }
     }
 }

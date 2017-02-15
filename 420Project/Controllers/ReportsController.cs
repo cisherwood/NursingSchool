@@ -13,5 +13,11 @@ namespace _420Project.Controllers
         {
             return View();
         }
+
+        // GET: Reports
+        public ActionResult ReportCard()
+        {
+            return View();
+        }
     }
 }

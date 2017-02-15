@@ -245,6 +245,7 @@
     <Content Include="Content\bootstrap-table.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Images\66.gif" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\Layout\logo-nursing_fullcolor.png" />
@@ -257,6 +258,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap-table-en-US.js" />
+    <Content Include="Scripts\bootstrap-table-export.js" />
     <Content Include="Scripts\bootstrap-table-toolbar.min.js" />
     <Content Include="Scripts\bootstrap-table.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -366,6 +368,9 @@
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Progress\Roster.cshtml" />
     <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
+    <Content Include="Views\Reports\ReportCard.cshtml" />
+    <Content Include="Views\Dashboard\Development.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -7,3 +7,13 @@
     font-size: 1.5em;
 
 }
+
+.progress-placeholder{
+    height: 100px;
+    border: 3px #eee dashed;
+    padding-top: 35px;
+}
+
+.progress-placeholder > h4{
+    color: #bbb;
+}

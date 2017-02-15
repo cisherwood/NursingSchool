@@ -10,7 +10,7 @@
     $(document).ready(function () {
         $(".progress-student-panel").hide();
         $(".progress-student-panel").removeClass('hidden');
-        $(".progress-student-panel").show('fade', {}, 500);
+        $(".progress-student-panel").show('fade', {}, 300);
     })
     function progressStudentAdd() {
         $('#progress-student-course-add-courses-link').click();
@@ -144,7 +144,9 @@
                 <h3>Registered Courses</h3>
             </div>
             <div class="panel-body">
-                Select a student...
+                <div class="progress-placeholder col-xs-12">
+                    <h4 class="center">SELECT STUDENT...</h4>
+                </div>
             </div>
         </div>
 
@@ -153,7 +155,9 @@
                 <h3>Add Courses</h3>
             </div>
             <div class="panel-body">
-                Select a student...
+                <div class="progress-placeholder col-xs-12">
+                    <h4 class="center">SELECT STUDENT...</h4>
+                </div>
             </div>
         </div>
 
