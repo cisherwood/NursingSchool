@@ -11,7 +11,7 @@ namespace _420Project.Models
         public int ProgramCourseId { get; set; }
         public int ProgramId { get; set; }
         public int CourseId { get; set; }
-        public int Semester { get; set; }
+        public int SemesterId { get; set; }
 
         public virtual Course Course { get; set; }
         public virtual Program Program { get; set; }
