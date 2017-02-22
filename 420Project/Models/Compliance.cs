@@ -7,10 +7,7 @@ namespace _420Project.Models
 {
     public class Compliance
     {
-        public int ComplianceId;
+        public int Id { get; set; }
         public string Name { get; set; }
-
-        
-
     }
 }
