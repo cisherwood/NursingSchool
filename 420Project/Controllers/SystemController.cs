@@ -13,8 +13,8 @@ namespace _420Project.Controllers
 
         //Method that will be take a student's Id, retrieve their enrollments, and then calculate their GPA.
         //Pre-Condition: Provide a valid Id number.
-        //Post-Conition: The student's GPA will be returned.
-        public double GetGPA(int id)
+        //Post-Conition: The student's GPA will be returned as a string formatted to two decimal places.
+        public string GetGPA(int id)
         {
             double totalHours = 0;
             double achievedPoints = 0;
@@ -24,12 +24,17 @@ namespace _420Project.Controllers
                               select c;
 
             foreach (Enrollment enrollment in enrollments)
-                totalHours += enrollment.Course.ClassHours;
+            {
+                if (!string.IsNullOrWhiteSpace(enrollment.Grade)) //Done to ensure that only graded enrollment records are included.
+                    totalHours += enrollment.Course.ClassHours;
+            }
 
             foreach (Enrollment enrollment in enrollments)
-                achievedPoints += GetGradePoints(enrollment.Course.ClassHours, enrollment.Grade);
-
-            return achievedPoints / totalHours;
+            {
+                if (!string.IsNullOrWhiteSpace(enrollment.Grade))
+                    achievedPoints += GetGradePoints(enrollment.Course.ClassHours, enrollment.Grade);
+            }
+            return string.Format($"{Math.Round(achievedPoints / totalHours,2):N2}"); //Return calculated gpa as a string, rounded to two decimal places.
         }
         //Helper method that will determine the grade points achieved at a certain grade.
         //Pre-Condition: Class Hours and Grade achieved are passed.
