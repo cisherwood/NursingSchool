@@ -29,7 +29,6 @@ namespace _420Project.Models
         {
             return new ApplicationDbContext();
         }
-
         public virtual DbSet<Course> Course { get; set; }
         public virtual DbSet<Department> Department { get; set; }
         public virtual DbSet<Enrollment> Enrollment { get; set; }
