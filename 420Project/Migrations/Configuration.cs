@@ -1,5 +1,6 @@
 namespace _420Project.Migrations
 {
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,13 @@ namespace _420Project.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Advisor.AddOrUpdate(
+                a => a.FirstName,
+                new Advisor { FirstName = "Yo" }
+                );
+
+
         }
     }
 }

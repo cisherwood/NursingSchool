@@ -7,6 +7,7 @@ namespace _420Project.Migrations
     {
         public override void Up()
         {
+            /*
             //Add Semesters
             Sql("INSERT INTO Semesters (Year, Season) VALUES (2016, 'Spring')");
             Sql("INSERT INTO Semesters (Year, Season) VALUES (2016, 'Summer')");
@@ -18,7 +19,8 @@ namespace _420Project.Migrations
             Sql("INSERT INTO Students (FirstName, LastName) VALUES ('Mary', 'Williams')");
             Sql("INSERT INTO Students (FirstName, LastName) VALUES ('Angela', 'Gavins')");
             Sql("INSERT INTO Students (FirstName, LastName) VALUES ('Larry', 'Smith')");
-            Sql("INSERT INTO Students (FirstName, LastName) VALUES ('Jane', 'Doe')");
+            Sql("INSERT INTO Students (FirstName, LastName) VALUES ('Jane', 'Doe')");*/
+            
         }
 
         public override void Down()
