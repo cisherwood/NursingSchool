@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CompliancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
@@ -389,6 +390,11 @@
     <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
     <Content Include="Views\Reports\ReportCard.cshtml" />
     <Content Include="Views\Dashboard\Development.cshtml" />
+    <Content Include="Views\Compliances\Create.cshtml" />
+    <Content Include="Views\Compliances\Delete.cshtml" />
+    <Content Include="Views\Compliances\Details.cshtml" />
+    <Content Include="Views\Compliances\Edit.cshtml" />
+    <Content Include="Views\Compliances\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

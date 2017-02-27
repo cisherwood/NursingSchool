@@ -100,13 +100,13 @@ namespace _420Project.Controllers
             foreach (Course c in courses)
             {
                 ProgressStudentAddCourseViewModel course = new ProgressStudentAddCourseViewModel();
-                course.CourseId = c.CourseId;
+                course.CourseId = c.Id;
                 course.Number = c.Number;
                 course.Title = c.Title;
                 course.Description = c.Description;
                 course.Department = c.Department;
-                course.IsChecked = db.Enrollment.Any(x => x.CourseId == c.CourseId && x.SemesterId == currentSemester && x.StudentId == currentStudent);
-                course.HasTaken = db.Enrollment.Any(x => x.CourseId == c.CourseId && x.StudentId == currentStudent);
+                course.IsChecked = db.Enrollment.Any(x => x.CourseId == c.Id && x.SemesterId == currentSemester && x.StudentId == currentStudent);
+                course.HasTaken = db.Enrollment.Any(x => x.CourseId == c.Id && x.StudentId == currentStudent);
 
                 vm.Add(course);
 
