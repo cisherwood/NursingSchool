@@ -29,7 +29,8 @@ namespace _420Project.Models
         public string Note { get; set; }
 
         public virtual ICollection<Course> Courses { get; set; }
-        public virtual ICollection<Enrollment> Enrollment { get; set; }
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
+        public virtual ICollection<StudentCompliance> Compliances { get; set; }
 
 
 
