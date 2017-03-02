@@ -45,5 +45,6 @@ namespace _420Project.Models
         public virtual DbSet<StudentCompliance> StudentCompliance { get; set; }
         public virtual DbSet<StudentPetition> StudentPetition { get; set; }
         public virtual DbSet<StudentProgram> StudentProgram { get; set; }
+        public virtual DbSet<File> File { get; set; }
     }
 }

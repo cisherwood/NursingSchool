@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CompliancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
@@ -234,6 +235,10 @@
     <Compile Include="Migrations\201702232334162_models-update.Designer.cs">
       <DependentUpon>201702232334162_models-update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702271617274_FileModel.cs" />
+    <Compile Include="Migrations\201702271617274_FileModel.Designer.cs">
+      <DependentUpon>201702271617274_FileModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201702261945136_fixcourse.cs" />
     <Compile Include="Migrations\201702261945136_fixcourse.Designer.cs">
       <DependentUpon>201702261945136_fixcourse.cs</DependentUpon>
@@ -247,6 +252,8 @@
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Petition.cs" />
@@ -393,6 +400,11 @@
     <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
     <Content Include="Views\Reports\ReportCard.cshtml" />
     <Content Include="Views\Dashboard\Development.cshtml" />
+    <Content Include="Views\Compliances\Create.cshtml" />
+    <Content Include="Views\Compliances\Delete.cshtml" />
+    <Content Include="Views\Compliances\Details.cshtml" />
+    <Content Include="Views\Compliances\Edit.cshtml" />
+    <Content Include="Views\Compliances\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -421,9 +433,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702232334162_models-update.resx">
       <DependentUpon>201702232334162_models-update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702261945136_fixcourse.resx">
-      <DependentUpon>201702261945136_fixcourse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
