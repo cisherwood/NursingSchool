@@ -234,6 +234,10 @@
     <Compile Include="Migrations\201702232334162_models-update.Designer.cs">
       <DependentUpon>201702232334162_models-update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702261945136_fixcourse.cs" />
+    <Compile Include="Migrations\201702261945136_fixcourse.Designer.cs">
+      <DependentUpon>201702261945136_fixcourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advisor.cs" />
@@ -417,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702232334162_models-update.resx">
       <DependentUpon>201702232334162_models-update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702261945136_fixcourse.resx">
+      <DependentUpon>201702261945136_fixcourse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
