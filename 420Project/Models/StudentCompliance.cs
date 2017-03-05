@@ -12,11 +12,12 @@ namespace _420Project.Models
     public class StudentCompliance
     {
         //General "Primary Key" Id property.
-        public int Id { get; set; }
+        [Key]
+        public int SCId { get; set; }
 
         //Properties to hold the dates that the compliance is submitted and expires.
-        public DateTime ExpirationDate { get; set; }
-        public DateTime SubmissionDate { get; set; }
+        public DateTime? ExpirationDate { get; set; }
+        public DateTime? SubmissionDate { get; set; }
 
         //Foreign Keys for Compliance and Student.
         public int ComplianceId { get; set; }

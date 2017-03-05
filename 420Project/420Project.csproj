@@ -247,6 +247,14 @@
     <Compile Include="Migrations\201703020203310_seeds.Designer.cs">
       <DependentUpon>201703020203310_seeds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703042312436_fixs.cs" />
+    <Compile Include="Migrations\201703042312436_fixs.Designer.cs">
+      <DependentUpon>201703042312436_fixs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703042317197_quickfix.cs" />
+    <Compile Include="Migrations\201703042317197_quickfix.Designer.cs">
+      <DependentUpon>201703042317197_quickfix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advisor.cs" />
@@ -268,12 +276,18 @@
     <Compile Include="Models\StudentCompliance.cs" />
     <Compile Include="Models\StudentPetition.cs" />
     <Compile Include="Models\StudentProgram.cs" />
-    <Compile Include="Models\To_Do.cs" />
+    <Compile Include="Models\ToDo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ProgressStudentAddCourseViewModel.cs" />
     <EmbeddedResource Include="Migrations\201703020203310_seeds.resx">
       <DependentUpon>201703020203310_seeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703042312436_fixs.resx">
+      <DependentUpon>201703042312436_fixs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703042317197_quickfix.resx">
+      <DependentUpon>201703042317197_quickfix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

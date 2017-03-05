@@ -9,7 +9,7 @@ namespace _420Project.Models
     {
         public int StudentPetitionID { get; set; }
         public string Status { get; set; }
-        public DateTime SubmitDate { get; set; }
+        public DateTime? SubmitDate { get; set; }
 
         public int StudentID { get; set; }
         public int PetitionID { get; set; }

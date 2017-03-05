@@ -5,7 +5,7 @@ using System.Web;
 
 namespace _420Project.Models
 {
-    public class To_Do
+    public class ToDo
     {
         public int ToDoID { get; set; }
 
@@ -13,7 +13,7 @@ namespace _420Project.Models
 
         public DateTime CreateDate { get; set; }
 
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
         public int GroupID { get; set; }
     }

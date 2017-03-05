@@ -12,8 +12,7 @@ namespace _420Project.Models
         public string Description { get; set; }
         public string Location { get; set; }
         public bool IsRecruitmentEvent { get; set; }
-        public DateTime Date { get; set;}
-        public DateTime Time { get; set; }
+        public DateTime? Date { get; set;}
 
     }
 }
