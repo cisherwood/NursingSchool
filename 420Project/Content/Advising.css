@@ -1,0 +1,13 @@
+﻿#advising-tabs > li > a{
+    color: #AD0000;
+    font-family: 'Meriweather Sans', sans-serif;
+    font-size: 1.3em;
+}
+
+#advising-tabs > li.active > a {
+    color: black;
+}
+
+.advising-heading{
+    margin: 10px;
+}

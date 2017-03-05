@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdvisingController.cs" />
     <Compile Include="Controllers\CompliancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
@@ -291,11 +292,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Advising.css" />
     <Content Include="Content\bootstrap-table.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Images\66.gif" />
+    <Content Include="Content\Layout\linedpaper.png" />
+    <Content Include="Content\Layout\Logo_Inverse.png" />
+    <Content Include="Content\Layout\shattered.png" />
+    <Content Include="Content\Layout\theme-sprite.png" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\Layout\logo-nursing_fullcolor.png" />
     <Content Include="Content\Login.css" />
@@ -426,6 +432,8 @@
     <Content Include="Views\Compliances\Details.cshtml" />
     <Content Include="Views\Compliances\Edit.cshtml" />
     <Content Include="Views\Compliances\Index.cshtml" />
+    <Content Include="Views\Advising\Index.cshtml" />
+    <Content Include="Views\Advising\Advising.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

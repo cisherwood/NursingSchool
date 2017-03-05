@@ -4,7 +4,8 @@
 }
 
 #logo{
-    max-width: 180px;
+    max-width: 200px;
+    padding-top: 23px;
 }
 
 .center{
@@ -12,41 +13,66 @@
     display: table;
 }
 
+.navigation-link{
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 75px;
+    display: flex;
+    color: #aaa;
+    font-size: 1em;
+    font-weight: 200;
+    font-family: 'Meriweather Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.navigation-link > span{
+    /* Center this */
+}
+
+.navigation-link-active{
+    padding-top: 5px;
+    background-color: #222;
+    color: white;
+    box-shadow: inset 0px -5px 15px -5px #111;
+    border-bottom-color: #AD0000;
+    border-bottom: 5px solid #AD0000;
+}
+
+.navigation-link:hover{
+    background-color: #222;
+    color: white;
+    text-decoration:none;
+    box-shadow: inset 0px -5px 15px -5px #111;
+}
+
+.navigation-link > span{
+    align-self: center;
+}
+
+#navigation-link-container{
+    height: 75px;
+    align-items: stretch;
+    display: flex;
+}
+
 #navbar{
-    background-color: #444;
+    background-color: #333;
     position: fixed;
     top: 0;
     width: 100%;
     height: 75px;
     z-index:1;
-    border-bottom: 5px solid black;
+    box-shadow: inset 0px -5px 15px -5px #111;
 }
 
 #navigation{
-    display: table;
-    margin: 0 auto;
     margin-top: 15px;
 
 }
 
-#navigation > li > a{
-    font-size: 1.2em;
-    font-weight: 200;
-    color: white;
-}
-
-#navigation > li.active > a{
-    background-color: #000;
-}
-
-#navigation > li > a:hover{
-    background-color: #777;
-}
-
 #container {
-    background-image: url('Layout/brickwall.png');
+    background-image: url('Layout/shattered.png');
     border: 15px;
-    min-height: 100vh;
 }
 #panel-content{
     margin-top: 100px;
@@ -69,27 +95,48 @@
     font-weight: 400;
 }
 
-
-.nav-pills > li > a{
-    font-size: 1.2em;
-    font-weight: 200;
-    color: #333;
-}
-
-.nav-pills > li.active > a{
-    background-color: #333;
-}
-
-.nav-pills > li.active > a:hover{
-    background-color: #111;
-}
-
-.nav-pills > li.active > a:focus{
-    background-color: #222;
-}
-
 #content-row{
     padding: 15px;
 }
 
+#toolbar{
+    position: fixed;
+    top: 75px;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+    border-bottom: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: #999;
+}
 
+/* TOOLBAR STYLING */
+#toolbar-menu{
+    padding-top: 13px;
+}
+
+/* BREAD CRUMB STYLING*/
+
+#breadcrumb{
+    background-color: white;
+    padding: 0px;
+    padding-top: 13px;
+    margin-bottom: 0px;
+    align-content: flex-end;
+}
+
+#breadcrumb > li > a{
+    color: #ad0000
+}
+
+#breadcrumb-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* MISC */
+.dark-hr{
+    border-top-color: #ccc;
+    margin: 5px;
+}
