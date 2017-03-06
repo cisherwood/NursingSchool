@@ -6,17 +6,20 @@
 @section css{
     <link href="~/Content/Dashboard.css" rel="stylesheet" />
 }
-<script>
+@section head{
+    <script>
     $(document).ready(function () {
         $('#nav-home').addClass('active');
 
         $("#content-dashboard").hide();
         $("#content-dashboard").removeClass('hidden');
         $("#content-dashboard").show('blind', {}, 300);
-    })
+    });
 </script>
+}
 <!-- Links container-->
 <div id="content-dashboard" class="row hidden">
+
     <div class="col-xs-12">
 
         <div class="row">

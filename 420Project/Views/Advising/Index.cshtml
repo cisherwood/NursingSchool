@@ -22,7 +22,7 @@
             <tbody>
                 @for (int i = 1; i <= 100; i++)
                 {
-                    <tr>
+                    <tr class="advising-student-row">
                         <td>Student 1</td>
                         <td>3.5</td>
                         <td>BSN</td>
@@ -35,45 +35,28 @@
     </div>
 </div>
 <div class="col-xs-7">
-    <div class="panel panel-default">
-        <div class="panel-heading"><h3>Advising</h3></div>
-        <div class="panel-body">
-            <div>
-                <div class="well">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h3 class="advising-heading"><b>Student Name 1</b></h3>
-                            <hr class="dark-hr"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <div class="col-xs-12">
-                                <h4><b>GPA:</b> 3.5</h4>
-                            </div>
-                        </div>
-                        <div class="col-xs-6">
+<div class="panel panel-default">
+    <div class="panel-heading"><h3>Advising</h3></div>
+    <div class="panel-body">
+        <div>Placeholder</div>
 
-                        </div>
-                    </div>
-                    
-                </div>
-                <ul id="advising-tabs" class="nav nav-tabs">
-                    <li role="presentation" class="active"><a href="#">Compliance</a></li>
-                    <li role="presentation"><a href="#">Plan</a></li>
-                    <li role="presentation"><a href="#">Report Card</a></li>
-                </ul>
-
-
-                <h3>Test Area</h3>
-                <p>Test test test</p>
-            </div>  
-        </div>
+    </div>  
     </div>
 </div>
 
+
 <script>
     $('#advising-student').bootstrapTable({
+
+    });
+
+    $('.advising-student-row').click(function () {
+        alert('test');
+
+
+    })
+
+    $(function () {
 
     });
 </script>
