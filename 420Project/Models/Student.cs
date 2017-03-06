@@ -30,14 +30,16 @@ namespace _420Project.Models
         public int AdvisorId { get; set; }
         public int ProgramId { get; set; }
         public bool HasGraduated { get; set; }
-
-        [StringLength(5, MinimumLength = 1)]
+        [StringLength(5, MinimumLength = 2)]
         public string Standing { get; set; }
+        [StringLength(50)]
         public string Year { get; set; }
         public DateTime DOB { get; set; }
         public int CampusId { get; set; }
 
         public string Status { get; set; }
+
+        [StringLength(100)]
         public string Note { get; set; }
 
         public virtual ICollection<Course> Courses { get; set; }
