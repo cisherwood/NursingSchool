@@ -19,95 +19,141 @@
 }
 <!-- Links container-->
 <div id="content-dashboard" class="row hidden">
-
-    <div class="col-xs-12">
-
-        <div class="row">
-            <div class="col-xs-4">
-                <div class="col-xs-12 panel panel-default dashboard-panel">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-xs-3">
+                <div class="panel-default panel">
                     <div class="panel-body">
-                        <div class="col-xs-12 text-center">
-                            <a href="/Dashboard/Development">
-                                <div class="center glyphicon glyphicon-calendar dash-icon"></div>
-                                <h2>News + Events</h2>
-                            </a>
-                        </div>
+                        Test
                     </div>
                 </div>
             </div>
 
-            <div class="col-xs-4">
-                <div class="col-xs-12 panel panel-default dashboard-panel">
+            <div class="col-xs-3">
+                <div class="panel-default panel">
                     <div class="panel-body">
-                        <div class="col-xs-12 text-center">
-                            <a href="/Dashboard/Development">
-                                <div class="center glyphicon glyphicon-envelope dash-icon"></div>
-                                <h2>Messaging</h2>
-                            </a>
-                        </div>
+                        Test
                     </div>
                 </div>
             </div>
 
-            <div class="col-xs-4">
-                <div class="col-xs-12 panel panel-default dashboard-panel">
+            <div class="col-xs-3">
+                <div class="panel-default panel">
                     <div class="panel-body">
-                        <div class="col-xs-12 text-center">
-                            <a href="/Dashboard/Development">
-                                <div class="center glyphicon glyphicon-ok dash-icon"></div>
-                                <h2>Advising</h2>
-                            </a>
-                        </div>
+                        Test
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+                <div class="panel-default panel">
+                    <div class="panel-body">
+                        Test
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-xs-4">
-                <div class="col-xs-12 panel panel-default dashboard-panel">
-                    <div class="panel-body">
-                        <div class="col-xs-12 text-center">
-                            <a href="/Reports">
-                                <div class="center glyphicon glyphicon-file dash-icon"></div>
-                                <h2>Reports</h2>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-4">
-                <div class="col-xs-12 panel panel-default dashboard-panel">
-                    <div class="panel-body">
-                        <div class="col-xs-12 text-center">
-                            <a href="/Progress">
-                                <div class="center glyphicon glyphicon-list dash-icon"></div>
-                                <h2>Progress</h2>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-4">
-                <div class="col-xs-12 panel panel-default dashboard-panel">
-                    <div class="panel-body">
-                        <div class="col-xs-12 text-center">
-                            <a href="/Dashboard/Development">
-                                <div class="center glyphicon glyphicon-cog dash-icon"></div>
-                                <h2>My Account</h2>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div well>
-            <a href="@Url.Action("Index", "Admin")" class="navbar-brand"><h6>Temp Admin Link</h6></a>
-        </div>
-
     </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-xs-4">
+                <div class="panel panel-default dashboard-panel">
+                    <div class="panel-heading">
+                        <h3 class="dashboard-panel-h3"><span class="badge">100</span>Notifications</h3>
+                    </div>
+                    <table id="dashboard-notifications" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 1; i <= 100; i++)
+                            {
+                                <tr>
+                                    <td>Test Notification</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <div class="panel panel-default dashboard-panel">
+                    <div class="panel-heading">
+                        <h3 class="dashboard-panel-h3"><span class="badge">100</span>To Do</h3>
+                    </div>
+                    <table id="dashboard-todo" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
+                        <thead>
+                            <tr>
+                                <th class="col-xs-1"></th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 1; i <= 100; i++)
+                            {
+                                <tr>
+                                    <td><span class="glyphicon glyphicon-ok"></span></td>
+                                    <td>Test Todo</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <div class="panel panel-default dashboard-panel">
+                    <div class="panel-heading">
+                        <h3 class="dashboard-panel-h3"><span class="badge">100</span>Events</h3>
+                    </div>
+                    <table id="dashboard-event" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
+                        <thead>
+                            <tr>
+                                <th class="col-xs-3">Date</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 1; i <= 100; i++)
+                            {
+                                <tr>
+                                    <td>3-1-2017</td>
+                                    <td>Test Event</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div well>
+                <a href="@Url.Action("Index", "Admin")" class="navbar-brand"><h6>Temp Admin Link</h6></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Control Panel</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-xs-3">
+                            <h3>Notification</h3>
+                            <div class="well"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 

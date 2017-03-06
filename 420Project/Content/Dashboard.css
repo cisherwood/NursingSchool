@@ -1,13 +1,17 @@
-﻿.dash-icon{
-    font-size: 2em;
-    color: black;
+﻿.dashboard-panel > .bootstrap-table{
+    height: 200px;
+    overflow: auto;
 }
 
-h2{
-    color: black;
+.dashboard-panel-h3{
+    display: flex;
+    justify-content: center;
 }
 
-.dashboard-panel:hover{
-    background-color: #eee;
-    box-shadow: 5px 5px 5px #ccc;
+.dashboard-panel-h3 > span{
+    align-self: center;
+    background-color: #AD0000;
+    margin-right: 5px;
+    font-size: 0.75em;
+    padding: 5px 8px;
 }

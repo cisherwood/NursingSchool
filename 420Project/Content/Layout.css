@@ -141,3 +141,20 @@
     border-top-color: #ccc;
     margin: 5px;
 }
+
+/* Custom Bootstrap Tables*/
+.page-pre > a{
+    color: #AD0000;
+}
+
+.page-next > a{
+    color: #AD0000;
+}
+
+ul.pagination > li.active > a{
+    background-color: #AD0000;
+    border-color: #720000;
+}
+ul.pagination > li > a{
+  color: #AD0000;
+}
