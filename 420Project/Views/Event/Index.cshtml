@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Events</h3>
+    </div>
+    <table class="panel-body table-striped" data-toggle="table" data-pagination="true">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 1; i <= 100; i++)
+            {
+                <tr>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>1-1-2017</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

@@ -203,6 +203,7 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EnrollmentsController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProgramCoursesController.cs" />
@@ -434,9 +435,12 @@
     <Content Include="Views\Compliances\Index.cshtml" />
     <Content Include="Views\Advising\Index.cshtml" />
     <Content Include="Views\Advising\Advising.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Manager\" />
     <Folder Include="Views\System\" />
   </ItemGroup>
   <ItemGroup>
