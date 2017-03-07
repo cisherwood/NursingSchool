@@ -437,6 +437,10 @@
     <Content Include="Views\Advising\Advising.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
     <Content Include="Views\Event\Detail.cshtml" />
+    <Content Include="Views\Advising\Program.cshtml" />
+    <Content Include="Views\Advising\Plan.cshtml" />
+    <Content Include="Views\Advising\Petition.cshtml" />
+    <Content Include="Views\Advising\Compliance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

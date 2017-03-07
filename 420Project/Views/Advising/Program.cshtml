@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<br />
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+        BSN
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#">BSN</a></li>
+        <li><a href="#">Masters</a></li>
+    </ul>
+</div> 
+
+
+<br />
+
+<table id="advising-program-table" class="table table-striped" data-toggle="table">
+    <thead>
+        <tr>
+            <th>Course</th>
+            <th>Semester</th>
+            <th>Grade</th>
+            <th>Hours</th>
+        </tr>
+    </thead>
+    <tbody id="advising-compliance-body">
+        @for (int i = 1; i <= 30; i++)
+        {
+            <tr class="advising-student-row success">
+                <td>NURS 101</td>
+                <td>Spring 2016</td>
+                <td>A</td>
+                <td>3</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $('#advising-program-table').bootstrapTable({
+
+    });
+</script>

@@ -13,5 +13,30 @@ namespace _420Project.Controllers
         {
             return View();
         }
+
+        public ActionResult Advising()
+        {
+            return View();
+        }
+
+        public ActionResult Compliance()
+        {
+            return View();
+        }
+
+        public ActionResult Program()
+        {
+            return View();
+        }
+
+        public ActionResult Plan()
+        {
+            return View();
+        }
+
+        public ActionResult Petition()
+        {
+            return View();
+        }
     }
 }

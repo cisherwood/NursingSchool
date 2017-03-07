@@ -1,7 +1,83 @@
 ﻿@{
     Layout = null;
 }
+<script>
+    $(document).ready(function () {
+        $('#advising-tab-compliance').click(function () {
 
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("Compliance", "Advising"))",
+                success: function (data) {
+                    $('.advising-tab-active').removeClass('active');
+                    $('.advising-tab-active').removeClass('advising-tab-active');
+                    $('#advising-tab-compliance').parent().addClass('active');
+                    $('#advising-tab-compliance').parent().addClass('advising-tab-active');
+                    $('#advising-tab-content').html(data);
+                },
+            error: function (data) {
+                alert('error');
+            }
+        })           
+        })
+
+        $('#advising-tab-program').click(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("Program", "Advising"))",
+                success: function (data) {
+                    $('.advising-tab-active').removeClass('active');
+                    $('.advising-tab-active').removeClass('advising-tab-active');
+                    $('#advising-tab-program').parent().addClass('active');
+                    $('#advising-tab-program').parent().addClass('advising-tab-active');
+                    $('#advising-tab-content').html(data);
+                },
+            error: function (data) {
+                alert('error');
+            }
+            })
+        })
+
+        $('#advising-tab-plan').click(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("Plan", "Advising"))",
+                success: function (data) {
+                    $('.advising-tab-active').removeClass('active');
+                    $('.advising-tab-active').removeClass('advising-tab-active');
+                    $('#advising-tab-plan').parent().addClass('active');
+                    $('#advising-tab-plan').parent().addClass('advising-tab-active');
+                    $('#advising-tab-content').html(data);
+                },
+            error: function (data) {
+                alert('error');
+            }
+        })
+        })
+
+        $('#advising-tab-petition').click(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("Petition", "Advising"))",
+                success: function (data) {
+                    $('.advising-tab-active').removeClass('active');
+                    $('.advising-tab-active').removeClass('advising-tab-active');
+                    $('#advising-tab-petition').parent().addClass('active');
+                    $('#advising-tab-petition').parent().addClass('advising-tab-active');
+                    $('#advising-tab-content').html(data);
+                },
+            error: function (data) {
+                alert('error');
+            }
+        })
+    })
+
+
+    })
+</script>
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
@@ -23,7 +99,41 @@
 
 
 <ul id="advising-tabs" class="nav nav-tabs">
-    <li role="presentation" class="active"><a href="#">Compliance</a></li>
-    <li role="presentation"><a href="#">Plan</a></li>
-    <li role="presentation"><a href="#">Report Card</a></li>
+    <li role="presentation" class="active advising-tab-active"><a id="advising-tab-compliance" href="#">Compliance</a></li>
+    <li role="presentation"><a id="advising-tab-program" href="#">Program</a></li>
+    <li role="presentation"><a id="advising-tab-plan" href="#">Plan</a></li>
+    <li role="presentation"><a id="advising-tab-petition" href="#">Petition</a></li>
 </ul>
+<div id="advising-tab-content">
+    <br />
+    <table id="advising-compliance-table" class="table table-striped" data-toggle="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Expiration Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="advising-compliance-body">
+            @for (int i = 1; i <= 7; i++)
+            {
+                <tr class="advising-student-row">
+                    <td>Compliance 1</td>
+                    <td>1-1-2017</td>
+                    <td><span class="glyphicon glyphicon-ok"></span></td>
+                    <td><span class="glyphicon glyphicon-eye-open"></span></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script>
+    $('#advising-compliance-table').bootstrapTable({
+
+    });
+    </script>
+
+
+</div>
+

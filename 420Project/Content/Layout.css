@@ -142,6 +142,16 @@
     margin: 5px;
 }
 
+/*
+.glyphicon{
+    color: #999;
+}
+
+.glyphicon:hover{
+    color: #AD0000;
+    cursor: pointer;
+}*/
+
 /* Custom Bootstrap Tables*/
 .page-pre > a{
     color: #AD0000;

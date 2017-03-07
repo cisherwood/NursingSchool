@@ -5,11 +5,29 @@
 @section css{
     <link href="~/Content/Advising.css" rel="stylesheet" />
 }
+<script>
+    $(document).ready(function () {
+        $('#advising-student-body').on("click", ".advising-student-row", function () {
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("Advising", "Advising"))",
+            success: function (data) {
+                $('#advising-panel').html(data);
+            },
+            error: function (data) {
+                alert('error');
 
+            }
+        })
+        })
+    })
+
+
+</script>
 <div class="col-xs-5">
     <div class="panel panel-default">
         <div class="panel-heading"><h3>Students</h3></div>
-        <table id="advising-student" class="panel-body" data-toggle="table" data-pagination="true">
+        <table id="advising-student" class="panel-body table table-striped" data-toggle="table" data-pagination="true" data-page-size="20" data-page-list="[20,50,100,500]">
             <thead>
                 <tr>
                     <th>Student</th>
@@ -19,7 +37,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="advising-student-body">
                 @for (int i = 1; i <= 100; i++)
                 {
                     <tr class="advising-student-row">
@@ -37,8 +55,10 @@
 <div class="col-xs-7">
 <div class="panel panel-default">
     <div class="panel-heading"><h3>Advising</h3></div>
-    <div class="panel-body">
-        <div>Placeholder</div>
+    <div id="advising-panel" class="panel-body">
+        <div id="placeholder">
+            
+        </div>
 
     </div>  
     </div>
@@ -47,16 +67,6 @@
 
 <script>
     $('#advising-student').bootstrapTable({
-
-    });
-
-    $('.advising-student-row').click(function () {
-        alert('test');
-
-
-    })
-
-    $(function () {
 
     });
 </script>

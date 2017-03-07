@@ -1,0 +1,57 @@
+﻿@{ 
+    Layout = null;
+}
+<br />
+<div class="panel panel-default">
+    <table id="advising-compliance-table" class="table table-striped panel-body" data-toggle="table">
+        <thead>
+            <tr>
+                <th data-checkbox="true"></th>
+                <th>Name</th>
+                <th>Expiration Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="advising-compliance-body">
+            @for (int i = 1; i <= 2; i++)
+            {
+                <tr class="advising-student-row">
+                    <td></td>
+                    <td>Compliance 1</td>
+                    <td>1-1-2017</td>
+                    <td><span class="glyphicon glyphicon-ok"></span></td>
+                    <td>
+                        <span class="glyphicon glyphicon-eye-open"> </span>
+                        <span class="glyphicon glyphicon-time"> </span>
+                        <span class="glyphicon glyphicon-pencil"> </span>
+                    </td>
+                </tr>
+            }
+            @for (int i = 1; i <= 3; i++)
+            {
+                <tr class="advising-student-row">
+                    <td></td>
+                    <td>Compliance 1</td>
+                    <td>1-1-2017</td>
+                    <td><span class="glyphicon glyphicon-flag"></span></td>
+                    <td>
+                        <span class="glyphicon glyphicon-eye-open"> </span>
+                        <span class="glyphicon glyphicon-time"> </span>
+                        <span class="glyphicon glyphicon-pencil"> </span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="panel-footer">
+        <div class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Approve</div>
+    </div>
+</div>
+
+<script>
+    $('#advising-compliance-table').bootstrapTable({
+
+    });
+</script>
+
