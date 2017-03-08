@@ -38,5 +38,10 @@ namespace _420Project.Controllers
         {
             return View();
         }
+
+        public ActionResult ViewDocument()
+        {
+            return View();
+        }
     }
 }
