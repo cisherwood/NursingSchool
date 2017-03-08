@@ -19,5 +19,11 @@ namespace _420Project.Controllers
         {
             return View();
         }
+
+        // GET: Reports
+        public ActionResult Compliance()
+        {
+            return View();
+        }
     }
 }

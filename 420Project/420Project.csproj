@@ -450,6 +450,7 @@
     <Content Include="Views\Event\Edit.cshtml" />
     <Content Include="Views\Dashboard\ManageStudents.cshtml" />
     <Content Include="Views\Dashboard\ManageEvents.cshtml" />
+    <Content Include="Views\Reports\Compliance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
