@@ -13,5 +13,7 @@
 }
 
 #placeholder{
-    height: 500px;
+    padding-top: 150px;
+    padding-bottom: 200px;
+    color: #999;
 }

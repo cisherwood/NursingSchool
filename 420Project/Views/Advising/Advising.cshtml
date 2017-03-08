@@ -4,6 +4,7 @@
 
 <script>
     $(document).ready(function () {
+
         $('#advising-tab-compliance').click(function () {
 
             $.ajax({
@@ -107,34 +108,11 @@
 </ul>
 <div id="advising-tab-content">
     <br />
-    <table id="advising-compliance-table" class="table table-striped" data-toggle="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Expiration Date</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody id="advising-compliance-body">
-            @for (int i = 1; i <= 7; i++)
-            {
-                <tr class="advising-student-row">
-                    <td>Compliance 1</td>
-                    <td>1-1-2017</td>
-                    <td><span class="glyphicon glyphicon-ok"></span></td>
-                    <td><span class="glyphicon glyphicon-eye-open"></span></td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <script>
-    $('#advising-compliance-table').bootstrapTable({
-
-    });
-    </script>
+    
 
 
 </div>
+<script>
 
+    $('#advising-tab-compliance').click();
+</script>

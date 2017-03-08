@@ -52,16 +52,16 @@
                 </a>
             </div>
             <div id="navigation-link-container" class="col-xs-6">
-                <a id="nav-home" href="/Dashboard/Index" class="navigation-link navigation-link-active">
+                <a id="nav-home" href="/Dashboard/Index" class="navigation-link @RenderSection("navlinkhome", required: false)">
                     <span><span class="glyphicon glyphicon-home"></span> Home</span>
                 </a>
-                <a id="nav-advising" href="/Advising/Index" class="navigation-link">
+                <a id="nav-advising" href="/Advising/Index" class="navigation-link @RenderSection("navlinkadv", required: false)">
                     <span><span class="glyphicon glyphicon-ok"></span> Advising</span>
                 </a>
-                <a id="nav-progress "href="/Progress/Index" class="navigation-link">
+                <a id="nav-progress "href="/Progress/Index" class="navigation-link @RenderSection("navlinkenr", required: false)">
                     <span><span class="glyphicon glyphicon-list-alt"></span> Enrollment</span>
                 </a>
-                <a id="nav-reports"href="/Reports/Index" class="navigation-link">
+                <a id="nav-reports"href="/Reports/Index" class="navigation-link @RenderSection("navlinkrep", required: false)">
                     <span><span class="glyphicon glyphicon-file"></span> Reports</span>
                 </a>
 

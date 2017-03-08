@@ -1,0 +1,226 @@
+﻿@model _420Project.Models.Event
+@section context{
+    <div class="col-xs-2">
+        <a href="/Event/Index" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+    </div>
+
+}
+<div class="col-sm-8 col-sm-offset-2">
+    <div class="panel-default panel">
+        <div class="panel-heading"><h3>Create Event</h3></div>
+        <div class="panel-body">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-6">
+                            @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @rows="100", @class = " form-control"} })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IsRecruitmentEvent, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-6">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.IsRecruitmentEvent)
+                                @Html.ValidationMessageFor(model => model.IsRecruitmentEvent, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @id="event-create-date", @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-success btn-lg" />
+                        </div>
+                    </div>
+
+                </div>
+            }       
+
+
+            <div class="well row col-sm-10 col-sm-offset-1">
+                <h4 class="col-xs-12 text-center"><b>Group Settings</b></h4>
+
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <div class="col-md-12 text-left"><b>Account Type</b></div>
+                        <div class="col-md-12">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-default btn-primary">Student</button>
+                                <button type="button" class="btn btn-default">Advisor</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="col-xs-6">
+                            <br />
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-left"><b>Year</b></div>
+                                <div class="col-md-12">
+                                    <span class="checkbox">
+                                        <label><input type="checkbox" value="">Freshman</label>
+                                    </span>
+                                    <span class="checkbox">
+                                        <label><input type="checkbox" value="">Sophmore</label>
+                                    </span>
+                                    <span class="checkbox">
+                                        <label><input type="checkbox" value="">Junior</label>
+                                    </span>
+                                    <span class="checkbox">
+                                        <label><input type="checkbox" value="">Senior</label>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-6">
+                            <br />
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-left"><b>Program</b></div>
+                                <div class="col-md-12">
+                                    <span class="checkbox">
+                                        <label><input type="checkbox" value="">BSN - LD</label>
+                                    </span>
+                                    <span class="checkbox">
+                                        <label><input type="checkbox" value="">BSN - UD</label>
+                                    </span>
+                                    <span class="checkbox">
+                                        <label><input type="checkbox" value="">Master</label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="col-xs-6">
+                            <br />
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-left"><b>Compliance</b></div>
+                                <div class="col-md-12">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                            All
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">All</a></li>
+                                            <li><a href="#"><span class="glyphicon glyphicon-ok"></span> In Compiance</a></li>
+                                            <li><a href="#"><span class="glyphicon glyphicon-remove"></span> Not In Compliance</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <br />
+
+                                <div class="col-md-12 text-left"><b>Advisor</b></div>
+                                <div class="col-md-12">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                            All
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">All</a></li>
+                                            <li><a href="#">Advisor 1</a></li>
+                                            <li><a href="#">Advisor 2</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <br />
+
+                                <div class="col-md-12 text-left"><b>Campus</b></div>
+                                <div class="col-md-12">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                            All
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">All</a></li>
+                                            <li><a href="#">Louisville</a></li>
+                                            <li><a href="#">Other</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-6">
+                            <br />
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-left"><b>Status</b></div>
+                                <div class="col-md-12">
+                                    <span class="checkbox">
+                                        <label><input type="checkbox" value="">Unenrolled</label>
+                                    </span>
+                                    <span class="checkbox">
+                                        <label><input type="checkbox" value="">Active</label>
+                                    </span>
+                                    <span class="checkbox">
+                                        <label><input type="checkbox" value="">Inactive</label>
+                                    </span>
+                                    <span class="checkbox">
+                                        <label><input type="checkbox" value="">Graduated</label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#event-create-date").datepicker({
+            showOn: "focus"
+        });
+    });
+</script>

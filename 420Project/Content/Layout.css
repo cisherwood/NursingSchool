@@ -122,6 +122,15 @@
     padding-top: 6px;
 }
 
+.context-label{
+    padding-top: 7px;
+    text-align: right;
+}
+.context-div{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 /* BREAD CRUMB STYLING*/
 
 #breadcrumb{

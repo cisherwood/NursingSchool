@@ -19,5 +19,20 @@ namespace _420Project.Controllers
         {
             return View();
         }
+
+        public ActionResult EventDetail()
+        {
+            return View();
+        }
+
+        public ActionResult ManageStudents()
+        {
+            return View();
+        }
+
+        public ActionResult ManageEvents()
+        {
+            return View();
+        }
     }
 }

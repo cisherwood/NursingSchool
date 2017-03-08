@@ -445,6 +445,11 @@
     <Content Include="Views\Advising\Compliance.cshtml" />
     <Content Include="Views\Advising\ViewDocument.cshtml" />
     <Content Include="Views\Advising\ComplianceEdit.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
+    <Content Include="Views\Dashboard\EventDetail.cshtml" />
+    <Content Include="Views\Event\Edit.cshtml" />
+    <Content Include="Views\Dashboard\ManageStudents.cshtml" />
+    <Content Include="Views\Dashboard\ManageEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

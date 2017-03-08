@@ -6,22 +6,62 @@
     <link href="~/Content/Advising.css" rel="stylesheet" />
 }
 @section context{
-    <p><b>Program:</b></p>
-    <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-        Dropdown Example
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-        <li><a href="#">HTML</a></li>
-        <li><a href="#">CSS</a></li>
-        <li><a href="#">JavaScript</a></li>
-    </ul>
+<div id="advising-status-filter" class="col-xs-2">
+    <a href="/Dashboard" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
 </div>
+<div id="advising-status-filter" class="col-xs-2">
+    <div class="btn btn-danger disabled"><span class="glyphicon glyphicon-filter"></span> Filter</div>
+</div>
+
+<div id="advising-status-filter" class="col-xs-3">
+    <input type="text" class="form-control" placeholder="Enter name here...">
+</div>
+
+<div id="advising-program-filter" class="col-xs-3">
+    <p class="col-xs-6 text-right context-label context-div"><b>Program:</b></p>
+    <div class="col-xs-6 dropdown context-div">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            All
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">All</a></li>
+            <li><a href="#">BSN</a></li>
+            <li><a href="#">Masters</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="advising-status-filter" class="col-xs-2">
+    <p class="col-xs-6 text-right context-label context-div"><b>Status:</b></p>
+    <div class="col-xs-6 dropdown context-div">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            All
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">None</a></li>
+            <li><a href="#">Pending</a></li>
+            <li><a href="#">Denied</a></li>
+            <li><a href="#">Approved</a></li>
+        </ul>
+    </div>
+</div>
+}
+@section navlinkadv{
+    navigation-link-active
 }
 <script>
     $(document).ready(function () {
+
+
+
         $('#advising-student-body').on("click", ".advising-student-row", function () {
+            $(".advising-student-active").removeClass("warning");
+            $(".advising-student-active").removeClass("advising-student-active");
+            $(this).addClass("advising-student-active");
+            $(this).addClass("warning");
+
             $.ajax({
                 type: "GET",
                 url: "@(Url.Action("Advising", "Advising"))",
@@ -35,8 +75,6 @@
         })
         })
     })
-
-
 </script>
 <div class="col-xs-5">
     <div class="panel panel-default">
@@ -47,8 +85,8 @@
                     <th>Student</th>
                     <th>GPA</th>
                     <th>Program</th>
-                    <th>Compliance</th>
-                    <th></th>
+                    <th>Email</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody id="advising-student-body">
@@ -58,8 +96,13 @@
                         <td>Student 1</td>
                         <td>3.5</td>
                         <td>BSN</td>
-                        <td><span class="glyphicon glyphicon-ok"></span></td>
-                        <td><span class="glyphicon glyphicon-envelope"></span></td>
+                        <td class="text-center">
+                            <a href="mailto:someone@example.com?Subject=Test%20Email" target="_top">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </a>
+                            
+                        </td>
+                        <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
                     </tr>
                 }
             </tbody>
@@ -70,8 +113,8 @@
 <div class="panel panel-default">
     <div class="panel-heading"><h3>Advising</h3></div>
     <div id="advising-panel" class="panel-body">
-        <div id="placeholder">
-            
+        <div class="text-center">
+            <h3 id="placeholder" class="text-center">Please Select a Student...</h3>
         </div>
 
     </div>  
