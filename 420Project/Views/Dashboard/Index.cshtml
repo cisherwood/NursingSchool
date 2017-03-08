@@ -141,11 +141,6 @@
                     </table>
                 </div>
             </div>
-
-            <div well>
-                <a href="@Url.Action("Index", "Admin")" class="navbar-brand"><h6>Temp Admin Link</h6></a>
-            </div>
-
         </div>
     </div>
 
@@ -157,11 +152,45 @@
                         <h3>Control Panel</h3>
                     </div>
                     <div class="panel-body">
-                        <div class="col-xs-3">
-                            <h3>Manage</h3>
-                            <div class="well">
-                                <a href="/Event/Index" class="btn btn-primary">Manage Events</a>
-                                <a href="/Event" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add Event</a>
+                        <div class="col-xs-8">
+                            <h3 class="text-center">Manage</h3>
+                            <div class="well col-xs-12 row">
+                                <div class="col-xs-6">
+                                    <h4>Events</h4>
+                                    <a href="/Event/Index" class="btn btn-primary">Manage Events</a>
+                                    <a href="/Event" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add Event</a>
+                                    <br /><br />
+
+                                    <h4>Todo</h4>
+                                    <a href="/Event/Index" class="btn btn-primary">Manage Events</a>
+                                    <a href="/Event" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add Event</a>
+                                    <br /><br />
+
+                                    <h4>Students</h4>
+                                    <a href="/Event/Index" class="btn btn-primary">Manage Events</a>
+                                    <a href="/Event" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add Event</a>
+                                    <br /><br />
+
+                                </div>
+                                <div class="col-xs-6">
+                                    <h4>Semesters</h4>
+                                    <a href="/Event/Index" class="btn btn-primary">Manage Events</a>
+                                    <a href="/Event" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add Event</a>
+                                    <br /><br />
+
+                                    <h4>Programs</h4>
+                                    <a href="/Event/Index" class="btn btn-primary">Manage Events</a>
+                                    <a href="/Event" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add Event</a>
+                                    <br /><br />
+
+                                </div>                              
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <h3 class="text-center">Actions</h3>
+                            <div class="well row col-xs-12">
+                                <h4>Communicate</h4>
+                                <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>New Message</a>
                             </div>
                         </div>
                     </div>
@@ -169,6 +198,11 @@
             </div>
         </div>
     </div>
-
 </div>
+
+
+<div well>
+    <a href="@Url.Action("Index", "Admin")" class="navbar-brand"><h6>Temp Admin Link</h6></a>
+</div>
+
 

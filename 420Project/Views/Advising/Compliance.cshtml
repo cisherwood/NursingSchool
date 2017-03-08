@@ -8,17 +8,25 @@
         });
 
         $('.advising-compliance-detail').click(function () {
-            $('#dialog').hide();
-            $('#dialog').removeClass('hidden');
-            $('#dialog').dialog({
-                hide: 'fold',
-                show: 'blind'
-            });
-            $('#dialog').show();
-        })
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("ComplianceEdit", "Advising"))",
+                success: function (data) {
+                    $('#dialog').html(data);
+                    $('#dialog').hide();
+                    $('#dialog').removeClass('hidden');
+                    $('#dialog').dialog({
+                        hide: 'fold',
+                        show: 'blind'
+                    });
+                    $('#dialog').show();
+                },
+                error: function (data) {
+                    alert('error');
+                }
+            })
+        });
     });
-
-
 </script>
 
 <br />
@@ -41,7 +49,6 @@
                     <td><span class="glyphicon glyphicon-ok"></span></td>
                     <td>
                         <span class="glyphicon glyphicon-eye-open"> </span>
-                        <span class="glyphicon glyphicon-time"> </span>
                         <span class="glyphicon glyphicon-pencil"> </span>
                     </td>
                 </tr>
@@ -54,23 +61,16 @@
                     <td><span class="glyphicon glyphicon-flag"></span></td>
                     <td>
                         <a href="/Advising/ViewDocument" target="_blank"><span class="glyphicon glyphicon-eye-open"> </span></a>
-                        <span class="glyphicon glyphicon-time"> </span>
-                        <span class="advising-compliance-detail glyphicon glyphicon-pencil"> </span>
+                        <span class="advising-compliance-detail glyphicon glyphicon-pencil"> </span>       
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <div class="panel-footer">
-        <div class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Approve</div>
-    </div>
 </div>
 
 <div id="dialog" title="Compliance Detail" class="hidden col-xs-6">
-    <div class="well">
-        <h3>Yo</h3>
-    </div>
-
+    test
 </div>
 
 

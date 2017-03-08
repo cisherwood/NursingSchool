@@ -43,5 +43,10 @@ namespace _420Project.Controllers
         {
             return View();
         }
+
+        public ActionResult ComplianceEdit()
+        {
+            return View();
+        }
     }
 }

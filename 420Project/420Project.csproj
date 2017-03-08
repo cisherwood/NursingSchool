@@ -443,6 +443,7 @@
     <Content Include="Views\Advising\Petition.cshtml" />
     <Content Include="Views\Advising\Compliance.cshtml" />
     <Content Include="Views\Advising\ViewDocument.cshtml" />
+    <Content Include="Views\Advising\ComplianceEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
