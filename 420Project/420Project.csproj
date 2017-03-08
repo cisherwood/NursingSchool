@@ -300,6 +300,7 @@
     <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Images\66.gif" />
     <Content Include="Content\Images\insurance-authorization-hipaa-consent.gif" />
+    <Content Include="Content\jquery-ui.theme.min.css" />
     <Content Include="Content\Layout\linedpaper.png" />
     <Content Include="Content\Layout\Logo_Inverse.png" />
     <Content Include="Content\Layout\shattered.png" />

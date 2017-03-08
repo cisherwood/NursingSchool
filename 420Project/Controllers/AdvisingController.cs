@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _420Project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -46,7 +47,15 @@ namespace _420Project.Controllers
 
         public ActionResult ComplianceEdit()
         {
-            return View();
+            StudentCompliance model = new StudentCompliance();
+
+            model.ComplianceId = 1;
+            model.ExpirationDate = new DateTime(2017, 1, 1);
+            model.SCId = 1;
+            model.StudentId = 1;
+            model.SubmissionDate = new DateTime(2017, 1, 1);
+
+            return View(model);
         }
     }
 }

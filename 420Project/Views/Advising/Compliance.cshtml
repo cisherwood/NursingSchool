@@ -17,7 +17,8 @@
                     $('#dialog').removeClass('hidden');
                     $('#dialog').dialog({
                         hide: 'fold',
-                        show: 'blind'
+                        show: 'blind',
+                        width: '500px'
                     });
                     $('#dialog').show();
                 },
@@ -34,7 +35,7 @@
     <table id="advising-compliance-table" class="table table-striped panel-body" data-toggle="table">
         <thead>
             <tr>
-                <th>Name</th>
+                <th>Type</th>
                 <th>Expiration Date</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -48,8 +49,8 @@
                     <td>1-1-2017</td>
                     <td><span class="glyphicon glyphicon-ok"></span></td>
                     <td>
-                        <span class="glyphicon glyphicon-eye-open"> </span>
                         <span class="glyphicon glyphicon-pencil"> </span>
+                        <span class="glyphicon glyphicon-eye-open"> </span>
                     </td>
                 </tr>
             }
@@ -60,8 +61,8 @@
                     <td>1-1-2017</td>
                     <td><span class="glyphicon glyphicon-flag"></span></td>
                     <td>
-                        <a href="/Advising/ViewDocument" target="_blank"><span class="glyphicon glyphicon-eye-open"> </span></a>
-                        <span class="advising-compliance-detail glyphicon glyphicon-pencil"> </span>       
+                        <span class="advising-compliance-detail glyphicon glyphicon-pencil"> </span>   
+                        <a href="/Advising/ViewDocument" target="_blank"><span class="glyphicon glyphicon-eye-open"> </span></a>    
                     </td>
                 </tr>
             }
@@ -69,7 +70,7 @@
     </table>
 </div>
 
-<div id="dialog" title="Compliance Detail" class="hidden col-xs-6">
+<div id="dialog" title="Compliance Detail" class="hidden">
     test
 </div>
 

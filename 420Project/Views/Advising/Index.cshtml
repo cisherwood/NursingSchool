@@ -5,6 +5,20 @@
 @section css{
     <link href="~/Content/Advising.css" rel="stylesheet" />
 }
+@section context{
+    <p><b>Program:</b></p>
+    <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Dropdown Example
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ul>
+</div>
+}
 <script>
     $(document).ready(function () {
         $('#advising-student-body').on("click", ".advising-student-row", function () {

@@ -71,7 +71,12 @@
 
             <div id="toolbar" class="row">
                 <div id="toolbar-menu" class="col-xs-8">
-                    <p>[Toolbar context]</p>
+                    <div id="context-row" class="row">
+                        <div class="col-xs-12">
+                            @RenderSection("context", required: false)
+                        </div>
+                    </div>
+
                 </div>
                 <div id="breadcrumb-container" class="col-xs-4">
                     <ol id="breadcrumb" class="breadcrumb">
