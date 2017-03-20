@@ -1,0 +1,78 @@
+﻿@{ 
+    Layout = null;
+}
+<script>
+    $(document).ready(function () {
+        $('#advising-compliance-table').bootstrapTable({
+
+        });
+
+        $('.advising-compliance-detail').click(function () {
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("ComplianceEdit", "Advising"))",
+                success: function (data) {
+                    $('#dialog').html(data);
+                    $('#dialog').hide();
+                    $('#dialog').removeClass('hidden');
+                    $('#dialog').dialog({
+                        hide: 'fold',
+                        show: 'blind',
+                        width: '500px'
+                    });
+                    $('#dialog').show();
+                },
+                error: function (data) {
+                    alert('error');
+                }
+            })
+        });
+    });
+</script>
+
+<br />
+<div class="panel panel-default">
+    <table id="advising-compliance-table" class="table table-striped panel-body" data-toggle="table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Expiration Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="advising-compliance-body">
+            @for (int i = 1; i <= 2; i++)
+            {
+                <tr class="advising-student-row">
+                    <td>Compliance 1</td>
+                    <td>1-1-2017</td>
+                    <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+                    <td class="text-center">
+                        <span class="advising-compliance-detail glyphicon glyphicon-pencil"> </span>
+                        <a href="/Advising/ViewDocument" target="_blank"><span class="glyphicon glyphicon-eye-open"> </span></a>    
+                    </td>
+                </tr>
+            }
+            @for (int i = 1; i <= 3; i++)
+            {
+                <tr class="advising-student-row">
+                    <td>Compliance 1</td>
+                    <td>1-1-2017</td>
+                    <td class="text-center"><span class="glyphicon glyphicon-flag"></span></td>
+                    <td class="text-center">
+                        <span class="advising-compliance-detail glyphicon glyphicon-pencil"> </span>   
+                        <a href="/Advising/ViewDocument" target="_blank"><span class="glyphicon glyphicon-eye-open"> </span></a>    
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div id="dialog" title="Compliance Detail" class="hidden">
+    test
+</div>
+
+
+

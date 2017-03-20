@@ -203,6 +203,7 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EnrollmentsController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProgramCoursesController.cs" />
@@ -299,6 +300,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Images\66.gif" />
+    <Content Include="Content\Images\insurance-authorization-hipaa-consent.gif" />
+    <Content Include="Content\jquery-ui.theme.min.css" />
     <Content Include="Content\Layout\linedpaper.png" />
     <Content Include="Content\Layout\Logo_Inverse.png" />
     <Content Include="Content\Layout\shattered.png" />
@@ -435,9 +438,24 @@
     <Content Include="Views\Compliances\Index.cshtml" />
     <Content Include="Views\Advising\Index.cshtml" />
     <Content Include="Views\Advising\Advising.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\Detail.cshtml" />
+    <Content Include="Views\Advising\Program.cshtml" />
+    <Content Include="Views\Advising\Plan.cshtml" />
+    <Content Include="Views\Advising\Petition.cshtml" />
+    <Content Include="Views\Advising\Compliance.cshtml" />
+    <Content Include="Views\Advising\ViewDocument.cshtml" />
+    <Content Include="Views\Advising\ComplianceEdit.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
+    <Content Include="Views\Dashboard\EventDetail.cshtml" />
+    <Content Include="Views\Event\Edit.cshtml" />
+    <Content Include="Views\Dashboard\ManageStudents.cshtml" />
+    <Content Include="Views\Dashboard\ManageEvents.cshtml" />
+    <Content Include="Views\Reports\Compliance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Manager\" />
     <Folder Include="Views\System\" />
   </ItemGroup>
   <ItemGroup>

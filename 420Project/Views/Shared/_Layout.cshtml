@@ -20,6 +20,9 @@
  
     @RenderSection("scripts", required: false)
 
+    <!-- ChartJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js" type="text/javascript"></script>
+
     <!-- Bootstrap table -->
     <link href="~/Content/bootstrap-table.min.css" rel="stylesheet" />
     <script src="~/Scripts/bootstrap-table.min.js"></script>
@@ -52,19 +55,16 @@
                 </a>
             </div>
             <div id="navigation-link-container" class="col-xs-6">
-                <a id="nav-home" href="/Dashboard/Index" class="navigation-link navigation-link-active">
+                <a id="nav-home" href="/Dashboard/Index" class="navigation-link @RenderSection("navlinkhome", required: false)">
                     <span><span class="glyphicon glyphicon-home"></span> Home</span>
                 </a>
-                <a id="nav-advising" href="/Advising/Index" class="navigation-link">
+                <a id="nav-advising" href="/Advising/Index" class="navigation-link @RenderSection("navlinkadv", required: false)">
                     <span><span class="glyphicon glyphicon-ok"></span> Advising</span>
                 </a>
-                <a id="nav-progress "href="/Progress/Index" class="navigation-link">
-                    <span><span class="glyphicon glyphicon-list-alt"></span> Progress</span>
+                <a id="nav-progress "href="/Progress/Index" class="navigation-link @RenderSection("navlinkenr", required: false)">
+                    <span><span class="glyphicon glyphicon-list-alt"></span> Enrollment</span>
                 </a>
-                <a id="nav-manage" href="/Dashboard/Development" class="navigation-link">
-                    <span><span class="glyphicon glyphicon-wrench"></span> Manage</span>
-                </a>
-                <a id="nav-reports"href="/Reports/Index" class="navigation-link">
+                <a id="nav-reports"href="/Reports/Index" class="navigation-link @RenderSection("navlinkrep", required: false)">
                     <span><span class="glyphicon glyphicon-file"></span> Reports</span>
                 </a>
 
@@ -74,13 +74,16 @@
 
             <div id="toolbar" class="row">
                 <div id="toolbar-menu" class="col-xs-8">
-                    <p>[Toolbar context]</p>
+                    <div id="context-row" class="row">
+                        <div class="col-xs-12">
+                            @RenderSection("context", required: false)
+                        </div>
+                    </div>
+
                 </div>
                 <div id="breadcrumb-container" class="col-xs-4">
                     <ol id="breadcrumb" class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Library</a></li>
-                        <li class="active">Data</li>
+                        <li><a href="/Dashboard/Index">Home</a></li>
                     </ol>
                 </div>
             </div>

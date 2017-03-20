@@ -11,3 +11,9 @@
 .advising-heading{
     margin: 10px;
 }
+
+#placeholder{
+    padding-top: 150px;
+    padding-bottom: 200px;
+    color: #999;
+}

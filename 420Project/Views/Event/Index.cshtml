@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section context{
+    <div class="col-xs-2">
+        <a href="/Dashboard" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+    </div>
+
+    <div class="col-xs-2">
+        <a href="/Event/Create" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Create Event</a>
+    </div>
+
+
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Events</h3>
+    </div>
+    <table class="panel-body table-striped" data-toggle="table" data-pagination="true">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 1; i <= 100; i++)
+            {
+                <tr>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>1-1-2017</td>
+                    <td class="text-center"><a href="/Event/Edit"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
