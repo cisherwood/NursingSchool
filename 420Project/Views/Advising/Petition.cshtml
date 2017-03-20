@@ -1,0 +1,31 @@
+﻿@{ 
+    Layout = null;
+}
+<br />
+
+<table id="advising-petition-table" class="table table-striped" data-toggle="table">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody id="advising-petition-body">
+        @for (int i = 1; i <= 3; i++)
+        {
+            <tr class="advising-student-row">
+                <td>Drop From Class</td>
+                <td>1-1-2017</td>
+                <td><span class="glyphicon glyphicon-ok"></span>
+                </td>
+</tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $('#advising-petition-table').bootstrapTable({
+
+    });
+</script>

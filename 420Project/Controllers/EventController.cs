@@ -6,23 +6,31 @@ using System.Web.Mvc;
 
 namespace _420Project.Controllers
 {
-    public class ReportsController : Controller
+    public class EventController : Controller
     {
-        // GET: Reports
+        // GET: Event
         public ActionResult Index()
         {
+
             return View();
         }
 
-        // GET: Reports
-        public ActionResult ReportCard()
+        // GET: Event
+        public ActionResult Detail(int id)
         {
+
             return View();
         }
 
-        // GET: Reports
-        public ActionResult Compliance()
+        public ActionResult Create()
         {
+
+            return View();
+        }
+
+        public ActionResult Edit()
+        {
+
             return View();
         }
     }

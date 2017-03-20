@@ -12,8 +12,8 @@ namespace _420Project.ViewModels
         public double AverageGPA { get; set; }
         public int  DaysUntilSemesterIsOver { get; set; }
         //public ICollection<Notification> Notifications { get; set; }
-        public ICollection<ToDo> ToDos { get; set; }
+        //public ICollection<ToDo> ToDos { get; set; }
 
-        public ICollection<Event> Events { get; set; }
+        //public ICollection<Event> Events { get; set; }
      }
 }
