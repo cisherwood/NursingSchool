@@ -13,9 +13,9 @@
 #navigation{
     display: table;
     margin: 1% auto;
-
-
 }
+
+
 
 #navigation > li > a{
     font-size: 1.2em;
@@ -32,7 +32,7 @@
 }
 
 #container {
-    background-image: url('Layout/brickwall.png');
+    background-image: url('Layout/shattered.png');
     border: 15px;
     min-height: 100vh;
 }

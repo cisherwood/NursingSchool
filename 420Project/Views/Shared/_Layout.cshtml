@@ -28,7 +28,19 @@
 
     <link href="~/Content/Layout.css" rel="stylesheet" />
 
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Oswald|PT+Sans" rel="stylesheet">
 
+    <!-- FullCalender -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.print.css" media="print" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
+
+
+    
+
+    @RenderSection("head", required: false)
 
 </head>
 <body>
@@ -36,29 +48,46 @@
         <div id="navbar" class="row">
             <div class="col-xs-2">
                 <a href="/Dashboard">
-                    <img id="logo" src="~/Content/Layout/logo-nursing_fullcolor.png" class="col-xs-12" />
+                    <img id="logo" src="~/Content/Layout/Logo_Inverse.png" class="col-xs-12" />
                 </a>
             </div>
-            <div class="col-xs-8">
-                <ul id="navigation" class="nav nav-pills">
-                    <li id="nav-home" role="presentation">
-                        <a href="/Dashboard/Index">HOME</a>
-                </li>
-                <li id="nav-news" role="presentation"><a href="/Dashboard/Development">NEWS</a></li>
-                <li id="nav-reports" role="presentation"><a href="/Reports/Index">REPORTS</a></li>
-                <li id="nav-progress" role="presentation">
-                    <a href="/Progress/Index">PROGRESS</a>
-              </li>
-            <li id="nav-advising" role="presentation"><a href="/Dashboard/Development">ADVISING</a></li>
-            <li id="nav-account" role="presentation"><a href="/Dashboard/Development">ACCOUNT</a></li>
-        </ul>
+            <div id="navigation-link-container" class="col-xs-6">
+                <a id="nav-home" href="/Dashboard/Index" class="navigation-link navigation-link-active">
+                    <span><span class="glyphicon glyphicon-home"></span> Home</span>
+                </a>
+                <a id="nav-advising" href="/Advising/Index" class="navigation-link">
+                    <span><span class="glyphicon glyphicon-ok"></span> Advising</span>
+                </a>
+                <a id="nav-progress "href="/Progress/Index" class="navigation-link">
+                    <span><span class="glyphicon glyphicon-list-alt"></span> Progress</span>
+                </a>
+                <a id="nav-manage" href="/Dashboard/Development" class="navigation-link">
+                    <span><span class="glyphicon glyphicon-wrench"></span> Manage</span>
+                </a>
+                <a id="nav-reports"href="/Reports/Index" class="navigation-link">
+                    <span><span class="glyphicon glyphicon-file"></span> Reports</span>
+                </a>
 
-    </div>
-</div>
+
+                </div>
+            </div>
+
+            <div id="toolbar" class="row">
+                <div id="toolbar-menu" class="col-xs-8">
+                    <p>[Toolbar context]</p>
+                </div>
+                <div id="breadcrumb-container" class="col-xs-4">
+                    <ol id="breadcrumb" class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li class="active">Data</li>
+                    </ol>
+                </div>
+            </div>
 
 <div class="row" id="content-row">
-    <div id="panel-content" class="panel panel-default">
-        <div id="content" class="panel-body">
+    <div id="panel-content">
+        <div id="content">
             @RenderBody()
         </div>
     </div>

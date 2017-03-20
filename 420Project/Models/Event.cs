@@ -17,8 +17,7 @@ namespace _420Project.Models
         [StringLength(150)]
         public string Location { get; set; }
         public bool IsRecruitmentEvent { get; set; }
-        public DateTime Date { get; set;}
-        public DateTime Time { get; set; }
+        public DateTime? Date { get; set;}
 
     }
 }

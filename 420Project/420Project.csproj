@@ -197,6 +197,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdvisingController.cs" />
+    <Compile Include="Controllers\CompliancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
@@ -210,6 +212,7 @@
     <Compile Include="Controllers\SemestersController.cs" />
     <Compile Include="Controllers\StudentProgramsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,6 +228,34 @@
     <Compile Include="Migrations\201702141742562_AddManualData.Designer.cs">
       <DependentUpon>201702141742562_AddManualData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702232325386_fixGPA.cs" />
+    <Compile Include="Migrations\201702232325386_fixGPA.Designer.cs">
+      <DependentUpon>201702232325386_fixGPA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702232334162_models-update.cs" />
+    <Compile Include="Migrations\201702232334162_models-update.Designer.cs">
+      <DependentUpon>201702232334162_models-update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702271617274_FileModel.cs" />
+    <EmbeddedResource Include="Migrations\201702271617274_FileModel.Designer.cs">
+      <DependentUpon>201702271617274_FileModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Migrations\201702261945136_fixcourse.cs" />
+    <EmbeddedResource Include="Migrations\201702261945136_fixcourse.Designer.cs">
+      <DependentUpon>201702261945136_fixcourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Migrations\201703020203310_seeds.cs" />
+    <Compile Include="Migrations\201703020203310_seeds.Designer.cs">
+      <DependentUpon>201703020203310_seeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703042312436_fixs.cs" />
+    <Compile Include="Migrations\201703042312436_fixs.Designer.cs">
+      <DependentUpon>201703042312436_fixs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703042317197_quickfix.cs" />
+    <Compile Include="Migrations\201703042317197_quickfix.Designer.cs">
+      <DependentUpon>201703042317197_quickfix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advisor.cs" />
@@ -234,6 +265,8 @@
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Petition.cs" />
@@ -244,17 +277,31 @@
     <Compile Include="Models\StudentCompliance.cs" />
     <Compile Include="Models\StudentPetition.cs" />
     <Compile Include="Models\StudentProgram.cs" />
-    <Compile Include="Models\To_Do.cs" />
+    <Compile Include="Models\ToDo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ProgressStudentAddCourseViewModel.cs" />
+    <EmbeddedResource Include="Migrations\201703020203310_seeds.resx">
+      <DependentUpon>201703020203310_seeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703042312436_fixs.resx">
+      <DependentUpon>201703042312436_fixs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703042317197_quickfix.resx">
+      <DependentUpon>201703042317197_quickfix.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Advising.css" />
     <Content Include="Content\bootstrap-table.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Images\66.gif" />
+    <Content Include="Content\Layout\linedpaper.png" />
+    <Content Include="Content\Layout\Logo_Inverse.png" />
+    <Content Include="Content\Layout\shattered.png" />
+    <Content Include="Content\Layout\theme-sprite.png" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\Layout\logo-nursing_fullcolor.png" />
     <Content Include="Content\Login.css" />
@@ -380,9 +427,17 @@
     <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
     <Content Include="Views\Reports\ReportCard.cshtml" />
     <Content Include="Views\Dashboard\Development.cshtml" />
+    <Content Include="Views\Compliances\Create.cshtml" />
+    <Content Include="Views\Compliances\Delete.cshtml" />
+    <Content Include="Views\Compliances\Details.cshtml" />
+    <Content Include="Views\Compliances\Edit.cshtml" />
+    <Content Include="Views\Compliances\Index.cshtml" />
+    <Content Include="Views\Advising\Index.cshtml" />
+    <Content Include="Views\Advising\Advising.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\System\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -402,6 +457,12 @@
     <EmbeddedResource Include="Migrations\201702141742562_AddManualData.resx">
       <DependentUpon>201702141742562_AddManualData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702232325386_fixGPA.resx">
+      <DependentUpon>201702232325386_fixGPA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702232334162_models-update.resx">
+      <DependentUpon>201702232334162_models-update.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -417,7 +478,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>63694</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

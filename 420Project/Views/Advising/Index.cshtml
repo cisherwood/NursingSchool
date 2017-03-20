@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link href="~/Content/Advising.css" rel="stylesheet" />
+}
+
+<div class="col-xs-5">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3>Students</h3></div>
+        <table id="advising-student" class="panel-body" data-toggle="table" data-pagination="true">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>GPA</th>
+                    <th>Program</th>
+                    <th>Compliance</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 1; i <= 100; i++)
+                {
+                    <tr class="advising-student-row">
+                        <td>Student 1</td>
+                        <td>3.5</td>
+                        <td>BSN</td>
+                        <td><span class="glyphicon glyphicon-ok"></span></td>
+                        <td><span class="glyphicon glyphicon-envelope"></span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-xs-7">
+<div class="panel panel-default">
+    <div class="panel-heading"><h3>Advising</h3></div>
+    <div class="panel-body">
+        <div>Placeholder</div>
+
+    </div>  
+    </div>
+</div>
+
+
+<script>
+    $('#advising-student').bootstrapTable({
+
+    });
+
+    $('.advising-student-row').click(function () {
+        alert('test');
+
+
+    })
+
+    $(function () {
+
+    });
+</script>
