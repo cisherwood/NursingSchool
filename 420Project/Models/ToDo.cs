@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace _420Project.Models
 {
@@ -9,6 +10,7 @@ namespace _420Project.Models
     {
         public int ToDoID { get; set; }
 
+        [StringLength(50)]
         public string Description { get; set; }
 
         public DateTime CreateDate { get; set; }
