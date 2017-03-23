@@ -10,6 +10,7 @@ namespace _420Project.Models
     {
         public int EventId { get; set; }
         [StringLength(50)]
+        [Required]
         public string Name { get; set; }
 
         [StringLength(250)]
