@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdvisingController.cs" />
+    <Compile Include="Controllers\AdvisorsController.cs" />
     <Compile Include="Controllers\CompliancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
@@ -220,6 +221,10 @@
     <Compile Include="Migrations\201703232031518_init.cs" />
     <Compile Include="Migrations\201703232031518_init.Designer.cs">
       <DependentUpon>201703232031518_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703232227106_Joeystudentmodel.cs" />
+    <Compile Include="Migrations\201703232227106_Joeystudentmodel.Designer.cs">
+      <DependentUpon>201703232227106_Joeystudentmodel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -408,6 +413,11 @@
     <Content Include="Views\Dashboard\ManageEvents.cshtml" />
     <Content Include="Views\Reports\Compliance.cshtml" />
     <Content Include="Views\Shared\_LayoutPanel.cshtml" />
+    <Content Include="Views\Advisors\Create.cshtml" />
+    <Content Include="Views\Advisors\Delete.cshtml" />
+    <Content Include="Views\Advisors\Details.cshtml" />
+    <Content Include="Views\Advisors\Edit.cshtml" />
+    <Content Include="Views\Advisors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -425,6 +435,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703232031518_init.resx">
       <DependentUpon>201703232031518_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703232227106_Joeystudentmodel.resx">
+      <DependentUpon>201703232227106_Joeystudentmodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
