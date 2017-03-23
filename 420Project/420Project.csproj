@@ -217,47 +217,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702111801284_InitialCreate.cs" />
-    <Compile Include="Migrations\201702111801284_InitialCreate.Designer.cs">
-      <DependentUpon>201702111801284_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702112118400_initial.cs" />
-    <Compile Include="Migrations\201702112118400_initial.Designer.cs">
-      <DependentUpon>201702112118400_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702141742562_AddManualData.cs" />
-    <Compile Include="Migrations\201702141742562_AddManualData.Designer.cs">
-      <DependentUpon>201702141742562_AddManualData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702232325386_fixGPA.cs" />
-    <Compile Include="Migrations\201702232325386_fixGPA.Designer.cs">
-      <DependentUpon>201702232325386_fixGPA.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702232334162_models-update.cs" />
-    <Compile Include="Migrations\201702232334162_models-update.Designer.cs">
-      <DependentUpon>201702232334162_models-update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702271617274_FileModel.cs" />
-    <EmbeddedResource Include="Migrations\201702271617274_FileModel.Designer.cs">
-      <DependentUpon>201702271617274_FileModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="Migrations\201702261945136_fixcourse.cs" />
-    <EmbeddedResource Include="Migrations\201702261945136_fixcourse.Designer.cs">
-      <DependentUpon>201702261945136_fixcourse.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="Migrations\201703020203310_seeds.cs" />
-    <Compile Include="Migrations\201703020203310_seeds.Designer.cs">
-      <DependentUpon>201703020203310_seeds.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703042312436_fixs.cs" />
-    <Compile Include="Migrations\201703042312436_fixs.Designer.cs">
-      <DependentUpon>201703042312436_fixs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703042317197_quickfix.cs" />
-    <Compile Include="Migrations\201703042317197_quickfix.Designer.cs">
-      <DependentUpon>201703042317197_quickfix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advisor.cs" />
     <Compile Include="Models\Campus.cs" />
@@ -283,15 +242,6 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AdminDashboardViewModel.cs" />
     <Compile Include="ViewModels\ProgressStudentAddCourseViewModel.cs" />
-    <EmbeddedResource Include="Migrations\201703020203310_seeds.resx">
-      <DependentUpon>201703020203310_seeds.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703042312436_fixs.resx">
-      <DependentUpon>201703042312436_fixs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703042317197_quickfix.resx">
-      <DependentUpon>201703042317197_quickfix.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Advising.css" />
@@ -465,23 +415,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702111801284_InitialCreate.resx">
-      <DependentUpon>201702111801284_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702112118400_initial.resx">
-      <DependentUpon>201702112118400_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702141742562_AddManualData.resx">
-      <DependentUpon>201702141742562_AddManualData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702232325386_fixGPA.resx">
-      <DependentUpon>201702232325386_fixGPA.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702232334162_models-update.resx">
-      <DependentUpon>201702232334162_models-update.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
