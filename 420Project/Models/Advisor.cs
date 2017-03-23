@@ -33,8 +33,7 @@ namespace _420Project.Models
         [StringLength(50)]
         public string Office { get; set; }
 
-        [Key]
-        [ForeignKey("User"]
+       
         public int UserId { get; set; }
 
         [StringLength(100)]
