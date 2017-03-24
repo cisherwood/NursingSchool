@@ -407,6 +407,7 @@
     <Content Include="Views\Dashboard\ManageStudents.cshtml" />
     <Content Include="Views\Dashboard\ManageEvents.cshtml" />
     <Content Include="Views\Reports\Compliance.cshtml" />
+    <Content Include="Views\Shared\_LayoutPanel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
