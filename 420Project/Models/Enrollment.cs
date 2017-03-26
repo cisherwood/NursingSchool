@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -20,7 +21,8 @@ namespace _420Project.Models
         public int StudentId { get; set; }
 
         [ForeignKey("Course")]
-        [Display(Name ="Course")]
+        //[Display(Name ="Course")]
+        [DisplayName("Course")]
         [Required]
         public int CourseId { get; set; }
 

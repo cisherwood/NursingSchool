@@ -203,6 +203,7 @@
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -353,11 +354,6 @@
     <Content Include="Views\Departments\Details.cshtml" />
     <Content Include="Views\Departments\Edit.cshtml" />
     <Content Include="Views\Departments\Index.cshtml" />
-    <Content Include="Views\Enrollments\Create.cshtml" />
-    <Content Include="Views\Enrollments\Delete.cshtml" />
-    <Content Include="Views\Enrollments\Details.cshtml" />
-    <Content Include="Views\Enrollments\Edit.cshtml" />
-    <Content Include="Views\Enrollments\Index.cshtml" />
     <Content Include="Views\Programs\Create.cshtml" />
     <Content Include="Views\Programs\Delete.cshtml" />
     <Content Include="Views\Programs\Details.cshtml" />
@@ -420,6 +416,11 @@
     <Content Include="Views\Advisors\Details.cshtml" />
     <Content Include="Views\Advisors\Edit.cshtml" />
     <Content Include="Views\Advisors\Index.cshtml" />
+    <Content Include="Views\Enrollments\Create.cshtml" />
+    <Content Include="Views\Enrollments\Delete.cshtml" />
+    <Content Include="Views\Enrollments\Details.cshtml" />
+    <Content Include="Views\Enrollments\Edit.cshtml" />
+    <Content Include="Views\Enrollments\Index.cshtml" />
     <Content Include="Views\Petitions\Create.cshtml" />
     <Content Include="Views\Petitions\Delete.cshtml" />
     <Content Include="Views\Petitions\Details.cshtml" />
