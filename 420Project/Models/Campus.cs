@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Alexis Lentz
+//2-24-17
+//This model keeps track of the Campus locations
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,10 +13,12 @@ namespace _420Project.Models
     {
         public int CampusID { get; set; }
         
-        [StringLength(50)]
+        [StringLength(100)]
+        [Display(Name = "Campus Name")]
+        [Required]
         public string CampusName { get; set; }
 
-        [StringLength(50)]
+        [StringLength(150)]
         public string Address { get; set; }
 
         [StringLength(50)]
@@ -26,7 +31,10 @@ namespace _420Project.Models
         public string ZipCode { get; set; }
 
         [StringLength(15)]
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
+
+
         
     }
 }
