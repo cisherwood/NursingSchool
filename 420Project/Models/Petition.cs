@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Brooke Gorbandt
+//Date: 2/24/17
+//
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +15,7 @@ namespace _420Project.Models
         public int PetitionID { get; set; }
 
         [StringLength(50)]
+        [Required]
         public string Name { get; set; }
         
     }
