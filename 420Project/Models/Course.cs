@@ -22,8 +22,6 @@ namespace _420Project.Models
         public string CourseString { get { return this.Department.Name + " " + this.Number; } }
         public string PassGrade { get; set; }
 
-        [Key]
-        [ForeignKey("Campus")]
         public string CampusId { get; set; }
         public virtual Department Department { get; set; }
         public virtual ICollection<ProgramCourse> ProgramCourse { get; set; }
