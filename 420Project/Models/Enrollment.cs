@@ -20,7 +20,8 @@ namespace _420Project.Models
         public int StudentId { get; set; }
 
         [ForeignKey("Course")]
-        [Display(Name ="Course")]
+        //[Display(Name ="Course")]
+        [Displayname("Course")]
         [Required]
         public int CourseId { get; set; }
 

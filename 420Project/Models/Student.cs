@@ -45,7 +45,7 @@ namespace _420Project.Models
         public string Year { get; set; }
 
         [DataType(DataType.DateTime)]
-        public DateTime DOB { get; set; }
+        public DateTime DOB? { get; set; }
 
         
         [ForeignKey("Campus")]
