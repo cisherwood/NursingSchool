@@ -34,13 +34,10 @@ namespace _420Project.Models
         [StringLength(50, MinimumLength = 1)]
         public string Address { get; set; }
 
-        [Key]
+        
         [ForeignKey("Advisor")]
         public int AdvisorId { get; set; }
 
-        [Key]
-        [ForeignKey("Program")]
-        public int ProgramId { get; set; }
         public bool HasGraduated { get; set; }
         [StringLength(5, MinimumLength = 2)]
         public string Standing { get; set; }
@@ -50,7 +47,7 @@ namespace _420Project.Models
         [DataType(DataType.DateTime)]
         public DateTime DOB { get; set; }
 
-        [Key]
+        
         [ForeignKey("Campus")]
         public int CampusId { get; set; }
 
@@ -64,6 +61,7 @@ namespace _420Project.Models
         public virtual ICollection<StudentCompliance> Compliances { get; set; }
         public virtual Campus Campus { get; set; }
         public virtual Advisor Advisor { get; set; }
+        public virtual Program Program { get; set; }
 
 
 

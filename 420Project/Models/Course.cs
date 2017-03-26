@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Joey Kunkel
+//3/23/17
+//Course Model
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,7 +14,7 @@ namespace _420Project.Models
     {
         public int CourseId { get; set; }
 
-        [Key]
+        
         [ForeignKey("Department")]
         public int DepartmentId { get; set; }
         public string Number { get; set; }
@@ -22,7 +25,8 @@ namespace _420Project.Models
         public string CourseString { get { return this.Department.Name + " " + this.Number; } }
         public string PassGrade { get; set; }
 
-        public string CampusId { get; set; }
+        
+        public string CampusID { get; set; }
         public virtual Department Department { get; set; }
         public virtual ICollection<ProgramCourse> ProgramCourse { get; set; }
         public virtual ICollection<Enrollment> Enrollments { get; set; }
