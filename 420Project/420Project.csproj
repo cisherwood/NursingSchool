@@ -206,6 +206,7 @@
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PetitionsController.cs" />
     <Compile Include="Controllers\ProgressController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\SemestersController.cs" />
@@ -419,6 +420,11 @@
     <Content Include="Views\Advisors\Details.cshtml" />
     <Content Include="Views\Advisors\Edit.cshtml" />
     <Content Include="Views\Advisors\Index.cshtml" />
+    <Content Include="Views\Petitions\Create.cshtml" />
+    <Content Include="Views\Petitions\Delete.cshtml" />
+    <Content Include="Views\Petitions\Details.cshtml" />
+    <Content Include="Views\Petitions\Edit.cshtml" />
+    <Content Include="Views\Petitions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
