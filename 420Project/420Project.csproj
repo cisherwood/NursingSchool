@@ -212,6 +212,7 @@
     <Compile Include="Controllers\ProgressController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\SemestersController.cs" />
+    <Compile Include="Controllers\StudentCompliancesController.cs" />
     <Compile Include="Controllers\StudentProgramsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
@@ -234,6 +235,10 @@
     <Compile Include="Migrations\201703270055152_FIXES.cs" />
     <Compile Include="Migrations\201703270055152_FIXES.Designer.cs">
       <DependentUpon>201703270055152_FIXES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703272024497_MichaelsModels.cs" />
+    <Compile Include="Migrations\201703272024497_MichaelsModels.Designer.cs">
+      <DependentUpon>201703272024497_MichaelsModels.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -437,6 +442,16 @@
     <Content Include="Views\ToDos\Details.cshtml" />
     <Content Include="Views\ToDos\Edit.cshtml" />
     <Content Include="Views\ToDos\Index.cshtml" />
+    <Content Include="Views\Compliances\Create.cshtml" />
+    <Content Include="Views\Compliances\Delete.cshtml" />
+    <Content Include="Views\Compliances\Details.cshtml" />
+    <Content Include="Views\Compliances\Edit.cshtml" />
+    <Content Include="Views\Compliances\Index.cshtml" />
+    <Content Include="Views\StudentCompliances\Create.cshtml" />
+    <Content Include="Views\StudentCompliances\Delete.cshtml" />
+    <Content Include="Views\StudentCompliances\Details.cshtml" />
+    <Content Include="Views\StudentCompliances\Edit.cshtml" />
+    <Content Include="Views\StudentCompliances\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -463,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703270055152_FIXES.resx">
       <DependentUpon>201703270055152_FIXES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703272024497_MichaelsModels.resx">
+      <DependentUpon>201703272024497_MichaelsModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
