@@ -9,10 +9,15 @@ namespace _420Project.Controllers
 {
     public class AdvisingController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         // GET: Advising
         public ActionResult Index()
         {
-            return View();
+            var students = db.Student;
+
+            return View(students);
+
         }
 
         public ActionResult Advising()
