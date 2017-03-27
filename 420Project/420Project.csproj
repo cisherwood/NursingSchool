@@ -395,11 +395,6 @@
     <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
     <Content Include="Views\Reports\ReportCard.cshtml" />
     <Content Include="Views\Dashboard\Development.cshtml" />
-    <Content Include="Views\Compliances\Create.cshtml" />
-    <Content Include="Views\Compliances\Delete.cshtml" />
-    <Content Include="Views\Compliances\Details.cshtml" />
-    <Content Include="Views\Compliances\Edit.cshtml" />
-    <Content Include="Views\Compliances\Index.cshtml" />
     <Content Include="Views\Advising\Index.cshtml" />
     <Content Include="Views\Advising\Advising.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
