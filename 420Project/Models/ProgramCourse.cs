@@ -17,7 +17,7 @@ namespace _420Project.Models
         public int ProgramCourseId { get; set; }
 
         [ForeignKey("Program")]
-        [Display(name = "Program")]
+        [Display(Name = "Program")]
         [Required]
         public int ProgramId { get; set; }
 
