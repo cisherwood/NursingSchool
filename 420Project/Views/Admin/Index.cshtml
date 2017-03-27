@@ -1,9 +1,15 @@
 ﻿
 @{
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
     ViewBag.Title = "Index";
 }
+@section navlinkadmin{
+    navigation-link-active
+}
+@section panelHeading{
+Admin
+}
 
-<h2>Admin</h2>
 
 <h4><a href="/Courses">Courses</a></h4>
 <h4><a href="/Departments">Departments</a></h4>
