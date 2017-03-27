@@ -203,12 +203,9 @@
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
-    <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProgramCoursesController.cs" />
-    <Compile Include="Controllers\ProgramsController.cs" />
     <Compile Include="Controllers\ProgressController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\SemestersController.cs" />
@@ -225,6 +222,10 @@
     <Compile Include="Migrations\201703232227106_Joeystudentmodel.cs" />
     <Compile Include="Migrations\201703232227106_Joeystudentmodel.Designer.cs">
       <DependentUpon>201703232227106_Joeystudentmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703270016331_ModelsUpdate.cs" />
+    <Compile Include="Migrations\201703270016331_ModelsUpdate.Designer.cs">
+      <DependentUpon>201703270016331_ModelsUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -438,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703232227106_Joeystudentmodel.resx">
       <DependentUpon>201703232227106_Joeystudentmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703270016331_ModelsUpdate.resx">
+      <DependentUpon>201703270016331_ModelsUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
