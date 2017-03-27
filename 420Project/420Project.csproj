@@ -199,6 +199,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdvisingController.cs" />
     <Compile Include="Controllers\AdvisorsController.cs" />
+    <Compile Include="Controllers\CampusController.cs" />
     <Compile Include="Controllers\CompliancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
@@ -214,6 +215,7 @@
     <Compile Include="Controllers\StudentProgramsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
+    <Compile Include="Controllers\ToDosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -430,6 +432,16 @@
     <Content Include="Views\Petitions\Details.cshtml" />
     <Content Include="Views\Petitions\Edit.cshtml" />
     <Content Include="Views\Petitions\Index.cshtml" />
+    <Content Include="Views\Campus\Create.cshtml" />
+    <Content Include="Views\Campus\Delete.cshtml" />
+    <Content Include="Views\Campus\Details.cshtml" />
+    <Content Include="Views\Campus\Edit.cshtml" />
+    <Content Include="Views\Campus\Index.cshtml" />
+    <Content Include="Views\ToDos\Create.cshtml" />
+    <Content Include="Views\ToDos\Delete.cshtml" />
+    <Content Include="Views\ToDos\Details.cshtml" />
+    <Content Include="Views\ToDos\Edit.cshtml" />
+    <Content Include="Views\ToDos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
