@@ -17,7 +17,8 @@ namespace _420Project.Controllers
         // GET: Students
         public ActionResult Index()
         {
-            return View(db.Student.ToList());
+            var student = db.Student.Include(s => s.Advisor).Include(s => s.Campus);
+            return View(student.ToList());
         }
 
         // GET: Students/Details/5
@@ -38,6 +39,8 @@ namespace _420Project.Controllers
         // GET: Students/Create
         public ActionResult Create()
         {
+            ViewBag.AdvisorId = new SelectList(db.Advisor, "AdvisorId", "FirstName");
+            ViewBag.CampusId = new SelectList(db.Campus, "CampusID", "CampusName");
             return View();
         }
 
@@ -46,7 +49,7 @@ namespace _420Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName")] Student student)
+        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName,MiddleName,Email,PhoneNumber,Address,AdvisorId,HasGraduated,Standing,Year,DOB,CampusId,Status,Note")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +58,8 @@ namespace _420Project.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.AdvisorId = new SelectList(db.Advisor, "AdvisorId", "FirstName", student.AdvisorId);
+            ViewBag.CampusId = new SelectList(db.Campus, "CampusID", "CampusName", student.CampusId);
             return View(student);
         }
 
@@ -70,6 +75,8 @@ namespace _420Project.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AdvisorId = new SelectList(db.Advisor, "AdvisorId", "FirstName", student.AdvisorId);
+            ViewBag.CampusId = new SelectList(db.Campus, "CampusID", "CampusName", student.CampusId);
             return View(student);
         }
 
@@ -78,7 +85,7 @@ namespace _420Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName")] Student student)
+        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName,MiddleName,Email,PhoneNumber,Address,AdvisorId,HasGraduated,Standing,Year,DOB,CampusId,Status,Note")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +93,8 @@ namespace _420Project.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.AdvisorId = new SelectList(db.Advisor, "AdvisorId", "FirstName", student.AdvisorId);
+            ViewBag.CampusId = new SelectList(db.Campus, "CampusID", "CampusName", student.CampusId);
             return View(student);
         }
 

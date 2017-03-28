@@ -10,112 +10,116 @@ using _420Project.Models;
 
 namespace _420Project.Controllers
 {
-    public class CoursesController : Controller
+    public class ProgramCoursesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Courses
+        // GET: ProgramCourses
         public ActionResult Index()
         {
-            var course = db.Course.Include(c => c.Department);
-            return View(course.ToList());
+            var programCourse = db.ProgramCourse.Include(p => p.Course).Include(p => p.Program);
+            return View(programCourse.ToList());
         }
 
-        // GET: Courses/Details/5
+        // GET: ProgramCourses/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Course course = db.Course.Find(id);
-            if (course == null)
+            ProgramCourse programCourse = db.ProgramCourse.Find(id);
+            if (programCourse == null)
             {
                 return HttpNotFound();
             }
-            return View(course);
+            return View(programCourse);
         }
 
-        // GET: Courses/Create
+        // GET: ProgramCourses/Create
         public ActionResult Create()
         {
-            ViewBag.DepartmentId = new SelectList(db.Department, "DepartmentId", "Name");
+            ViewBag.CourseId = new SelectList(db.Course, "CourseId", "Number");
+            ViewBag.ProgramId = new SelectList(db.Program, "ProgramId", "Name");
             return View();
         }
 
-        // POST: Courses/Create
+        // POST: ProgramCourses/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CourseId,DepartmentId,Number,Title,Description,ClassHours,PassGrade,CampusID")] Course course)
+        public ActionResult Create([Bind(Include = "ProgramCourseId,ProgramId,CourseId,SemesterNumber")] ProgramCourse programCourse)
         {
             if (ModelState.IsValid)
             {
-                db.Course.Add(course);
+                db.ProgramCourse.Add(programCourse);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DepartmentId = new SelectList(db.Department, "DepartmentId", "Name", course.DepartmentId);
-            return View(course);
+            ViewBag.CourseId = new SelectList(db.Course, "CourseId", "Number", programCourse.CourseId);
+            ViewBag.ProgramId = new SelectList(db.Program, "ProgramId", "Name", programCourse.ProgramId);
+            return View(programCourse);
         }
 
-        // GET: Courses/Edit/5
+        // GET: ProgramCourses/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Course course = db.Course.Find(id);
-            if (course == null)
+            ProgramCourse programCourse = db.ProgramCourse.Find(id);
+            if (programCourse == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DepartmentId = new SelectList(db.Department, "DepartmentId", "Name", course.DepartmentId);
-            return View(course);
+            ViewBag.CourseId = new SelectList(db.Course, "CourseId", "Number", programCourse.CourseId);
+            ViewBag.ProgramId = new SelectList(db.Program, "ProgramId", "Name", programCourse.ProgramId);
+            return View(programCourse);
         }
 
-        // POST: Courses/Edit/5
+        // POST: ProgramCourses/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CourseId,DepartmentId,Number,Title,Description,ClassHours,PassGrade,CampusID")] Course course)
+        public ActionResult Edit([Bind(Include = "ProgramCourseId,ProgramId,CourseId,SemesterNumber")] ProgramCourse programCourse)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(course).State = EntityState.Modified;
+                db.Entry(programCourse).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DepartmentId = new SelectList(db.Department, "DepartmentId", "Name", course.DepartmentId);
-            return View(course);
+            ViewBag.CourseId = new SelectList(db.Course, "CourseId", "Number", programCourse.CourseId);
+            ViewBag.ProgramId = new SelectList(db.Program, "ProgramId", "Name", programCourse.ProgramId);
+            return View(programCourse);
         }
 
-        // GET: Courses/Delete/5
+        // GET: ProgramCourses/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Course course = db.Course.Find(id);
-            if (course == null)
+            ProgramCourse programCourse = db.ProgramCourse.Find(id);
+            if (programCourse == null)
             {
                 return HttpNotFound();
             }
-            return View(course);
+            return View(programCourse);
         }
 
-        // POST: Courses/Delete/5
+        // POST: ProgramCourses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Course course = db.Course.Find(id);
-            db.Course.Remove(course);
+            ProgramCourse programCourse = db.ProgramCourse.Find(id);
+            db.ProgramCourse.Remove(programCourse);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
