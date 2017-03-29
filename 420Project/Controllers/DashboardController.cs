@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _420Project.Models;
+using _420Project.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,26 @@ namespace _420Project.Controllers
 {
     public class DashboardController : Controller
     {
+        ApplicationDbContext db = new ApplicationDbContext();
+
+
+
+
         // GET: Dashboard/Index
         public ActionResult Index()
         {
-            return View();
+
+            var EnrolledStudentsQuery = db.Student.Where(x => x.Status == "Enrolled").Count();
+
+
+            DashboardViewModel dashboardViewModel = new DashboardViewModel()
+            {
+                studentsoutofcompliance = 3,
+                EnrolledStudents = EnrolledStudentsQuery,
+                AverageGPA = 2.5,
+                DaysToSemesterEnd = 3,
+            };
+            return View(dashboardViewModel);
         }
 
         // GET: Dashboard/Index
