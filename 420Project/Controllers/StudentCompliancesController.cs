@@ -49,7 +49,7 @@ namespace _420Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SCId,ExpirationDate,SubmissionDate,ComplianceId,StudentId")] StudentCompliance studentCompliance)
+        public ActionResult Create([Bind(Include = "SCId,ExpirationDate,SubmissionDate,ComplianceId,StudentId,Status")] StudentCompliance studentCompliance)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace _420Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SCId,ExpirationDate,SubmissionDate,ComplianceId,StudentId")] StudentCompliance studentCompliance)
+        public ActionResult Edit([Bind(Include = "SCId,ExpirationDate,SubmissionDate,ComplianceId,StudentId,Status")] StudentCompliance studentCompliance)
         {
             if (ModelState.IsValid)
             {

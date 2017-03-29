@@ -25,6 +25,8 @@ namespace _420Project.Models
         public int ComplianceId { get; set; }
         public int StudentId { get; set; }
 
+        public string Status { get; set; }
+
         //References to the student and compliance models.
         public virtual Student Student { get; set; }
         public virtual Compliance Compliance { get; set; }

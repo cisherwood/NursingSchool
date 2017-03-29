@@ -210,6 +210,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PetitionsController.cs" />
     <Compile Include="Controllers\ProgramCoursesController.cs" />
+    <Compile Include="Controllers\ProgramsController.cs" />
     <Compile Include="Controllers\ProgressController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\SemestersController.cs" />
@@ -240,6 +241,14 @@
     <Compile Include="Migrations\201703272024497_MichaelsModels.cs" />
     <Compile Include="Migrations\201703272024497_MichaelsModels.Designer.cs">
       <DependentUpon>201703272024497_MichaelsModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703292136018_fixesforadvising.cs" />
+    <Compile Include="Migrations\201703292136018_fixesforadvising.Designer.cs">
+      <DependentUpon>201703292136018_fixesforadvising.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703292140081_studentcompliancestatus.cs" />
+    <Compile Include="Migrations\201703292140081_studentcompliancestatus.Designer.cs">
+      <DependentUpon>201703292140081_studentcompliancestatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -418,11 +427,6 @@
     <Content Include="Views\Compliances\Details.cshtml" />
     <Content Include="Views\Compliances\Edit.cshtml" />
     <Content Include="Views\Compliances\Index.cshtml" />
-    <Content Include="Views\StudentCompliances\Create.cshtml" />
-    <Content Include="Views\StudentCompliances\Delete.cshtml" />
-    <Content Include="Views\StudentCompliances\Details.cshtml" />
-    <Content Include="Views\StudentCompliances\Edit.cshtml" />
-    <Content Include="Views\StudentCompliances\Index.cshtml" />
     <Content Include="Views\Courses\Create.cshtml" />
     <Content Include="Views\Courses\Delete.cshtml" />
     <Content Include="Views\Courses\Details.cshtml" />
@@ -448,6 +452,16 @@
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
     <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Programs\Create.cshtml" />
+    <Content Include="Views\Programs\Delete.cshtml" />
+    <Content Include="Views\Programs\Details.cshtml" />
+    <Content Include="Views\Programs\Edit.cshtml" />
+    <Content Include="Views\Programs\Index.cshtml" />
+    <Content Include="Views\StudentCompliances\Create.cshtml" />
+    <Content Include="Views\StudentCompliances\Delete.cshtml" />
+    <Content Include="Views\StudentCompliances\Details.cshtml" />
+    <Content Include="Views\StudentCompliances\Edit.cshtml" />
+    <Content Include="Views\StudentCompliances\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -477,6 +491,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703272024497_MichaelsModels.resx">
       <DependentUpon>201703272024497_MichaelsModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703292136018_fixesforadvising.resx">
+      <DependentUpon>201703292136018_fixesforadvising.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703292140081_studentcompliancestatus.resx">
+      <DependentUpon>201703292140081_studentcompliancestatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

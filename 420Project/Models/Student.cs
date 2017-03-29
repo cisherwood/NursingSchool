@@ -61,7 +61,7 @@ namespace _420Project.Models
         public virtual ICollection<StudentCompliance> Compliances { get; set; }
         public virtual Campus Campus { get; set; }
         public virtual Advisor Advisor { get; set; }
-        public virtual Program Program { get; set; }
+        public virtual ICollection<StudentProgram> StudentProgram { get; set; }
 
 
 
