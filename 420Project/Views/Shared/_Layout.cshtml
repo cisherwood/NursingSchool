@@ -54,7 +54,7 @@
                     <img id="logo" src="~/Content/Layout/Logo_Inverse.png" class="col-xs-12" />
                 </a>
             </div>
-            <div id="navigation-link-container" class="col-xs-6">
+            <div id="navigation-link-container" class="col-xs-8">
                 <a id="nav-home" href="/Dashboard/Index" class="navigation-link @RenderSection("navlinkhome", required: false)">
                     <span><span class="glyphicon glyphicon-home"></span> Home</span>
                 </a>
@@ -70,25 +70,34 @@
                 <a id="nav-admin" href="/Admin/Index" class="navigation-link @RenderSection("navlinkadmin", required: false)">
                     <span><span class="glyphicon glyphicon-globe"></span> Admin</span>
                 </a>
+                </div>
+            <div class="col-xs-2">
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                {
+                @Html.AntiForgeryToken()
+                    <input type="submit" value="Log Out" />
 
+                }
+
+            </div>
+            </div>
+        @*
+    <div id="toolbar" class="row">
+        <div id="toolbar-menu" class="col-xs-8">
+            <div id="context-row" class="row">
+                <div class="col-xs-12">
+                    @RenderSection("context", required: false)
                 </div>
             </div>
 
-            <div id="toolbar" class="row">
-                <div id="toolbar-menu" class="col-xs-8">
-                    <div id="context-row" class="row">
-                        <div class="col-xs-12">
-                            @RenderSection("context", required: false)
-                        </div>
-                    </div>
-
-                </div>
-                <div id="breadcrumb-container" class="col-xs-4">
-                    <ol id="breadcrumb" class="breadcrumb">
-                        <li><a href="/Dashboard/Index">Home</a></li>
-                    </ol>
-                </div>
-            </div>
+        </div>
+        <div id="breadcrumb-container" class="col-xs-4">
+            <ol id="breadcrumb" class="breadcrumb">
+                <li><a href="/Dashboard/Index">Home</a></li>
+            </ol>
+        </div>
+    </div>
+        *@
 
 <div class="row" id="content-row">
     <div id="panel-content">

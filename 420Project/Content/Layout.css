@@ -76,7 +76,7 @@
     border: 15px;
 }
 #panel-content{
-    margin-top: 100px;
+    margin-top: 40px;
 }
 #content{
     padding: 25px;
@@ -100,19 +100,9 @@
     padding: 15px;
 }
 
-#toolbar{
-    position: fixed;
-    top: 75px;
-    height: 50px;
-    width: 100%;
-    background-color: white;
-    z-index: 1;
-    border-bottom: solid;
-    border-bottom-width: 3px;
-    border-bottom-color: #999;
-}
 
-/* TOOLBAR STYLING */
+
+/* TOOLBAR STYLING 
 #toolbar-menu{
     padding-top: 0px;
 }
@@ -131,7 +121,19 @@
     padding-right: 5px;
 }
 
-/* BREAD CRUMB STYLING*/
+#toolbar{
+    position: fixed;
+    top: 75px;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+    border-bottom: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: #999;
+}
+
+ BREAD CRUMB STYLING
 
 #breadcrumb{
     background-color: white;
@@ -149,6 +151,7 @@
     display: flex;
     justify-content: flex-end;
 }
+*/
 
 /* MISC */
 .dark-hr{

@@ -25,12 +25,6 @@ namespace _420Project.Models
         public string LastName { get; set; }
 
         [StringLength(50)]
-        public string Title { get; set; }
-
-        [StringLength(250)]
-        public string TitleDescription { get; set; }
-
-        [StringLength(50)]
         public string Office { get; set; }
 
        
@@ -42,6 +36,9 @@ namespace _420Project.Models
 
         [StringLength(20)]
         public string ContactNumber { get; set; }
+
+        [Required]
+        public bool IsAdmin { get; set; }
 
     }
 }

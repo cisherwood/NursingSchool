@@ -79,6 +79,29 @@ namespace _420Project.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    using(ApplicationDbContext db = new ApplicationDbContext())
+                    {
+                        if(db.Advisor.Any(x=>x.Email == model.Email))
+                        {
+                            bool IsAdmin = db.Advisor.Where(x => x.Email == model.Email).SingleOrDefault().IsAdmin;
+                            if (IsAdmin)
+                            {
+                                return Redirect("/Dashboard/Index");
+                            }
+                            else
+                            {
+                                return Redirect("/Advisor/Dashboard");
+                            }
+                            
+                        }
+
+                        if (db.Student.Any(x => x.Email == model.Email))
+                        {
+                            return Redirect("/Student/Dashboard");
+                        }
+
+                    }
+
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
