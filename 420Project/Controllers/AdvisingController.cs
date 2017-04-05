@@ -1,4 +1,5 @@
 ﻿using _420Project.Models;
+using _420Project.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace _420Project.Controllers
             return View(students);
 
         }
-        
+
         public ActionResult _Students(List<int> studentIDList)
         {
             List<Student> studentList = new List<Student>();
@@ -41,9 +42,16 @@ namespace _420Project.Controllers
 
         public ActionResult _StudentDetails(int id)
         {
-            Student student = db.Student.Where(x => x.StudentId == id).FirstOrDefault();            
+            AdvisingStudentDetailViewModel detailModel = new AdvisingStudentDetailViewModel();
+            List<ToDo> ToDos = new List<ToDo>();
+            List<Event> events = new List<Event>();
+            Student student = db.Student.Where(x => x.StudentId == id).FirstOrDefault();
 
-            return View(student);
+            events = db.To_Dos.Where(x => x.S)
+
+
+
+            return View();
         }
 
         //hurr
