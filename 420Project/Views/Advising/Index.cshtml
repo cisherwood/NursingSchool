@@ -18,6 +18,20 @@
 <!-- JS -->
 <script>
     $(document).ready(function () {
+
+        //Populate list of students
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("_Students", "Advising"))",
+            success: function (data) {
+                $('#advising-student-body').html(data);
+            },
+        error: function (data) {
+            alert('error');
+
+             }
+            })
+
         // Get group filter options
         $.ajax({
             type: "GET",
@@ -29,7 +43,12 @@
             alert('error');
 
            }
-          })
+        })
+
+
+        $('#group-filters-apply').click(function () {
+
+        })
 
         // Fires when user clicks on a student
         // Updates advising area with student information
@@ -74,12 +93,7 @@
                         </tr>
                     </thead>
                     <tbody id="advising-student-body">
-                        @foreach (var s in Model)
-                        {
-                            <tr class="advising-student-row">
-                                <td>@s.FirstName @s.LastName</td>
-                            </tr>
-                        }
+
                     </tbody>
                 </table>
             </div>
