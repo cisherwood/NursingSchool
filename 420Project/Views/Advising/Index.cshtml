@@ -1,6 +1,4 @@
 ﻿<!-- Advising Index -->
-
-
 @using _420Project.Models;
 @model IEnumerable<Student>
 
@@ -12,6 +10,120 @@
 @section css{
     <link href="~/Content/Advising.css" rel="stylesheet" />
 }
+
+<!-- Set navbar to 'Advising' -->
+@section navlinkadv{
+    navigation-link-active
+}
+<!-- JS -->
+<script>
+    $(document).ready(function () {
+        // Get group filter options
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("_GroupFilters", "GroupStuff"))",
+            success: function (data) {
+                $('#group-filter-modal-body').html(data);
+            },
+        error: function (data) {
+            alert('error');
+
+           }
+          })
+
+        // Fires when user clicks on a student
+        // Updates advising area with student information
+        $('#advising-student-body').on("click", ".advising-student-row", function () {
+            $(".advising-student-active").removeClass("warning");
+            $(".advising-student-active").removeClass("advising-student-active");
+            $(this).addClass("advising-student-active");
+            $(this).addClass("warning");
+
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("Advising", "Advising"))",
+            success: function (data) {
+                $('#advising-panel').html(data);
+            },
+            error: function (data) {
+                alert('error');
+
+            }
+          })
+        })
+    })
+</script>
+
+<!-- Left Panel (Students)-->
+<div class="col-xs-4">
+    <div class="panel panel-default panel-main">
+        <div class="panel-body">
+            <!-- Trigger the modal with a button -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#group-filter-modal"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                    <br /><br />
+                </div>
+            </div>
+
+            <div id="advising-student-select-table">
+                <table id="advising-student" class="table table-striped" data-toggle="table" data-pagination="true" data-page-size="20" data-page-list="[20,50,100,500]">
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                        </tr>
+                    </thead>
+                    <tbody id="advising-student-body">
+                        @foreach (var s in Model)
+                        {
+                            <tr class="advising-student-row">
+                                <td>@s.FirstName @s.LastName</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Right Panel (Advising) -->
+<div class="col-xs-8">
+<div class="panel panel-default panel-main">
+    <div id="advising-panel" class="panel-body">
+        <div class="text-center">
+            <h3 id="placeholder" class="text-center">Please Select a Student...</h3>
+        </div>
+
+    </div>  
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="group-filter-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Filter Options</h4>
+            </div>
+            <div id="group-filter-modal-body" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $('#advising-student').bootstrapTable({
+
+    });
+</script>
 
 <!-- Toolbar: Removed from production -->
 @*
@@ -59,94 +171,3 @@
     </div>
     }
 *@
-
-<!-- Set navbar to 'Advising' -->
-@section navlinkadv{
-    navigation-link-active
-}
-
-<script>
-    $(document).ready(function () {
-         
-        // Loads group filters 
-        $.ajax({
-            type: "GET",
-            url: "@(Url.Action("_GroupFilters", "GroupStuff"))",
-            success: function (data) {
-                $('#advising-student-group-filters').html(data);
-            },
-        error: function (data) {
-            alert('error');
-
-           }
-          })
-
-        // Fires when user clicks on a student
-        // Updates advising area with student information
-        $('#advising-student-body').on("click", ".advising-student-row", function () {
-            $(".advising-student-active").removeClass("warning");
-            $(".advising-student-active").removeClass("advising-student-active");
-            $(this).addClass("advising-student-active");
-            $(this).addClass("warning");
-
-            $.ajax({
-                type: "GET",
-                url: "@(Url.Action("Advising", "Advising"))",
-            success: function (data) {
-                $('#advising-panel').html(data);
-            },
-            error: function (data) {
-                alert('error');
-
-            }
-        })
-        })
-    })
-</script>
-
-<!-- Left Panel (Students)-->
-<div class="col-xs-4">
-    <div class="panel panel-default panel-main">
-        <div class="panel-body">
-            <div id="advising-student-group-filters">
-
-            </div>
-
-            <div id="advising-student-select-table">
-                <table id="advising-student" class="table table-striped" data-toggle="table" data-pagination="true" data-page-size="20" data-page-list="[20,50,100,500]">
-                    <thead>
-                        <tr>
-                            <th>Student</th>
-                        </tr>
-                    </thead>
-                    <tbody id="advising-student-body">
-                        @foreach (var s in Model)
-                        {
-                            <tr class="advising-student-row">
-                                <td>@s.FirstName @s.LastName</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Right Panel (Advising) -->
-<div class="col-xs-8">
-<div class="panel panel-default panel-main">
-    <div id="advising-panel" class="panel-body">
-        <div class="text-center">
-            <h3 id="placeholder" class="text-center">Please Select a Student...</h3>
-        </div>
-
-    </div>  
-    </div>
-</div>
-
-
-<script>
-    $('#advising-student').bootstrapTable({
-
-    });
-</script>

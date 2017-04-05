@@ -1,8 +1,9 @@
 ﻿
 #content{
     padding-top: 15px;
-
-}
+    padding-left: 0px;
+    padding-right: 0px;
+    }
 
 .panel-main{
     box-shadow: 5px 5px 10px #777;
@@ -95,10 +96,6 @@
 }
 #panel-content{
     margin-top: 40px;
-}
-#content{
-    padding: 25px;
-
 }
 
 .panel-default > .panel-heading{
