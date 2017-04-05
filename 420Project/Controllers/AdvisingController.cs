@@ -56,7 +56,29 @@ namespace _420Project.Controllers
             return View(detailModel);
         }
 
-        //hurr
+       public ActionResult _StudentCompliance(int id)
+        {
+            List<StudentCompliance> compliances = new List<StudentCompliance>();
+
+            compliances = db.StudentCompliance.Where(x => x.StudentId == id).ToList();
+
+            return View(compliances);
+        }
+
+        public ActionResult _StudentProgram(int id)
+        {
+            return View();
+        }
+
+        public ActionResult _StudentPlan(int id)
+        {
+            return View();
+        }
+
+        public ActionResult StudentPetition(int id)
+        {
+            return View();
+        }
 
 
 
