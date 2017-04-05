@@ -24,12 +24,16 @@ namespace _420Project.Controllers
         {
             List<Student> studentList = new List<Student>();
 
-            if (studentIDList == null)
+            if (studentIDList != null)
             {
                 foreach (int id in studentIDList)
                 {
                     studentList.Add((db.Student.Where(x => x.StudentId == id)).SingleOrDefault());
                 }
+            }
+            else
+            {
+                studentList = db.Student.ToList(); //Change to only enrolled students.
             }
 
             return View(studentList);
