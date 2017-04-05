@@ -206,6 +206,7 @@
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\GroupStuffController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PetitionsController.cs" />
@@ -467,6 +468,7 @@
     <Content Include="Views\StudentCompliances\Details.cshtml" />
     <Content Include="Views\StudentCompliances\Edit.cshtml" />
     <Content Include="Views\StudentCompliances\Index.cshtml" />
+    <Content Include="Views\GroupStuff\_GroupFilters.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

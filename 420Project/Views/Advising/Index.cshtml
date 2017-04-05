@@ -1,12 +1,19 @@
-﻿@using _420Project.Models;
+﻿<!-- Advising Index -->
+
+
+@using _420Project.Models;
 @model IEnumerable<Student>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @section css{
     <link href="~/Content/Advising.css" rel="stylesheet" />
 }
+
+<!-- Toolbar: Removed from production -->
 @*
     @section context{
     <div id="advising-status-filter" class="col-xs-2">
@@ -52,14 +59,30 @@
     </div>
     }
 *@
+
+<!-- Set navbar to 'Advising' -->
 @section navlinkadv{
     navigation-link-active
 }
+
 <script>
     $(document).ready(function () {
+         
+        // Loads group filters 
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("_GroupFilters", "GroupStuff"))",
+            success: function (data) {
+                $('#advising-student-group-filters').html(data);
+            },
+        error: function (data) {
+            alert('error');
 
+           }
+          })
 
-
+        // Fires when user clicks on a student
+        // Updates advising area with student information
         $('#advising-student-body').on("click", ".advising-student-row", function () {
             $(".advising-student-active").removeClass("warning");
             $(".advising-student-active").removeClass("advising-student-active");
@@ -80,41 +103,38 @@
         })
     })
 </script>
-<div class="col-xs-5">
-    <div class="panel panel-default">
-        <div class="panel-heading"><h3>Students</h3></div>
-        <table id="advising-student" class="panel-body table table-striped" data-toggle="table" data-pagination="true" data-page-size="20" data-page-list="[20,50,100,500]">
-            <thead>
-                <tr>
-                    <th>Student</th>
-                    <th>GPA</th>
-                    <th>Program</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody id="advising-student-body">
-                @foreach (var s in Model)
-                {
-                    <tr class="advising-student-row">
-                        <td>@s.FirstName @s.LastName</td>
-                        <td>3.5</td>
-                        <td>[][][][]</td>
-                        <td class="text-center">
-                            <a href="mailto:someone@example.com?Subject=Test%20Email" target="_top">
-                                <span class="glyphicon glyphicon-envelope"></span>
-                            </a>
-                        </td>
-                        <td>Test</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+
+<!-- Left Panel (Students)-->
+<div class="col-xs-4">
+    <div class="panel panel-default panel-main">
+        <div class="panel-body">
+            <div id="advising-student-group-filters">
+
+            </div>
+
+            <div id="advising-student-select-table">
+                <table id="advising-student" class="table table-striped" data-toggle="table" data-pagination="true" data-page-size="20" data-page-list="[20,50,100,500]">
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                        </tr>
+                    </thead>
+                    <tbody id="advising-student-body">
+                        @foreach (var s in Model)
+                        {
+                            <tr class="advising-student-row">
+                                <td>@s.FirstName @s.LastName</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
-<div class="col-xs-7">
-<div class="panel panel-default">
-    <div class="panel-heading"><h3>Advising</h3></div>
+<!-- Right Panel (Advising) -->
+<div class="col-xs-8">
+<div class="panel panel-default panel-main">
     <div id="advising-panel" class="panel-body">
         <div class="text-center">
             <h3 id="placeholder" class="text-center">Please Select a Student...</h3>

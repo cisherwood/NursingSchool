@@ -4,6 +4,23 @@
 
 }
 
+.panel-main{
+    box-shadow: 5px 5px 10px #777;
+}
+
+.panel-main:hover{
+    box-shadow: 5px 5px 10px #555;
+    transition: box-shadow 300ms;
+}
+
+.panel{
+    border-radius: 10px;
+}
+
+.panel-heading{
+    border-radius: 10px 10px 0px 0px;
+}
+
 #logo{
     max-width: 200px;
     padding-top: 23px;
@@ -74,6 +91,7 @@
 #container {
     background-image: url('Layout/shattered.png');
     border: 15px;
+    min-height: 100vh;
 }
 #panel-content{
     margin-top: 40px;
