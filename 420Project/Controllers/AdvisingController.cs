@@ -19,6 +19,33 @@ namespace _420Project.Controllers
             return View(students);
 
         }
+        
+        public ActionResult _Students(List<int> studentIDList)
+        {
+            List<Student> studentList = new List<Student>();
+
+            if (studentIDList == null)
+            {
+                foreach (int id in studentIDList)
+                {
+                    studentList.Add((db.Student.Where(x => x.StudentId == id)).SingleOrDefault());
+                }
+            }
+
+            return View(studentList);
+        }
+
+        public ActionResult _StudentDetails(int id)
+        {
+            Student student = db.Student.Where(x => x.StudentId == id).FirstOrDefault();            
+
+            return View(student);
+        }
+
+        //hurr
+
+
+
 
         public ActionResult Advising()
         {
