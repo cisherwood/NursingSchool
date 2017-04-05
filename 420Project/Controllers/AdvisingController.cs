@@ -47,7 +47,7 @@ namespace _420Project.Controllers
             List<Event> events = new List<Event>();
             Student student = db.Student.Where(x => x.StudentId == id).FirstOrDefault();
 
-            events = db.To_Dos.Where(x => x.S)
+            // events = db.To_Dos.Where(x => x.S)
 
 
 

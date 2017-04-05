@@ -58,6 +58,8 @@
             $(this).addClass("advising-student-active");
             $(this).addClass("warning");
 
+            var data = {id: $(this).attr("data-student-id")};
+
             $.ajax({
                 type: "GET",
                 url: "@(Url.Action("_StudentDetail", "Advising"))",
