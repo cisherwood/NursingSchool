@@ -477,6 +477,7 @@
     <Content Include="Views\GroupStuff\_GroupFilters.cshtml" />
     <Content Include="Views\Advising\_Students.cshtml" />
     <Content Include="Views\Advising\_StudentDetails.cshtml" />
+    <Content Include="Views\Advising\_StudentCompliance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

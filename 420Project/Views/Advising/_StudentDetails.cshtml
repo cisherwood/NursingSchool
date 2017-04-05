@@ -4,6 +4,21 @@
 @{ 
     Layout = null;
 }
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("_StudentCompliance", "Advising"))",
+            success: function (data) {
+                $('#advising-student-details-tabs').html(data);
+            },
+        error: function (data) {
+            alert('error');
+
+         }
+         })
+    })
+</script>
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
@@ -22,3 +37,12 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1>Placeholder for TODOS and EVEMTs</h1>
+    </div>
+</div>
+
+<div class="row" id="advising-student-details-tabs">
+    
+ </div>
