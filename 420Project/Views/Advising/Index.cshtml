@@ -62,7 +62,8 @@
 
             $.ajax({
                 type: "GET",
-                url: "@(Url.Action("_StudentDetail", "Advising"))",
+                data: data,
+                url: "@(Url.Action("_StudentDetails", "Advising"))",
             success: function (data) {
                 $('#advising-panel').html(data);
             },

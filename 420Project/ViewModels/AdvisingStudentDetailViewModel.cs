@@ -8,10 +8,10 @@ namespace _420Project.ViewModels
 {
     public class AdvisingStudentDetailViewModel
     {
-        Student Student { get; set; }
+        public Student Student { get; set; }
 
-        List<ToDo> ToDos { get; set; }
+        public List<ToDo> ToDos { get; set; }
 
-        List<Event> Events { get; set; }
+        public List<Event> Events { get; set; }
     }
 }

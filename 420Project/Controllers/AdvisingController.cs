@@ -43,15 +43,17 @@ namespace _420Project.Controllers
         public ActionResult _StudentDetails(int id)
         {
             AdvisingStudentDetailViewModel detailModel = new AdvisingStudentDetailViewModel();
+
             List<ToDo> ToDos = new List<ToDo>();
             List<Event> events = new List<Event>();
             Student student = db.Student.Where(x => x.StudentId == id).FirstOrDefault();
 
             // events = db.To_Dos.Where(x => x.S)
 
+            detailModel.Student = student;
 
 
-            return View();
+            return View(detailModel);
         }
 
         //hurr

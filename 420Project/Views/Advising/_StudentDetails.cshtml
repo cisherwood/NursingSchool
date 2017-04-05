@@ -1,8 +1,13 @@
-﻿
+﻿@using _420Project.ViewModels;
+@model AdvisingStudentDetailViewModel
+
+@{ 
+    Layout = null;
+}
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="advising-heading"><b>Student Name 1</b></h3>
+            <h3 class="advising-heading"><b>@Model.Student.FirstName @Model.Student.LastName</b></h3>
             <hr class="dark-hr" />
         </div>
     </div>
