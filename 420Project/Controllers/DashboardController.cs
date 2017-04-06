@@ -18,6 +18,55 @@ namespace _420Project.Controllers
         // GET: Dashboard/Index
         public ActionResult Index()
         {
+            //ViewModel initialization
+            List<ToDo> DashboardViewModelToDos = new List<ToDo>();
+            List<Notification> DashboardViewModelNotifications = new List<Notification>();
+            List<Event> DashboardViewModelEvents = new List<Event>();
+            int DashboardViewModelStudentsOutofCompliance = 0;
+            int DashboardViewModelEnrolledStudents = 0;
+            int DashboardViewModelDaysToSemesterEnd = 0;
+            int DashboardViewModelNotCount = 0;
+            int DashboardViewModelToDoCount = 0;
+            int DashboardViewModelEventCount = 0;
+
+            // ToDos
+            List<UserToDo> DashboardUserToDos = new List<UserToDo>();
+            DashboardUserToDos = db.UserToDos.Where(x => x.UserId == 1).Where(x => x.isComplete == false).ToList();
+
+            foreach (UserToDo DashboardUserToDo in DashboardUserToDos)
+            {
+                DashboardViewModelToDos.Add(db.To_Dos.Where(x => x.ToDoID == DashboardUserToDo.ToDoId).FirstOrDefault());
+            }
+
+
+
+
+            List<UserNotification> DashboardUserNotifications = new List<UserNotification>();
+            DashboardUserNotifications = db.UserNotifications.Where(x => x.UserId == 1).Where(x => x.isComplete == false).ToList();
+
+            foreach (UserNotification DashboardUserNotification in DashboardUserNotifications)
+                DashboardViewModelNotifications.Add(db.Notifications.Where(x => x.NotificationId == DashboardUserNotification.NotificationId).FirstOrDefault());
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             var EnrolledStudentsQuery = db.Student.Where(x => x.IsEnrolled == true).Count();
 
 
@@ -27,6 +76,7 @@ namespace _420Project.Controllers
                 EnrolledStudents = EnrolledStudentsQuery,
                 AverageGPA = 2.5,
                 DaysToSemesterEnd = 3,
+                ToDo = DashboardViewModelToDos,
             };
             return View(dashboardViewModel);
         }
