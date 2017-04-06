@@ -1,5 +1,69 @@
-﻿@{ 
+﻿@using _420Project.Models;
+@model IEnumerable<StudentCompliance>
+@{ 
     Layout = null;
 }
 
-<h3>Student Compliance holder</h3>
+<div class="col-xs-12">
+    <ul id="advising-tabs" class="nav nav-tabs">
+        <li role="presentation" class="active advising-tab-active"><a id="advising-tab-compliance" href="#">Compliance</a></li>
+        <li role="presentation"><a id="advising-tab-program" href="#">Program</a></li>
+        <li role="presentation"><a id="advising-tab-plan" href="#">Plan</a></li>
+        <li role="presentation"><a id="advising-tab-petition" href="#">Petition</a></li>
+    </ul>
+</div>
+
+
+<div class="col-xs-12">
+    <br />
+    <table id="advising-compliance-table" class="table table-striped table-bordered" data-toggle="table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Expiration Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="advising-compliance-body">
+            @foreach (StudentCompliance s in Model)
+            {
+                <tr class="advising-student-row">
+                    <td>@s.Compliance.Name</td>
+                    <td>@s.ExpirationDate</td>
+                    <td class="text-center">@s.Status</td>
+                    <td class="text-center">
+                        <span class="advising-compliance-detail glyphicon glyphicon-pencil"> </span>
+                        <a href="/Advising/ViewDocument" target="_blank"><span class="glyphicon glyphicon-eye-open"> </span></a>
+                    </td>
+                </tr>
+            }
+             <!-- 
+            @for (int i = 1; i <= 2; i++)
+            {
+                <tr class="advising-student-row">
+                    <td>Compliance 1</td>
+                    <td>1-1-2017</td>
+                    <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+                    <td class="text-center">
+                        <span class="advising-compliance-detail glyphicon glyphicon-pencil"> </span>
+                        <a href="/Advising/ViewDocument" target="_blank"><span class="glyphicon glyphicon-eye-open"> </span></a>
+                    </td>
+                </tr>
+            }
+            @for (int i = 1; i <= 3; i++)
+            {
+                <tr class="advising-student-row">
+                    <td>Compliance 1</td>
+                    <td>1-1-2017</td>
+                    <td class="text-center"><span class="glyphicon glyphicon-flag"></span></td>
+                    <td class="text-center">
+                        <span class="advising-compliance-detail glyphicon glyphicon-pencil"> </span>
+                        <a href="/Advising/ViewDocument" target="_blank"><span class="glyphicon glyphicon-eye-open"> </span></a>
+                    </td>
+                </tr>
+            }
+                 -->
+        </tbody>
+    </table>
+</div>

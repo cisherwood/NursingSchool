@@ -6,8 +6,12 @@
 }
 <script>
     $(document).ready(function () {
+        
+        var data = {id: @Session["AdvisingStudentId"]};
+
         $.ajax({
             type: "GET",
+            data: data,
             url: "@(Url.Action("_StudentCompliance", "Advising"))",
             success: function (data) {
                 $('#advising-student-details-tabs').html(data);
