@@ -12,5 +12,6 @@ namespace _420Project.ViewModels
         public double AverageGPA { get; set; }
 
         public int DaysToSemesterEnd { get; set; }
+
     }
 }
