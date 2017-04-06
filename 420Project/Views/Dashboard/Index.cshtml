@@ -10,46 +10,26 @@
 }
 @section head{
     <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
 
-        $('#nav-home').addClass('active');
-
-        $("#home-message-button").click(function () {
-            $('#home-message-dialog').hide();
-            $('#home-message-dialog').removeClass('hidden');
-            $('#home-message-dialog').dialog({
-                hide: 'fold',
-                show: 'blind',
-                width: '500px'
-            });
-            $('#home-message-dialog').show();
-        })
-
+            
         $('#home-events-body').on("click", ".home-events-row", function () {
 
             $.ajax({
                 type: "GET",
                 url: "@(Url.Action("EventDetail", "Dashboard"))",
                 success: function (data) {
-                    $('#home-event-dialog').html(data);
-
-                    $('#home-event-dialog').hide();
-                    $('#home-event-dialog').removeClass('hidden');
-                    $('#home-event-dialog').dialog({
-                        hide: 'fold',
-                        show: 'blind',
-                        width: '500px'
-                    });
-                    $('#home-event-dialog').show();
+                    $('#dashboard-event-modal-body').html(data);
                 },
-            error: function (data) {
-                alert('error');
+                error: function (data) {
+                    alert('error');
 
-            }
+                }
         })
         })
-
+            
         // Manage AJAX
+        @*
         $('#home-manage-students-link').click(function () {
             $.ajax({
                 type: "GET",
@@ -76,20 +56,255 @@
 
             }
         })
-    })
+    })*@
 
 
 
-    });
+        });
 </script>
 }
 @section navlinkhome{
     navigation-link-active
 }
 
+<!-- MODALS -->
 <div id="home-event-dialog" title="Event Detail" class="hidden">
 </div>
 
+<!-- Modal -->
+<div id="event-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Events</h4>
+            </div>
+            <div id="dashboard-event-modal-body" class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Links container-->
+<div id="content-dashboard" class="row">
+    <div class="row">
+        <div class="col-xs-4">
+                <div class="panel panel-default col-xs-12 panel-main">
+                    <div class="panel-body">
+                        <div class="col-xs-12">
+                            <div class="well">
+                                <ul>
+                                    <li><h4><b>40</b> Students out of Compliance</h4></li>
+                                    <li><h4><b>40</b> Students out of Compliance</h4></li>
+                                    <li><h4><b>40</b> Students out of Compliance</h4></li>
+                                    <li><h4><b>40</b> Students out of Compliance</h4></li>
+                                </ul>
+                            </div>
+                            <!-- 
+                            <div class="col-xs-6">
+                                <div class="panel-default panel">
+                                    <div class="panel-body">
+                                        <h2 class="col-xs-4">
+                                            <span class="glyphicon glyphicon-ok"></span>
+                                        </h2>
+                                        <h4 class="text-center col-sm-8"><b>42</b> Out of Compliance</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6">
+                                <div class="panel-default panel">
+                                    <div class="panel-body">
+                                        <h1 class="col-xs-4">
+                                            <span class="glyphicon glyphicon-cog"></span>
+                                        </h1>
+                                        <h4 class="text-center col-xs-8"><b>@Model.EnrolledStudents</b> Enrolled Students</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6">
+                                <div class="panel-default panel">
+                                    <div class="panel-body">
+                                        <h1 class="col-xs-4">
+                                            <span class="glyphicon glyphicon-stats"></span>
+                                        </h1>
+                                        <h4 class="text-center col-xs-8"><b>3.5</b> Average GPA</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6">
+                                <div class="panel-default panel">
+                                    <div class="panel-body">
+                                        <h1 class="col-xs-4">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </h1>
+                                        <h4 class="text-center col-xs-8"><b>50</b> Days to Semester End</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                        <div class="col-xs-12">
+                            <fieldset><legend>Links</legend>
+                            <ul>
+                                <li><a>School of Nursing Homepage</a></li>
+                                <li><a>Cardmail</a></li>
+                                <li><a>PeopleSoft</a></li>
+                                <li><a>Account Settings</a></li>
+
+                            </ul>
+                            
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+        <div class="col-xs-8">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="panel panel-default dashboard-panel">
+                        <div class="panel-heading">
+                            <h3 class="dashboard-panel-h3"><span class="badge">100</span>Notifications</h3>
+                        </div>
+                        <table id="dashboard-notifications" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 1; i <= 100; i++)
+                                {
+                                    <tr>
+                                        <td>Test Notification</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-xs-4">
+                    <div class="panel panel-default dashboard-panel">
+                        <div class="panel-heading">
+                            <h3 class="dashboard-panel-h3"><span class="badge">100</span>To Do</h3>
+                        </div>
+                        <table id="dashboard-todo" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
+                            <thead>
+                                <tr>
+                                    <th class="col-xs-1"></th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 1; i <= 100; i++)
+                                {
+                                    <tr>
+                                        <td><span class="glyphicon glyphicon-ok"></span></td>
+                                        <td>Test Todo</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-xs-4">
+                    <div class="panel panel-default dashboard-panel">
+                        <div class="panel-heading">
+                            <h3 class="dashboard-panel-h3"><span class="badge">100</span>Events</h3>
+                        </div>
+                        <table id="dashboard-event" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
+                            <thead>
+                                <tr>
+                                    <th class="col-xs-3">Date</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="home-events-body">
+                                @for (int i = 1; i <= 100; i++)
+                                {
+                                    <tr class="home-events-row" data-toggle="modal" data-target="#event-modal">
+                                        <td>3-1-2017</td>
+                                        <td>Test Event</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3>Control Panel</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-xs-8">
+                                    <h3 class="text-center">Manage: </h3>
+                                    <div class="well col-xs-12 row">
+                                        <div class="col-xs-12">
+                                            <div class="dropdown">
+                                                <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+                                                    <b>Select...</b>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li id="home-manage-students-link"><a href="#">Students</a></li>
+                                                    <li id="home-manage-events-link"><a href="#">Events</a></li>
+                                                </ul>
+                                            </div>
+                                            <hr />
+                                        </div>
+                                        <div id="home-manage-area" class="col-xs-12 ">
+                                            @*
+                                        <h4>Events</h4>
+                                        <a href="/Event/Index" class="btn btn-primary">Manage Events</a>
+                                        <a href="/Event/Create" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Create Event</a>
+                                        <br /><br />
+                                            *@
+                                            <div class="col-xs-12 text-center">
+                                                <h4>Select an item to manage...</h4>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <h3 class="text-center">Actions</h3>
+                                    <div class="well row col-xs-12">
+                                        <h4>Communicate</h4>
+                                        <a id="home-message-button" href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>New Message</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL -->
+<!--
 <div id="home-message-dialog" title="New Message" class="hidden">
     <div class="row col-sm-12">
         <h4 class="col-xs-12 text-center"><b>Group Settings</b></h4>
@@ -241,202 +456,8 @@
 
     </div>
 </div>
+-->
 
-<!-- Links container-->
-<div id="content-dashboard" class="row">
-    <div class="row">
-        <div class="col-xs-4">
-                <div class="panel panel-default col-xs-12 panel-main">
-                    <div class="panel-body">
-                        <div class="col-xs-12">
-                            <div class="col-xs-6">
-                                <div class="panel-default panel">
-                                    <div class="panel-body">
-                                        <h2 class="col-xs-4">
-                                            <span class="glyphicon glyphicon-ok"></span>
-                                        </h2>
-                                        <h4 class="text-center col-sm-8"><b>42</b> Out of Compliance</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6">
-                                <div class="panel-default panel">
-                                    <div class="panel-body">
-                                        <h1 class="col-xs-4">
-                                            <span class="glyphicon glyphicon-cog"></span>
-                                        </h1>
-                                        <h4 class="text-center col-xs-8"><b>@Model.EnrolledStudents</b> Enrolled Students</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6">
-                                <div class="panel-default panel">
-                                    <div class="panel-body">
-                                        <h1 class="col-xs-4">
-                                            <span class="glyphicon glyphicon-stats"></span>
-                                        </h1>
-                                        <h4 class="text-center col-xs-8"><b>3.5</b> Average GPA</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6">
-                                <div class="panel-default panel">
-                                    <div class="panel-body">
-                                        <h1 class="col-xs-4">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </h1>
-                                        <h4 class="text-center col-xs-8"><b>50</b> Days to Semester End</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
-                            <h3>Test</h3>
-                            <br /><br /><br /><br /><br />
-                            <h1>Test</h1>
-                            <h3>Test</h3>
-                            <br /><br /><br /><br /><br />
-                            <h1>Test</h1>
-                        </div>
-                    </div>
-                </div>
-
-
-        </div>
-        <div class="col-xs-8">
-            <div class="row">
-                <div class="col-xs-4">
-                    <div class="panel panel-default dashboard-panel">
-                        <div class="panel-heading">
-                            <h3 class="dashboard-panel-h3"><span class="badge">100</span>Notifications</h3>
-                        </div>
-                        <table id="dashboard-notifications" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
-                            <thead>
-                                <tr>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @for (int i = 1; i <= 100; i++)
-                                {
-                                    <tr>
-                                        <td>Test Notification</td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-4">
-                    <div class="panel panel-default dashboard-panel">
-                        <div class="panel-heading">
-                            <h3 class="dashboard-panel-h3"><span class="badge">100</span>To Do</h3>
-                        </div>
-                        <table id="dashboard-todo" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
-                            <thead>
-                                <tr>
-                                    <th class="col-xs-1"></th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @for (int i = 1; i <= 100; i++)
-                                {
-                                    <tr>
-                                        <td><span class="glyphicon glyphicon-ok"></span></td>
-                                        <td>Test Todo</td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-4">
-                    <div class="panel panel-default dashboard-panel">
-                        <div class="panel-heading">
-                            <h3 class="dashboard-panel-h3"><span class="badge">100</span>Events</h3>
-                        </div>
-                        <table id="dashboard-event" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
-                            <thead>
-                                <tr>
-                                    <th class="col-xs-3">Date</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody id="home-events-body">
-                                @for (int i = 1; i <= 100; i++)
-                                {
-                                    <tr class="home-events-row">
-                                        <td>3-1-2017</td>
-                                        <td>Test Event</td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3>Control Panel</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="col-xs-8">
-                                    <h3 class="text-center">Manage: </h3>
-                                    <div class="well col-xs-12 row">
-                                        <div class="col-xs-12">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
-                                                    <b>Select...</b>
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu">
-                                                    <li id="home-manage-students-link"><a href="#">Students</a></li>
-                                                    <li id="home-manage-events-link"><a href="#">Events</a></li>
-                                                </ul>
-                                            </div>
-                                            <hr />
-                                        </div>
-                                        <div id="home-manage-area" class="col-xs-12 ">
-                                            @*
-                                        <h4>Events</h4>
-                                        <a href="/Event/Index" class="btn btn-primary">Manage Events</a>
-                                        <a href="/Event/Create" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Create Event</a>
-                                        <br /><br />
-                                            *@
-                                            <div class="col-xs-12 text-center">
-                                                <h4>Select an item to manage...</h4>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-4">
-                                    <h3 class="text-center">Actions</h3>
-                                    <div class="well row col-xs-12">
-                                        <h4>Communicate</h4>
-                                        <a id="home-message-button" href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>New Message</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 <div well>
