@@ -4,6 +4,9 @@
     padding-left: 0px;
     padding-right: 0px;
     }
+#content-row{
+    min-height: 90vh;
+}
 
 .panel-main{
     box-shadow: 5px 5px 10px #777;

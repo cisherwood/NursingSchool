@@ -24,11 +24,14 @@
             type: "GET",
             url: "@(Url.Action("_Students", "Advising"))",
             success: function (data) {
+
+                $('#advising-student').hide();
+                $('#advising-student').removeClass("hidden");
                 $('#advising-student-body').html(data);
+
+                $("#advising-student").show("blind", { "direction": 'up' }, 500);
             },
         error: function (data) {
-            alert('error');
-
              }
             })
 
@@ -40,8 +43,6 @@
                 $('#group-filter-modal-body').html(data);
             },
         error: function (data) {
-            alert('error');
-
            }
         })
 
@@ -53,10 +54,10 @@
         // Fires when user clicks on a student
         // Updates advising area with student information
         $('#advising-student-body').on("click", ".advising-student-row", function () {
-            $(".advising-student-active").removeClass("warning");
+            $(".advising-student-active").removeClass("danger");
             $(".advising-student-active").removeClass("advising-student-active");
             $(this).addClass("advising-student-active");
-            $(this).addClass("warning");
+            $(this).addClass("danger");
 
             var data = {id: $(this).attr("data-student-id")};
 

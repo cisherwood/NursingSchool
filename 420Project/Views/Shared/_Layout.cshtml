@@ -47,6 +47,15 @@
 
 </head>
 <body>
+    <script>
+        $(document).ready(function () {
+            $('.layout-fade-in').hide();
+            $('.layout-fade-in').removeClass("hidden");
+            $('.layout-fade-in').show('fade', { duration: 300, easing: 'easeInCirc' });
+
+
+        })
+    </script>
     <div id="container" class="container-fluid body-content">
         <div id="navbar" class="row">
             <div class="col-xs-2">
@@ -101,15 +110,19 @@
 
 <div class="row" id="content-row">
     <div id="panel-content">
-        <div id="content">
+        <div id="content" class="layout-fade-in hidden">
             @RenderBody()
         </div>
     </div>
 </div>
-<hr />
-<footer>
-    <p>&copy; @DateTime.Now.Year - University of Louisville</p>
-</footer>
+ 
+        <!--
+<div class="layout-fade-in hidden">
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - University of Louisville</p>
+    </footer>
+</div>-->
 </div>
 
 
