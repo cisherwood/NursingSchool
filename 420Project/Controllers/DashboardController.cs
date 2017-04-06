@@ -45,6 +45,8 @@ namespace _420Project.Controllers
             DashboardUserNotifications = db.UserNotifications.Where(x => x.UserId == 1).Where(x => x.isComplete == false).ToList();
 
             foreach (UserNotification DashboardUserNotification in DashboardUserNotifications)
+            { 
+
                 DashboardViewModelNotifications.Add(db.Notifications.Where(x => x.NotificationId == DashboardUserNotification.NotificationId).FirstOrDefault());
             }
 
