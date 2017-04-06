@@ -11,6 +11,6 @@ namespace _420Project.Models
         [Key]
         public int NotificationId { get; set; }
 
-        public int Name { get; set; }
+        public string Name { get; set; }
     }
 }
