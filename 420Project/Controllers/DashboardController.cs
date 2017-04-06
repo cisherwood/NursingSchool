@@ -18,8 +18,7 @@ namespace _420Project.Controllers
         // GET: Dashboard/Index
         public ActionResult Index()
         {
-
-            var EnrolledStudentsQuery = db.Student.Where(x => x.Status == "Enrolled").Count();
+            var EnrolledStudentsQuery = db.Student.Where(x => x.IsEnrolled == true).Count();
 
 
             DashboardViewModel dashboardViewModel = new DashboardViewModel()

@@ -58,7 +58,10 @@ namespace _420Project.Controllers
             return View(detailModel);
         }
 
-       public ActionResult _StudentCompliance(int id)
+
+
+
+        public ActionResult _StudentCompliance(int id)
         {
             List<StudentCompliance> compliances = new List<StudentCompliance>();
 

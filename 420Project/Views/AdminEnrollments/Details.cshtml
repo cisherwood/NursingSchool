@@ -1,0 +1,59 @@
+﻿@model _420Project.Models.Enrollment
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Enrollment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Semester.Season)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Semester.Season)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentProgram.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentProgram.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EnrollmentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

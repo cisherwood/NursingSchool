@@ -6,6 +6,12 @@
 }
 <script>
     $(document).ready(function () {
+
+        $('.advising-student-detail-table').bootstrapTable({
+
+        });
+
+
         
         var data = {id: @Session["AdvisingStudentId"]};
 
@@ -23,30 +29,127 @@
          })
     })
 </script>
+
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="advising-heading"><b>@Model.Student.FirstName @Model.Student.LastName</b></h3>
+            <h2 class="advising-heading"><b>@Model.Student.FirstName @Model.Student.LastName</b></h2>
             <hr class="dark-hr" />
         </div>
     </div>
     <div class="row">
         <div class="col-xs-6">
             <div class="col-xs-12">
+                <h4><b>Year:</b> Senior</h4>
+                <h4><b>Hours:</b> 120</h4>
                 <h4><b>GPA:</b> 3.5</h4>
+                <h4><b>Program:</b> BSN (LD)</h4>
             </div>
         </div>
         <div class="col-xs-6">
+            <div class="col-xs-12">
+                <h4><b>Email:</b> test@louisville.edu</h4>
+                <h4><b>Phone:</b> 555-123-4567</h4>
+                <h4><b>Campus:</b> Louisville</h4>
 
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+
+<div class="row">
+
+    <div class="col-xs-12">
+        <div class="col-xs-4">
+            <div class="advising-student-detail-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3><span class="badge-holder"><span class="badge">100</span></span> To Do</h3>
+                </div>
+                <table id="advising-student-todo" class="advising-student-detail-table panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-1"></th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 1; i <= 100; i++)
+                        {
+                            <tr>
+                                <td><span class="glyphicon glyphicon-ok"></span></td>
+                                <td>Test Todo</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="advising-student-detail-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3><span class="badge-holder"><span class="badge">100</span></span> To Do</h3>
+                </div>
+                <table id="advising-student-todo" class="advising-student-detail-table panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-1"></th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 1; i <= 100; i++)
+                        {
+                            <tr>
+                                <td><span class="glyphicon glyphicon-ok"></span></td>
+                                <td>Test Todo</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="advising-student-detail-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3><span class="badge-holder"><span class="badge">100</span></span> To Do</h3>
+                </div>
+                <table id="advising-student-todo" class="advising-student-detail-table panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-1"></th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 1; i <= 100; i++)
+                        {
+                            <tr>
+                                <td><span class="glyphicon glyphicon-ok"></span></td>
+                                <td>Test Todo</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>Placeholder for TODOS and EVEMTs</h1>
+        <hr />
     </div>
 </div>
 
-<div class="row" id="advising-student-details-tabs">
-    
- </div>
+<div>
+    <div class="row" id="advising-student-details-tabs">
+
+    </div>
+
+</div>

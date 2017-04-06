@@ -17,3 +17,23 @@
     padding-bottom: 200px;
     color: #999;
 }
+
+
+
+
+.advising-student-detail-panel > .bootstrap-table{
+    max-height: 150px;
+    overflow: auto;
+}
+.advising-student-detail-panel > .panel-heading{
+    max-height: 50px;
+    padding-top: 7px;
+}
+
+.advising-student-detail-panel > .panel-heading > h3 > .badge-holder {
+
+}
+
+.panel-main{
+    min-height: 80vh;
+}
