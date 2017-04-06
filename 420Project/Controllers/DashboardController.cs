@@ -25,9 +25,6 @@ namespace _420Project.Controllers
             int DashboardViewModelStudentsOutofCompliance = 0;
             int DashboardViewModelEnrolledStudents = 0;
             int DashboardViewModelDaysToSemesterEnd = 0;
-            int DashboardViewModelNotCount = 0;
-            int DashboardViewModelToDoCount = 0;
-            int DashboardViewModelEventCount = 0;
 
             // ToDos
             List<UserToDo> DashboardUserToDos = new List<UserToDo>();
@@ -38,9 +35,7 @@ namespace _420Project.Controllers
                 DashboardViewModelToDos.Add(db.To_Dos.Where(x => x.ToDoID == DashboardUserToDo.ToDoId).FirstOrDefault());
             }
 
-
-
-
+            // Notifications
             List<UserNotification> DashboardUserNotifications = new List<UserNotification>();
             DashboardUserNotifications = db.UserNotifications.Where(x => x.UserId == 1).Where(x => x.isComplete == false).ToList();
 
@@ -50,24 +45,7 @@ namespace _420Project.Controllers
                 DashboardViewModelNotifications.Add(db.Notifications.Where(x => x.NotificationId == DashboardUserNotification.NotificationId).FirstOrDefault());
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            // Events
 
             var EnrolledStudentsQuery = db.Student.Where(x => x.IsEnrolled == true).Count();
 
@@ -79,6 +57,11 @@ namespace _420Project.Controllers
                 AverageGPA = 2.5,
                 DaysToSemesterEnd = 3,
                 ToDo = DashboardViewModelToDos,
+                Notifications = DashboardViewModelNotifications,
+                Event = DashboardViewModelEvents,
+                NotCount = DashboardViewModelNotifications.Count(),
+                EventCount = DashboardViewModelEvents.Count(),
+                ToDoCount = DashboardViewModelToDos.Count()
             };
             return View(dashboardViewModel);
         }

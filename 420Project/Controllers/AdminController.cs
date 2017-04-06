@@ -13,5 +13,11 @@ namespace _420Project.Controllers
         {
             return View();
         }
+
+        public void CreateStudent()
+        {
+
+            
+        }
     }
 }
