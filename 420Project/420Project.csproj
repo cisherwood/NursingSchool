@@ -204,6 +204,8 @@
     <Compile Include="Controllers\AdminDepartmentsController.cs" />
     <Compile Include="Controllers\AdminEnrollmentsController.cs" />
     <Compile Include="Controllers\AdminEventsController.cs" />
+    <Compile Include="Controllers\AdminGroupFiltersController.cs" />
+    <Compile Include="Controllers\AdminNotificationsController.cs" />
     <Compile Include="Controllers\AdminPetitionsController.cs" />
     <Compile Include="Controllers\AdminProgramCoursesController.cs" />
     <Compile Include="Controllers\AdminProgramsController.cs" />
@@ -213,6 +215,8 @@
     <Compile Include="Controllers\AdminStudentProgramsController.cs" />
     <Compile Include="Controllers\AdminStudentsController.cs" />
     <Compile Include="Controllers\AdminToDoesController.cs" />
+    <Compile Include="Controllers\AdminUserEventsController.cs" />
+    <Compile Include="Controllers\AdminUserNotificationsController.cs" />
     <Compile Include="Controllers\AdminUserToDoesController.cs" />
     <Compile Include="Controllers\AdvisingController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
@@ -265,6 +269,10 @@
     <Compile Include="Migrations\201704052336542_somefixes.Designer.cs">
       <DependentUpon>201704052336542_somefixes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704061905596_userstuff.cs" />
+    <Compile Include="Migrations\201704061905596_userstuff.Designer.cs">
+      <DependentUpon>201704061905596_userstuff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advisor.cs" />
@@ -276,8 +284,10 @@
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FileType.cs" />
+    <Compile Include="Models\GroupFilter.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Petition.cs" />
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\ProgramCourse.cs" />
@@ -287,6 +297,8 @@
     <Compile Include="Models\StudentPetition.cs" />
     <Compile Include="Models\StudentProgram.cs" />
     <Compile Include="Models\ToDo.cs" />
+    <Compile Include="Models\UserEvent.cs" />
+    <Compile Include="Models\UserNotification.cs" />
     <Compile Include="Models\UserToDo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -496,6 +508,26 @@
     <Content Include="Views\AdminUserToDoes\Details.cshtml" />
     <Content Include="Views\AdminUserToDoes\Edit.cshtml" />
     <Content Include="Views\AdminUserToDoes\Index.cshtml" />
+    <Content Include="Views\AdminUserEvents\Create.cshtml" />
+    <Content Include="Views\AdminUserEvents\Delete.cshtml" />
+    <Content Include="Views\AdminUserEvents\Details.cshtml" />
+    <Content Include="Views\AdminUserEvents\Edit.cshtml" />
+    <Content Include="Views\AdminUserEvents\Index.cshtml" />
+    <Content Include="Views\AdminNotifications\Create.cshtml" />
+    <Content Include="Views\AdminNotifications\Delete.cshtml" />
+    <Content Include="Views\AdminNotifications\Details.cshtml" />
+    <Content Include="Views\AdminNotifications\Edit.cshtml" />
+    <Content Include="Views\AdminNotifications\Index.cshtml" />
+    <Content Include="Views\AdminUserNotifications\Create.cshtml" />
+    <Content Include="Views\AdminUserNotifications\Delete.cshtml" />
+    <Content Include="Views\AdminUserNotifications\Details.cshtml" />
+    <Content Include="Views\AdminUserNotifications\Edit.cshtml" />
+    <Content Include="Views\AdminUserNotifications\Index.cshtml" />
+    <Content Include="Views\AdminGroupFilters\Create.cshtml" />
+    <Content Include="Views\AdminGroupFilters\Delete.cshtml" />
+    <Content Include="Views\AdminGroupFilters\Details.cshtml" />
+    <Content Include="Views\AdminGroupFilters\Edit.cshtml" />
+    <Content Include="Views\AdminGroupFilters\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -540,6 +572,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704052336542_somefixes.resx">
       <DependentUpon>201704052336542_somefixes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704061905596_userstuff.resx">
+      <DependentUpon>201704061905596_userstuff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

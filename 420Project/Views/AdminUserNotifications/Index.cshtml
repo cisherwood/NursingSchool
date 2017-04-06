@@ -1,0 +1,46 @@
+﻿@model IEnumerable<_420Project.Models.UserNotification>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NotificationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isComplete)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotificationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isComplete)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserNotificationId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserNotificationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserNotificationId })
+        </td>
+    </tr>
+}
+
+</table>

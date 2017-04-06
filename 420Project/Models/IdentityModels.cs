@@ -37,6 +37,8 @@ namespace _420Project.Models
         public virtual DbSet<Department> Department { get; set; }
         public virtual DbSet<Enrollment> Enrollment { get; set; }
         public virtual DbSet<Event> Event { get; set; }
+        public virtual DbSet<GroupFilter> GroupFilters { get; set; }
+
         public virtual DbSet<Petition> Petition { get; set; }
         public virtual DbSet<Program> Program { get; set; }
         public virtual DbSet<ProgramCourse> ProgramCourse { get; set; }
@@ -47,7 +49,10 @@ namespace _420Project.Models
         public virtual DbSet<StudentProgram> StudentProgram { get; set; }
         public virtual DbSet<File> File { get; set; }
         public virtual DbSet<ToDo> To_Dos { get; set; }
+        public virtual DbSet<UserEvent> UserEvents { get; set; }
+        public virtual DbSet<UserNotification> UserNotifications { get; set; }
         public virtual DbSet<UserToDo> UserToDos { get; set; }
 
+        public System.Data.Entity.DbSet<_420Project.Models.Notification> Notifications { get; set; }
     }
 }
