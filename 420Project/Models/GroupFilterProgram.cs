@@ -16,5 +16,7 @@ namespace _420Project.Models
 
         [ForeignKey("Program")]
         public int ProgramId { get; set; }
+
+        public virtual GroupFilter GroupFilter { get; set; }
     }
 }

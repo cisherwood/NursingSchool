@@ -44,5 +44,8 @@ namespace _420Project.Models
 
 
 
+        public virtual ICollection<GroupFilterCompliance> GroupFilterCompliances { get; set; }
+        public virtual ICollection<GroupFilterProgram> GroupFilterProgram { get; set; }
+
     }
 }

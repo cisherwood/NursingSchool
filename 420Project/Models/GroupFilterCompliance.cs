@@ -19,5 +19,10 @@ namespace _420Project.Models
         public bool CheckCompliance { get; set; }
 
         public bool IsCompliant { get; set; }
+
+        
+        
+        public virtual GroupFilter GroupFilter { get; set; }
+
     }
 }
