@@ -25,10 +25,11 @@ namespace _420Project.Controllers
             int DashboardViewModelStudentsOutofCompliance = 0;
             int DashboardViewModelEnrolledStudents = 0;
             int DashboardViewModelDaysToSemesterEnd = 0;
+            string CurrentUserId = Session["CurrentUserId"].ToString();
 
             // ToDos
             List<UserToDo> DashboardUserToDos = new List<UserToDo>();
-            DashboardUserToDos = db.UserToDos.Where(x => x.UserId == Convert.ToInt32(Session["CurrentUSerId"])).Where(x => x.isComplete == false).ToList();
+            DashboardUserToDos = db.UserToDos.Where(x => x.UserId == CurrentUserId).Where(x => x.isComplete == false).ToList();
 
             foreach (UserToDo DashboardUserToDo in DashboardUserToDos)
             {
@@ -37,7 +38,7 @@ namespace _420Project.Controllers
 
             // Notifications
             List<UserNotification> DashboardUserNotifications = new List<UserNotification>();
-            DashboardUserNotifications = db.UserNotifications.Where(x => x.UserId == 1).Where(x => x.isComplete == false).ToList();
+            DashboardUserNotifications = db.UserNotifications.Where(x => x.UserId == CurrentUserId).Where(x => x.isComplete == false).ToList();
 
             foreach (UserNotification DashboardUserNotification in DashboardUserNotifications)
             { 

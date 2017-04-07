@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _420Project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,6 +20,17 @@ namespace _420Project.Controllers
 
 
 
+            return View();
+        }
+
+        public ActionResult _List()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult _List(GroupFilter groupFilter)
+        {
             return View();
         }
     }
