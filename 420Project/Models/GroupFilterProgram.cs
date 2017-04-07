@@ -18,5 +18,7 @@ namespace _420Project.Models
         public int ProgramId { get; set; }
 
         public virtual GroupFilter GroupFilter { get; set; }
+
+        public virtual Program Program { get; set; }
     }
 }

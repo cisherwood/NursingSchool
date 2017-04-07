@@ -23,6 +23,6 @@ namespace _420Project.Models
         
         
         public virtual GroupFilter GroupFilter { get; set; }
-
+        public virtual Compliance Compliance { get; set; }
     }
 }
