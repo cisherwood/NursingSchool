@@ -328,6 +328,7 @@
     <Compile Include="ViewModels\AdvisingStudentDetailViewModel.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\ProgressStudentAddCourseViewModel.cs" />
+    <Compile Include="ViewModels\_GroupFilterCompliances.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Advising.css" />

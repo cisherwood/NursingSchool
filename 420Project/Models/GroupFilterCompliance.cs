@@ -15,5 +15,9 @@ namespace _420Project.Models
 
         [ForeignKey("Compliance")]
         public int ComplianceId { get; set; }
+
+        public bool CheckCompliance { get; set; }
+
+        public bool IsCompliant { get; set; }
     }
 }

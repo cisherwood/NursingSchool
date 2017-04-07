@@ -32,8 +32,25 @@ namespace _420Project.Controllers
         [HttpPost]
         public ActionResult _List(GroupFilter GroupFilter)
         {
-            //UserType
-            if (GroupFilter.UserType == "Student")
+
+            if(GroupFilter.UserType == "Potential Student")
+            {
+                List<Student> students = db.Student.ToList();
+                foreach (Student s in students)
+                {
+                   if(db.StudentProgram.Any(x => x.StudentId != s.StudentId))
+                    {
+                        students.RemoveAll(x => x.StudentId == s.StudentId);
+                    }
+                }
+            }
+
+            else if(GroupFilter.UserType == "Advisor")
+            {
+                List<Advisor> advisors = db.Advisor.ToList();
+            }
+
+            else if (GroupFilter.UserType == "Student")
             {
                 List<Student> students = db.Student.ToList();
 
@@ -61,6 +78,34 @@ namespace _420Project.Controllers
                 {
                     students.RemoveAll(x => x.CampusId != GroupFilter.CampusId);
                 }
+                if(!GroupFilter.Petition)
+                {
+                    foreach(Student s in students)
+                    {
+                        if(db.StudentPetition.Where(x => x.StudentID != s.StudentId).Any(x=>x.Status == "Pending"))
+                        {
+                            students.RemoveAll(x => x.StudentId == s.StudentId);
+                        }
+                    }
+                }
+                if(GroupFilter.FilterByCompliance)
+                {
+                    foreach(Compliance c in db.Compliance)
+                    {
+                        foreach(Student s in students)
+                        {
+                            List<StudentCompliance> studentCompliance = db.StudentCompliance.Where(x => x.ComplianceId == c.Id).
+                                Where(x=>x.StudentId == s.StudentId).ToList();
+
+                            if (db.StudentCompliance.Any(x => x.ComplianceId == c.Id))
+                            {
+
+                            }
+                        }
+                        
+                    }
+                }
+
               
             }
             else

@@ -40,6 +40,8 @@ namespace _420Project.Models
 
         public bool Petition { get; set; }
 
+        public bool FilterByCompliance { get; set; }
+
 
 
     }

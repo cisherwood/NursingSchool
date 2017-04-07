@@ -52,6 +52,8 @@ namespace _420Project.Models
         public virtual DbSet<UserEvent> UserEvents { get; set; }
         public virtual DbSet<UserNotification> UserNotifications { get; set; }
         public virtual DbSet<UserToDo> UserToDos { get; set; }
+        public virtual DbSet<GroupFilterCompliance> GroupFilterCompliance { get; set; }
+        public virtual DbSet<GroupFilterProgram> GroupFilterProgram { get; set; }
 
         public System.Data.Entity.DbSet<_420Project.Models.Notification> Notifications { get; set; }
     }
