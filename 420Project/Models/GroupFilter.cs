@@ -11,6 +11,7 @@ namespace _420Project.Models
 
         public int ToDoId { get; set; }
 
+
         public int GroupId { get; set; }
 
         public string UserType { get; set; }
@@ -38,6 +39,7 @@ namespace _420Project.Models
         public bool StatusGraduated { get; set; }
 
         public bool Petition { get; set; }
+
 
 
     }

@@ -45,7 +45,8 @@ namespace _420Project.Models
         [DataType(DataType.DateTime)]
         public DateTime? DOB { get; set; }
 
-        
+        public bool NeedsCompliance { get; set; } //If student is LowerDiv == False, if UpperDiv or Graduate == True
+
         [ForeignKey("Campus")]
         public int CampusId { get; set; }
 

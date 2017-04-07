@@ -285,6 +285,10 @@
     <Compile Include="Migrations\201704071909241_useridstudent.Designer.cs">
       <DependentUpon>201704071909241_useridstudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704071959019_StudentGroupFilterUpdate.cs" />
+    <Compile Include="Migrations\201704071959019_StudentGroupFilterUpdate.Designer.cs">
+      <DependentUpon>201704071959019_StudentGroupFilterUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201704072131113_useridtostring.cs" />
     <Compile Include="Migrations\201704072131113_useridtostring.Designer.cs">
       <DependentUpon>201704072131113_useridtostring.cs</DependentUpon>
@@ -603,6 +607,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704071909241_useridstudent.resx">
       <DependentUpon>201704071909241_useridstudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704071959019_StudentGroupFilterUpdate.resx">
+      <DependentUpon>201704071959019_StudentGroupFilterUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704072131113_useridtostring.resx">
       <DependentUpon>201704072131113_useridtostring.cs</DependentUpon>

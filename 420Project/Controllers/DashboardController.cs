@@ -48,7 +48,7 @@ namespace _420Project.Controllers
 
             // Events
 
-            var EnrolledStudentsQuery = db.Student.Where(x => x.IsEnrolled == true).Count();
+            var EnrolledStudentsQuery = db.Student.Count(); //Fix this for production
 
 
             DashboardViewModel dashboardViewModel = new DashboardViewModel()
