@@ -13,7 +13,7 @@ namespace _420Project.Models
 
         public int ToDoId { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         public bool isComplete { get; set; }
     }
