@@ -13,7 +13,15 @@ namespace _420Project.Models
 
         public int GroupId { get; set; }
 
-        public bool IsStudent { get; set; }
+        public string UserType { get; set; }
+
+        public bool IsFreshman { get; set; }
+
+        public bool IsSophomore { get; set; }
+
+        public bool IsJunior { get; set; }
+
+        public bool IsSenior { get; set; }
 
         public int AdvisorId { get; set; }
 

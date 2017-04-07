@@ -36,8 +36,6 @@ namespace _420Project.Models
         [StringLength(50, MinimumLength = 1)]
         public string Address { get; set; }
 
-        public bool IsEnrolled { get; set; }
-
         [ForeignKey("Advisor")]
         public int AdvisorId { get; set; }
 
