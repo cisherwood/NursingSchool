@@ -175,19 +175,19 @@
                 <div class="col-xs-4">
                     <div class="panel panel-default dashboard-panel">
                         <div class="panel-heading">
-                            <h3 class="dashboard-panel-h3"><span class="badge">100</span>Notifications</h3>
+                            <h3 class="dashboard-panel-h3"><span class="badge">@Model.NotCount</span>Notifications</h3>
                         </div>
                         <table id="dashboard-notifications" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
                             <thead>
                                 <tr>
-                                    <th>Description</th>
+                                    <th class="hidden">Description</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @for (int i = 1; i <= 100; i++)
+                                @foreach(Notification n in Model.Notifications)
                                 {
                                     <tr>
-                                        <td>Test Notification</td>
+                                        <td>@n.Name</td>
                                     </tr>
                                 }
                             </tbody>
@@ -198,20 +198,18 @@
                 <div class="col-xs-4">
                     <div class="panel panel-default dashboard-panel">
                         <div class="panel-heading">
-                            <h3 class="dashboard-panel-h3"><span class="badge">100</span>To Do</h3>
+                            <h3 class="dashboard-panel-h3"><span class="badge">@Model.ToDoCount</span>To Do</h3>
                         </div>
                         <table id="dashboard-todo" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
                             <thead>
                                 <tr>
-                                    <th class="col-xs-1"></th>
-                                    <th>Description</th>
+                                    <th class="hidden">Description</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @for (int i = 1; i <= 100; i++)
+                                @foreach (ToDo t in Model.ToDo)
                                 {
                                     <tr>
-                                        <td><span class="glyphicon glyphicon-ok"></span></td>
                                         <td>Test Todo</td>
                                     </tr>
                                 }
@@ -223,21 +221,21 @@
                 <div class="col-xs-4">
                     <div class="panel panel-default dashboard-panel">
                         <div class="panel-heading">
-                            <h3 class="dashboard-panel-h3"><span class="badge">100</span>Events</h3>
+                            <h3 class="dashboard-panel-h3"><span class="badge">@Model.EventCount</span>Events</h3>
                         </div>
                         <table id="dashboard-event" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
                             <thead>
                                 <tr>
-                                    <th class="col-xs-3">Date</th>
-                                    <th>Description</th>
+                                    <th class="col-xs-3 hidden">Date</th>
+                                    <th class="hidden">Description</th>
                                 </tr>
                             </thead>
                             <tbody id="home-events-body">
-                                @for (int i = 1; i <= 100; i++)
+                                @foreach(Event e in Model.Event)
                                 {
                                     <tr class="home-events-row" data-toggle="modal" data-target="#event-modal">
-                                        <td>3-1-2017</td>
-                                        <td>Test Event</td>
+                                        <td>@e.Date</td>
+                                        <td>@e.Name</td>
                                     </tr>
                                 }
                             </tbody>

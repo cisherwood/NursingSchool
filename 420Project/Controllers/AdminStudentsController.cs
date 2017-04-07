@@ -54,6 +54,7 @@ namespace _420Project.Controllers
             if (ModelState.IsValid)
             {
                 db.Student.Add(student);
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
