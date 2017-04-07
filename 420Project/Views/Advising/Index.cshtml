@@ -38,7 +38,7 @@
         // Get group filter options
         $.ajax({
             type: "GET",
-            url: "@(Url.Action("_GroupFilters", "GroupStuff"))",
+            url: "@(Url.Action("_List", "GroupStuff"))",
             success: function (data) {
                 $('#group-filter-modal-body').html(data);
             },
