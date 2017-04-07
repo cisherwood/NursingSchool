@@ -31,7 +31,7 @@ namespace _420Project.Controllers
 
             // ToDos
             List<UserToDo> DashboardUserToDos = new List<UserToDo>();
-            DashboardUserToDos = db.UserToDos.Where(x => x.UserId == 1).Where(x => x.isComplete == false).ToList();
+            DashboardUserToDos = db.UserToDos.Where(x => x.UserId == Convert.ToInt32(Session["CurrentUSerId"])).Where(x => x.isComplete == false).ToList();
 
             foreach (UserToDo DashboardUserToDo in DashboardUserToDos)
             {
@@ -44,7 +44,7 @@ namespace _420Project.Controllers
             List<UserNotification> DashboardUserNotifications = new List<UserNotification>();
             DashboardUserNotifications = db.UserNotifications.Where(x => x.UserId == 1).Where(x => x.isComplete == false).ToList();
 
-            foreach (UserNotification DashboardUserNotification in DashboardUserNotifications)
+            foreach (UserNotification DashboardUserNotification in DashboardUserNotifications) { 
                 DashboardViewModelNotifications.Add(db.Notifications.Where(x => x.NotificationId == DashboardUserNotification.NotificationId).FirstOrDefault());
             }
 
