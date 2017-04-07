@@ -14,7 +14,7 @@ namespace _420Project.Models
     {
         public int StudentId { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         [StringLength(50, MinimumLength = 1)]
         [Required]

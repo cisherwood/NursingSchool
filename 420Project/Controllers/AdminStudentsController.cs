@@ -7,11 +7,30 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using _420Project.Models;
+using Microsoft.AspNet.Identity.Owin;
+using System.Threading.Tasks;
 
 namespace _420Project.Controllers
 {
     public class AdminStudentsController : Controller
     {
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
+
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+
+
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: AdminStudents
@@ -49,12 +68,16 @@ namespace _420Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentId,UserId,FirstName,LastName,MiddleName,Email,PhoneNumber,Address,IsEnrolled,AdvisorId,Year,DOB,CampusId,Note")] Student student)
+        public async Task<ActionResult> Create([Bind(Include = "StudentId,FirstName,LastName,MiddleName,Email,PhoneNumber,Address,IsEnrolled,AdvisorId,Year,DOB,CampusId,Note")] Student student)
         {
             if (ModelState.IsValid)
             {
-                db.Student.Add(student);
 
+
+                var user = new ApplicationUser { UserName = student.Email, Email = student.Email };
+                var result = await UserManager.CreateAsync(user);
+                student.UserId = user.Id;
+                db.Student.Add(student);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
