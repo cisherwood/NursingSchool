@@ -309,6 +309,10 @@
     <Compile Include="Migrations\201704072335440_fixstudenttryoblivion.Designer.cs">
       <DependentUpon>201704072335440_fixstudenttryoblivion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704080049012_fixgroupfiltersubtablenavigtatioaopjosih.cs" />
+    <Compile Include="Migrations\201704080049012_fixgroupfiltersubtablenavigtatioaopjosih.Designer.cs">
+      <DependentUpon>201704080049012_fixgroupfiltersubtablenavigtatioaopjosih.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advisor.cs" />
@@ -344,7 +348,7 @@
     <Compile Include="ViewModels\AdvisingStudentDetailViewModel.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\ProgressStudentAddCourseViewModel.cs" />
-    <Compile Include="ViewModels\_GroupFilterCompliances.cs" />
+    <Compile Include="ViewModels\_GroupFilterCompliancesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Advising.css" />
@@ -642,6 +646,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704072335440_fixstudenttryoblivion.resx">
       <DependentUpon>201704072335440_fixstudenttryoblivion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704080049012_fixgroupfiltersubtablenavigtatioaopjosih.resx">
+      <DependentUpon>201704080049012_fixgroupfiltersubtablenavigtatioaopjosih.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,5 @@
 ﻿using _420Project.Models;
+using _420Project.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,10 +31,10 @@ namespace _420Project.Controllers
         }
 
         [HttpPost]
-        public ActionResult _List(GroupFilter GroupFilter)
+        public ActionResult _List(_GroupFilterCompliancesViewModel GroupFilter)
         {
 
-            if(GroupFilter.UserType == "Potential Student")
+            if(GroupFilter.GroupFilters.UserType == "Potential Student")
             {
                 List<Student> students = db.Student.ToList();
                 foreach (Student s in students)

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace _420Project.ViewModels
 {
-    public class _GroupFilterCompliances
+    public class _GroupFilterCompliancesViewModel
     {
         public GroupFilter GroupFilters { get; set; }
 
