@@ -15,3 +15,9 @@
     font-size: 0.75em;
     padding: 5px 8px;
 }
+
+#DashboardWelcomeText{
+        font-family: 'Meriweather Sans', sans-serif;
+        font-size: 3em;
+        font-weight: 100;
+}

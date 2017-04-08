@@ -47,6 +47,15 @@ namespace _420Project.Controllers
             }
 
             // Events
+            // Prod - just Upcoming events
+            List<UserEvent> DashboardUserEvents = new List<UserEvent>();
+            DashboardUserEvents = db.UserEvents.Where(x => x.UserId == CurrentUserId).ToList();
+
+            foreach (UserEvent DashboardUserEvent in DashboardUserEvents)
+            {
+
+                DashboardViewModelEvents.Add(db.Event.Where(x => x.EventId == DashboardUserEvent.EventId).FirstOrDefault());
+            }
 
             var EnrolledStudentsQuery = db.Student.Count(); //Fix this for production
 

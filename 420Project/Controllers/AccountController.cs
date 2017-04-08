@@ -85,7 +85,7 @@ namespace _420Project.Controllers
                         {
                             bool IsAdmin = db.Advisor.Where(x => x.Email == model.Email).SingleOrDefault().IsAdmin;
                             Session["CurrentUserId"] = db.Advisor.Where(x => x.Email == model.Email).SingleOrDefault().UserId;
-
+                            Session["CurrentUserFirstName"] = db.Advisor.Where(x => x.Email == model.Email).SingleOrDefault().FirstName;
 
                             if (IsAdmin)
                             {
@@ -100,6 +100,7 @@ namespace _420Project.Controllers
 
                         if (db.Student.Any(x => x.Email == model.Email))
                         {
+                            Session["CurrentUserFirstName"] = db.Student.Where(x => x.Email == model.Email).SingleOrDefault().FirstName;
                             Session["CurrentUserId"] = db.Student.Where(x => x.Email == model.Email).SingleOrDefault().UserId;
                             return Redirect("/Student/Dashboard");
                         }

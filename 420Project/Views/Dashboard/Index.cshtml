@@ -100,13 +100,17 @@
                 <div class="panel panel-default col-xs-12 panel-main">
                     <div class="panel-body">
                         <div class="col-xs-12">
+                            <fieldset>
+                                <legend id="DashboardWelcomeText">
+                                    Welcome, @Session["CurrentUserFirstName"]
+                                </legend>
+                            </fieldset>
+                        </div>
+                        <div class="col-xs-12">
                             <div class="well">
-                                <ul>
-                                    <li><h4><b>40</b> Students out of Compliance</h4></li>
-                                    <li><h4><b>40</b> Students out of Compliance</h4></li>
-                                    <li><h4><b>40</b> Students out of Compliance</h4></li>
-                                    <li><h4><b>40</b> Students out of Compliance</h4></li>
-                                </ul>
+                                <h3><span class="glyphicon glyphicon-certificate" style="color: #AD0000;"> </span> <b>3</b> Students out of Compliance</h3>
+                                <h3><span class="glyphicon glyphicon-user" style="color: #AD0000"></span> <b>40</b> Enrolled Students</h3>
+                                <h3><span class="glyphicon glyphicon-calendar" style="color: #AD0000"></span> <b>20</b> Days to Semester End</h3>           
                             </div>
                             <!--
                             <div class="col-xs-6">
@@ -156,13 +160,29 @@
                         </div>
                         <div class="col-xs-12">
                             <fieldset>
+                                <legend>Action Items <a href="#"><span class="glyphicon glyphicon-cog"></span></a></legend>
+                                <ul>
+                                    <li><h4><a href="#">Create New Message...</a></h4></li>
+                                    <li><h4><a href="#">Create New Student...</a></h4></li>
+                                    <li><h4><a href="#">Create New To Do...</a></h4></li>
+                                    <li><h4><a href="#">Create New Event...</a></h4></li>
+                                    <li><h4><a href="#">Manage Students...</a></h4></li>
+                                    <li><h4><a href="#">Manage Events...</a></h4></li>
+                                    <li><h4><a href="#">Manage Todos ...</a></h4></li>         
+                                </ul>
+
+                            </fieldset>
+                            <br />
+                        </div>
+
+                        <div class="col-xs-12">
+                            <fieldset>
                                 <legend>Links</legend>
                                 <ul>
-                                    <li><a>School of Nursing Homepage</a></li>
-                                    <li><a>Cardmail</a></li>
-                                    <li><a>PeopleSoft</a></li>
-                                    <li><a>Account Settings</a></li>
-
+                                    <li><h4><a href="#">School of Nursing Homepage</a></h4></li>
+                                    <li><h4><a href="#">Cardmail</a></h4></li>
+                                    <li><h4><a href="#">PeopleSoft</a></h4></li>
+                                    <li><h4><a href="#">Account Settings</a></h4></li>
                                 </ul>
 
                             </fieldset>
@@ -180,16 +200,16 @@
                                 <h3 class="dashboard-panel-h3"><span class="badge">@Model.NotCount</span>Notifications</h3>
                             </div>
                             <table id="dashboard-notifications" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
-                                <thead>
+                                <thead class="hidden">
                                     <tr>
-                                        <th class="hidden">Description</th>
+                                        <th>Description</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (Notification n in Model.Notifications)
                                     {
                                         <tr>
-                                            <td>@n.Name</td>
+                                            <td><H4>@n.Name</H4></td>
                                         </tr>
                                     }
                                 </tbody>
@@ -226,18 +246,18 @@
                                 <h3 class="dashboard-panel-h3"><span class="badge">@Model.EventCount</span>Events</h3>
                             </div>
                             <table id="dashboard-event" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
-                                <thead>
+                                <thead class="hidden">
                                     <tr>
-                                        <th class="col-xs-3 hidden">Date</th>
-                                        <th class="hidden">Description</th>
+                                        <th class="col-xs-3">Date</th>
+                                        <th>Description</th>
                                     </tr>
                                 </thead>
                                 <tbody id="home-events-body">
                                     @foreach (Event e in Model.Event)
                                     {
                                         <tr class="home-events-row" data-toggle="modal" data-target="#event-modal">
-                                            <td>@e.Date</td>
-                                            <td>@e.Name</td>
+                                            <td><h4>@e.Date</h4></td>
+                                            <td><h4>@e.Name</h4></td>
                                         </tr>
                                     }
                                 </tbody>
@@ -253,44 +273,33 @@
                                 <h3>Control Panel</h3>
                             </div>
                             <div class="panel-body">
-                                <div class="col-xs-8">
-                                    <h3 class="text-center">Manage: </h3>
-                                    <div class="well col-xs-12 row">
-                                        <div class="col-xs-12">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
-                                                    <b>Select...</b>
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu">
-                                                    <li id="home-manage-students-link"><a href="#">Students</a></li>
-                                                    <li id="home-manage-events-link"><a href="#">Events</a></li>
-                                                </ul>
-                                            </div>
-                                            <hr />
-                                        </div>
-                                        <div id="home-manage-area" class="col-xs-12 ">
-                                            @*
-                                                <h4>Events</h4>
-                                                <a href="/Event/Index" class="btn btn-primary">Manage Events</a>
-                                                <a href="/Event/Create" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Create Event</a>
-                                                <br /><br />
-                                            *@
-                                            <div class="col-xs-12 text-center">
-                                                <h4>Select an item to manage...</h4>
-                                            </div>
-
-
-                                        </div>
+                                <div class="col-xs-3 center">
+                                    <div class="dropdown btn-group col-xs-12">
+                                        <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
+                                            <h4><span class="glyphicon glyphicon-list"></span></h4>
+                                            <h4>To Dos <span class="caret"></span></h4>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">HTML</a></li>
+                                            <li><a href="#">CSS</a></li>
+                                            <li><a href="#">JavaScript</a></li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="col-xs-4">
-                                    <h3 class="text-center">Actions</h3>
-                                    <div class="well row col-xs-12">
-                                        <h4>Communicate</h4>
-                                        <a id="home-message-button" href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>New Message</a>
+                                <div class="col-xs-3 text-center">
+                                    <div class="dropdown btn-group col-xs-12">
+                                        <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
+                                            <h4><span class="glyphicon glyphicon-list"></span></h4>
+                                            <h4>To Dos <span class="caret"></span></h4>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">HTML</a></li>
+                                            <li><a href="#">CSS</a></li>
+                                            <li><a href="#">JavaScript</a></li>
+                                        </ul>
                                     </div>
                                 </div>
+                                <div class="col-xs-6"></div>
                             </div>
                         </div>
                     </div>
@@ -456,13 +465,6 @@
     </div>
 </div>
 -->
-
-
-
-<div well>
-    <a href="@Url.Action("Index", "Admin")" class="navbar-brand"><h6>Temp Admin Link</h6></a>
-</div>
-
 
 <script>
     $(document).ready(function () {
