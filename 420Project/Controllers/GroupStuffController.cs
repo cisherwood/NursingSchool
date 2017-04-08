@@ -46,40 +46,40 @@ namespace _420Project.Controllers
                 }
             }
 
-            else if(GroupFilter.UserType == "Advisor")
+            else if(GroupFilter.GroupFilters.UserType == "Advisor")
             {
                 List<Advisor> advisors = db.Advisor.ToList();
             }
 
-            else if (GroupFilter.UserType == "Student")
+            else if (GroupFilter.GroupFilters.UserType == "Student")
             {
                 List<Student> students = db.Student.ToList();
 
-                if(!GroupFilter.IsFreshman)
+                if(!GroupFilter.GroupFilters.IsFreshman)
                 {
                     students.RemoveAll(x => x.Year == "Freshman");
                 }
-                if (!GroupFilter.IsSophomore)
+                if (!GroupFilter.GroupFilters.IsSophomore)
                 {
                     students.RemoveAll(x => x.Year == "Sophomore");
                 }
-                if (!GroupFilter.IsJunior)
+                if (!GroupFilter.GroupFilters.IsJunior)
                 {
                     students.RemoveAll(x => x.Year == "Junior");
                 }
-                if (!GroupFilter.IsSenior)
+                if (!GroupFilter.GroupFilters.IsSenior)
                 {
                     students.RemoveAll(x => x.Year == "Senior");
                 }
-                if(GroupFilter.AdvisorId != 0)
+                if(GroupFilter.GroupFilters.AdvisorId != 0)
                 {
-                    students.RemoveAll(x => x.AdvisorId != GroupFilter.AdvisorId);
+                    students.RemoveAll(x => x.AdvisorId != GroupFilter.GroupFilters.AdvisorId);
                 }
-                if(GroupFilter.CampusId != 0)
+                if(GroupFilter.GroupFilters.CampusId != 0)
                 {
-                    students.RemoveAll(x => x.CampusId != GroupFilter.CampusId);
+                    students.RemoveAll(x => x.CampusId != GroupFilter.GroupFilters.CampusId);
                 }
-                if(!GroupFilter.Petition)
+                if(!GroupFilter.GroupFilters.Petition)
                 {
                     foreach(Student s in students)
                     {
@@ -89,7 +89,7 @@ namespace _420Project.Controllers
                         }
                     }
                 }
-                if(GroupFilter.FilterByCompliance)
+                if(GroupFilter.GroupFilters.FilterByCompliance)
                 {
                     foreach(Compliance c in db.Compliance)
                     {
