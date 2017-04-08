@@ -229,89 +229,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703232031518_init.cs" />
-    <Compile Include="Migrations\201703232031518_init.Designer.cs">
-      <DependentUpon>201703232031518_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703232227106_Joeystudentmodel.cs" />
-    <Compile Include="Migrations\201703232227106_Joeystudentmodel.Designer.cs">
-      <DependentUpon>201703232227106_Joeystudentmodel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703270016331_ModelsUpdate.cs" />
-    <Compile Include="Migrations\201703270016331_ModelsUpdate.Designer.cs">
-      <DependentUpon>201703270016331_ModelsUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703270055152_FIXES.cs" />
-    <Compile Include="Migrations\201703270055152_FIXES.Designer.cs">
-      <DependentUpon>201703270055152_FIXES.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703272024497_MichaelsModels.cs" />
-    <Compile Include="Migrations\201703272024497_MichaelsModels.Designer.cs">
-      <DependentUpon>201703272024497_MichaelsModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703292136018_fixesforadvising.cs" />
-    <Compile Include="Migrations\201703292136018_fixesforadvising.Designer.cs">
-      <DependentUpon>201703292136018_fixesforadvising.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703292140081_studentcompliancestatus.cs" />
-    <Compile Include="Migrations\201703292140081_studentcompliancestatus.Designer.cs">
-      <DependentUpon>201703292140081_studentcompliancestatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704032314439_init1.cs" />
-    <Compile Include="Migrations\201704032314439_init1.Designer.cs">
-      <DependentUpon>201704032314439_init1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704052254537_UserTodos.cs" />
-    <Compile Include="Migrations\201704052254537_UserTodos.Designer.cs">
-      <DependentUpon>201704052254537_UserTodos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704052336542_somefixes.cs" />
-    <Compile Include="Migrations\201704052336542_somefixes.Designer.cs">
-      <DependentUpon>201704052336542_somefixes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704061905596_userstuff.cs" />
-    <Compile Include="Migrations\201704061905596_userstuff.Designer.cs">
-      <DependentUpon>201704061905596_userstuff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704061915561_userfixstuff.cs" />
-    <Compile Include="Migrations\201704061915561_userfixstuff.Designer.cs">
-      <DependentUpon>201704061915561_userfixstuff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704061919367_fixnotification.cs" />
-    <Compile Include="Migrations\201704061919367_fixnotification.Designer.cs">
-      <DependentUpon>201704061919367_fixnotification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704071909241_useridstudent.cs" />
-    <Compile Include="Migrations\201704071909241_useridstudent.Designer.cs">
-      <DependentUpon>201704071909241_useridstudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704071959019_StudentGroupFilterUpdate.cs" />
-    <Compile Include="Migrations\201704071959019_StudentGroupFilterUpdate.Designer.cs">
-      <DependentUpon>201704071959019_StudentGroupFilterUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704072131113_useridtostring.cs" />
-    <Compile Include="Migrations\201704072131113_useridtostring.Designer.cs">
-      <DependentUpon>201704072131113_useridtostring.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704072326288_InitialCreate.cs" />
-    <Compile Include="Migrations\201704072326288_InitialCreate.Designer.cs">
-      <DependentUpon>201704072326288_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704072327486_attemptofixbrooke.cs" />
-    <Compile Include="Migrations\201704072327486_attemptofixbrooke.Designer.cs">
-      <DependentUpon>201704072327486_attemptofixbrooke.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704072331098_fixstudent.cs" />
-    <Compile Include="Migrations\201704072331098_fixstudent.Designer.cs">
-      <DependentUpon>201704072331098_fixstudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704072335440_fixstudenttryoblivion.cs" />
-    <Compile Include="Migrations\201704072335440_fixstudenttryoblivion.Designer.cs">
-      <DependentUpon>201704072335440_fixstudenttryoblivion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704080049012_fixgroupfiltersubtablenavigtatioaopjosih.cs" />
-    <Compile Include="Migrations\201704080049012_fixgroupfiltersubtablenavigtatioaopjosih.Designer.cs">
-      <DependentUpon>201704080049012_fixgroupfiltersubtablenavigtatioaopjosih.cs</DependentUpon>
+    <Compile Include="Migrations\201704080327429_init.cs" />
+    <Compile Include="Migrations\201704080327429_init.Designer.cs">
+      <DependentUpon>201704080327429_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -587,68 +507,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703232031518_init.resx">
-      <DependentUpon>201703232031518_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703232227106_Joeystudentmodel.resx">
-      <DependentUpon>201703232227106_Joeystudentmodel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703270016331_ModelsUpdate.resx">
-      <DependentUpon>201703270016331_ModelsUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703270055152_FIXES.resx">
-      <DependentUpon>201703270055152_FIXES.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703272024497_MichaelsModels.resx">
-      <DependentUpon>201703272024497_MichaelsModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703292136018_fixesforadvising.resx">
-      <DependentUpon>201703292136018_fixesforadvising.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703292140081_studentcompliancestatus.resx">
-      <DependentUpon>201703292140081_studentcompliancestatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704032314439_init1.resx">
-      <DependentUpon>201704032314439_init1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704052254537_UserTodos.resx">
-      <DependentUpon>201704052254537_UserTodos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704052336542_somefixes.resx">
-      <DependentUpon>201704052336542_somefixes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704061905596_userstuff.resx">
-      <DependentUpon>201704061905596_userstuff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704061915561_userfixstuff.resx">
-      <DependentUpon>201704061915561_userfixstuff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704061919367_fixnotification.resx">
-      <DependentUpon>201704061919367_fixnotification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704071909241_useridstudent.resx">
-      <DependentUpon>201704071909241_useridstudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704071959019_StudentGroupFilterUpdate.resx">
-      <DependentUpon>201704071959019_StudentGroupFilterUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704072131113_useridtostring.resx">
-      <DependentUpon>201704072131113_useridtostring.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704072326288_InitialCreate.resx">
-      <DependentUpon>201704072326288_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704072327486_attemptofixbrooke.resx">
-      <DependentUpon>201704072327486_attemptofixbrooke.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704072331098_fixstudent.resx">
-      <DependentUpon>201704072331098_fixstudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704072335440_fixstudenttryoblivion.resx">
-      <DependentUpon>201704072335440_fixstudenttryoblivion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704080049012_fixgroupfiltersubtablenavigtatioaopjosih.resx">
-      <DependentUpon>201704080049012_fixgroupfiltersubtablenavigtatioaopjosih.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704080327429_init.resx">
+      <DependentUpon>201704080327429_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

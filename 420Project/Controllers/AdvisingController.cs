@@ -16,7 +16,8 @@ namespace _420Project.Controllers
         public ActionResult Index()
         {
             var students = db.Student;
-
+            List<Student> studentList = new List<Student>();
+            studentList = db.Student.Where(x => x.StudentId != 0).ToList(); //Change to only enrolled students.
             return View(students);
 
         }
@@ -34,7 +35,7 @@ namespace _420Project.Controllers
             }
             else
             {
-                studentList = db.Student.ToList(); //Change to only enrolled students.
+                studentList = db.Student.Where(x=>x.StudentId != 0).ToList(); //Change to only enrolled students.
             }
 
             return View(studentList);
