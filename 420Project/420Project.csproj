@@ -233,6 +233,14 @@
     <Compile Include="Migrations\201704080327429_init.Designer.cs">
       <DependentUpon>201704080327429_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704081750265_useridadvisor.cs" />
+    <Compile Include="Migrations\201704081750265_useridadvisor.Designer.cs">
+      <DependentUpon>201704081750265_useridadvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704081801458_passworduseradviso.cs" />
+    <Compile Include="Migrations\201704081801458_passworduseradviso.Designer.cs">
+      <DependentUpon>201704081801458_passworduseradviso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advisor.cs" />
@@ -441,11 +449,6 @@
     <Content Include="Views\AdminSemesters\Details.cshtml" />
     <Content Include="Views\AdminSemesters\Edit.cshtml" />
     <Content Include="Views\AdminSemesters\Index.cshtml" />
-    <Content Include="Views\AdminStudents\Create.cshtml" />
-    <Content Include="Views\AdminStudents\Delete.cshtml" />
-    <Content Include="Views\AdminStudents\Details.cshtml" />
-    <Content Include="Views\AdminStudents\Edit.cshtml" />
-    <Content Include="Views\AdminStudents\Index.cshtml" />
     <Content Include="Views\AdminStudentCompliances\Create.cshtml" />
     <Content Include="Views\AdminStudentCompliances\Delete.cshtml" />
     <Content Include="Views\AdminStudentCompliances\Details.cshtml" />
@@ -492,6 +495,11 @@
     <Content Include="Views\AdminGroupFilters\Edit.cshtml" />
     <Content Include="Views\AdminGroupFilters\Index.cshtml" />
     <Content Include="Views\GroupStuff\_List.cshtml" />
+    <Content Include="Views\AdminStudents\Create.cshtml" />
+    <Content Include="Views\AdminStudents\Delete.cshtml" />
+    <Content Include="Views\AdminStudents\Details.cshtml" />
+    <Content Include="Views\AdminStudents\Edit.cshtml" />
+    <Content Include="Views\AdminStudents\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -509,6 +517,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704080327429_init.resx">
       <DependentUpon>201704080327429_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704081750265_useridadvisor.resx">
+      <DependentUpon>201704081750265_useridadvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704081801458_passworduseradviso.resx">
+      <DependentUpon>201704081801458_passworduseradviso.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

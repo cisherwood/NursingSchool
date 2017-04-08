@@ -68,14 +68,12 @@ namespace _420Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "StudentId,FirstName,LastName,MiddleName,Email,PhoneNumber,Address,IsEnrolled,AdvisorId,Year,DOB,CampusId,Note")] Student student)
+        public async Task<ActionResult> Create([Bind(Include = "StudentId,UserId,FirstName,LastName,MiddleName,Email,PhoneNumber,Address,AdvisorId,Year,DOB,NeedCompliance,CampusId,Note,Password,ConfirmPassword")] Student student)
         {
             if (ModelState.IsValid)
             {
-
-
                 var user = new ApplicationUser { UserName = student.Email, Email = student.Email };
-                var result = await UserManager.CreateAsync(user);
+                var result = await UserManager.CreateAsync(user, student.Password);
                 student.UserId = user.Id;
                 db.Student.Add(student);
                 db.SaveChanges();
@@ -109,7 +107,7 @@ namespace _420Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentId,UserId,FirstName,LastName,MiddleName,Email,PhoneNumber,Address,IsEnrolled,AdvisorId,Year,DOB,CampusId,Note")] Student student)
+        public ActionResult Edit([Bind(Include = "StudentId,UserId,FirstName,LastName,MiddleName,Email,PhoneNumber,Address,AdvisorId,Year,DOB,NeedCompliance,CampusId,Note")] Student student)
         {
             if (ModelState.IsValid)
             {

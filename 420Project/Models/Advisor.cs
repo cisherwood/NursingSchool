@@ -27,8 +27,7 @@ namespace _420Project.Models
         [StringLength(50)]
         public string Office { get; set; }
 
-       
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         [StringLength(100)]
         [EmailAddress]
@@ -39,6 +38,17 @@ namespace _420Project.Models
 
         [Required]
         public bool IsAdmin { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
 
     }
 }

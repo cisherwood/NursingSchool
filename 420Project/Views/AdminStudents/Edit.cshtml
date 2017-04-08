@@ -75,16 +75,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IsEnrolled, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsEnrolled)
-                    @Html.ValidationMessageFor(model => model.IsEnrolled, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.AdvisorId, "AdvisorId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("AdvisorId", null, htmlAttributes: new { @class = "form-control" })
@@ -105,6 +95,16 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NeedCompliance, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.NeedCompliance)
+                    @Html.ValidationMessageFor(model => model.NeedCompliance, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
 
