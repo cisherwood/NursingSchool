@@ -220,6 +220,7 @@
     <Compile Include="Controllers\AdminUserToDoesController.cs" />
     <Compile Include="Controllers\AdvisingController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\EnrollmentController.cs" />
     <Compile Include="Controllers\GroupStuffController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -240,6 +241,10 @@
     <Compile Include="Migrations\201704081801458_passworduseradviso.cs" />
     <Compile Include="Migrations\201704081801458_passworduseradviso.Designer.cs">
       <DependentUpon>201704081801458_passworduseradviso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704092118473_studentnote.cs" />
+    <Compile Include="Migrations\201704092118473_studentnote.Designer.cs">
+      <DependentUpon>201704092118473_studentnote.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -264,6 +269,7 @@
     <Compile Include="Models\Semester.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentCompliance.cs" />
+    <Compile Include="Models\StudentNote.cs" />
     <Compile Include="Models\StudentPetition.cs" />
     <Compile Include="Models\StudentProgram.cs" />
     <Compile Include="Models\ToDo.cs" />
@@ -506,6 +512,9 @@
     <Content Include="Views\Advising\_ToDoDetail.cshtml" />
     <Content Include="Views\Advising\_StudentPetition.cshtml" />
     <Content Include="Views\Advising\_StudentPlan.cshtml" />
+    <Content Include="Views\Enrollment\Index.cshtml" />
+    <Content Include="Views\Enrollment\_Student.cshtml" />
+    <Content Include="Views\Advising\_StudentNotes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -529,6 +538,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704081801458_passworduseradviso.resx">
       <DependentUpon>201704081801458_passworduseradviso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704092118473_studentnote.resx">
+      <DependentUpon>201704092118473_studentnote.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

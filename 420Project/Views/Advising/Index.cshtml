@@ -27,7 +27,7 @@
 
                 $('#advising-student').hide();
                 $('#advising-student').removeClass("hidden");
-                $('#advising-student-body').html(data);
+                $('#advising-student-select-table').html(data);
 
                 $("#advising-student").show("blind", { "direction": 'up' }, 500);
             },
@@ -51,29 +51,6 @@
 
         })
 
-        // Fires when user clicks on a student
-        // Updates advising area with student information
-        $('#advising-student-body').on("click", ".advising-student-row", function () {
-            $(".advising-student-active").removeClass("danger");
-            $(".advising-student-active").removeClass("advising-student-active");
-            $(this).addClass("advising-student-active");
-            $(this).addClass("danger");
-
-            var data = {id: $(this).attr("data-student-id")};
-
-            $.ajax({
-                type: "GET",
-                data: data,
-                url: "@(Url.Action("_StudentDetails", "Advising"))",
-            success: function (data) {
-                $('#advising-panel').html(data);
-            },
-            error: function (data) {
-                alert('error');
-
-            }
-          })
-        })
     })
 </script>
 
@@ -89,16 +66,7 @@
 
 
             <div id="advising-student-select-table">
-                <table id="advising-student" class="table table-striped" data-toggle="table" data-pagination="true" data-page-size="20" data-page-list="[20,50,100,500]" data-search="true" data-toolbar="#advising-group-filters">
-                    <thead>
-                        <tr>
-                            <th>Student</th>
-                        </tr>
-                    </thead>
-                    <tbody id="advising-student-body">
-
-                    </tbody>
-                </table>
+                
             </div>
         </div>
     </div>
@@ -136,11 +104,7 @@
     </div>
 </div>
 
-<script>
-    $('#advising-student').bootstrapTable({
 
-    });
-</script>
 
 <!-- Toolbar: Removed from production -->
 @*

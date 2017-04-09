@@ -4,9 +4,58 @@
 }
 @model List<Student>
 
-@foreach (var s in Model)
-{
-    <tr data-student-id="@s.StudentId" class="advising-student-row" style="cursor: pointer;">
-        <td>@s.FirstName @s.LastName</td>
-    </tr>
-}
+
+
+<table id="advising-student" class="table table-striped" data-toggle="table" data-pagination="true" data-page-size="20" data-page-list="[20,50,100,500]" data-search="true" data-toolbar="#advising-group-filters">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Program</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="advising-student-body">
+        @foreach (var s in Model)
+        {
+            <tr data-student-id="@s.StudentId" class="advising-student-row">
+                <td>@s.FirstName @s.LastName</td>
+                <td>BSN - LD</td>
+                <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $('#advising-student').bootstrapTable({
+
+    });
+
+    // Fires when user clicks on a student
+    // Updates advising area with student information
+    $('#advising-student-body').on("click", ".advising-student-row", function () {
+        $('#advising-panel').hide('fade', { duration: 100, easing: 'easeInCirc' });
+        $(".advising-student-active").removeClass("danger");
+        $(".advising-student-active").removeClass("advising-student-active");
+        $(this).addClass("advising-student-active");
+        $(this).addClass("danger");
+
+        var data = {id: $(this).attr("data-student-id")};
+
+        $.ajax({
+            type: "GET",
+            data: data,
+            url: "@(Url.Action("_StudentDetails", "Advising"))",
+            success: function (data) {
+                $('#advising-panel').removeClass("hidden");
+                $('#advising-panel').show('fade', { duration: 300, easing: 'easeInCirc' });
+                $('#advising-panel').html(data);
+            },
+        error: function (data) {
+            alert('error');
+
+        }
+    })
+    })
+</script>
+

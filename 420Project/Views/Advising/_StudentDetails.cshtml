@@ -50,6 +50,23 @@
             })
         })
 
+        $('#AdvisingStudentNotes').click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/Advising/_StudentNotes/1", //PROD make it go to notification clicked
+                success: function (data) {
+                    $('#AdvisingModalBody').hide();
+                    $('#AdvisingModalBody').removeClass("hidden");
+                    $('#AdvisingModalBody').html(data);
+                    $('#AdvisingModalBody').show('fade', { duration: 300, easing: 'easeInCirc' });
+
+                },
+                error: function (data) {
+                    alert('error');
+                }
+            })
+        })
+
         var data = {id: @Session["AdvisingStudentId"]};
 
         $.ajax({
@@ -57,7 +74,12 @@
             data: data,
             url: "@(Url.Action("_StudentCompliance", "Advising"))",
             success: function (data) {
+                $('#advising-student-details-tabs').hide();
+                $('#advising-student-details-tabs').removeClass("hidden");
                 $('#advising-student-details-tabs').html(data);
+                $('#advising-student-details-tabs').show('fade', { duration: 300, easing: 'easeInCirc' });
+
+
             },
         error: function (data) {
             alert('error');
@@ -93,9 +115,12 @@
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
-            <h2 class="advising-heading"><b>@Model.Student.FirstName @Model.Student.LastName</b>
-            <a href="/AdminStudents/Edit/@Model.Student.StudentId"><span class="glyphicon glyphicon-edit AdvisingStudentIconLink"></span></a> 
-            <a href="#"><span class="glyphicon glyphicon-envelope AdvisingStudentIconLink"></span></a></h2>
+            <h2 class="advising-heading">
+                <b>@Model.Student.FirstName @Model.Student.LastName</b>
+                <a href="/AdminStudents/Edit/@Model.Student.StudentId"><span class="glyphicon glyphicon-cog AdvisingStudentIconLink"></span></a>
+                <a href="mailto:@Model.Student.Email"><span class="glyphicon glyphicon-envelope AdvisingStudentIconLink"></span></a>
+                <a href="#" id="AdvisingStudentNotes" data-toggle="modal" data-target="#AdvisingModal" class="glyphicon glyphicon-edit AdvisingStudentIconLink"></a>
+            </h2>
             <hr class="dark-hr" />
         </div>
     </div>

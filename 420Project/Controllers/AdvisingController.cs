@@ -99,6 +99,11 @@ namespace _420Project.Controllers
             return View();
         }
 
+        public ActionResult _StudentNotes(int id)
+        {
+            return View();
+        }
+
 
 
 
