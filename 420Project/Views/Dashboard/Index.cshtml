@@ -12,52 +12,47 @@
     <script>
         $(document).ready(function () {
 
-            
-        $('#home-events-body').on("click", ".home-events-row", function () {
+            $('#home-events-body').on("click", ".home-events-row", function () {
+                $.ajax({
+                    type: "GET",
+                    url: "@(Url.Action("_EventDetail", "Dashboard"))",
+                    success: function (data) {
+                        $('#dashboard-modal-body').html(data);
+                    },
+                    error: function (data) {
+                        alert('error');
+                    }
+                 })
+            })
 
-            $.ajax({
-                type: "GET",
-                url: "@(Url.Action("EventDetail", "Dashboard"))",
-                success: function (data) {
-                    $('#dashboard-event-modal-body').html(data);
-                },
+            $('#DashboardToDoBody').on("click", ".DashboardToDoRow", function () {
+
+                $.ajax({
+                    type: "GET",
+                    url: "@(Url.Action("_ToDoDetail", "Dashboard"))",
+                    success: function (data) {
+                        $('#dashboard-modal-body').html(data);
+                    },
                 error: function (data) {
                     alert('error');
 
                 }
-        })
-        })
-            
-        // Manage AJAX
-        @*
-        $('#home-manage-students-link').click(function () {
-            $.ajax({
-                type: "GET",
-                url: "@(Url.Action("ManageStudents", "Dashboard"))",
-                success: function (data) {
-                    $('#home-manage-area').html(data);
-                },
-            error: function (data) {
-                alert('error');
+            })
+            })
 
-            }
-          })
-        })
+            $('#DashboardNotificationBody').on("click", ".DashboardNotificationRow", function () {
+                $.ajax({
+                    type: "GET",
+                    url: "@(Url.Action("_NotificationDetail", "Dashboard"))",
+                    success: function (data) {
+                        $('#dashboard-modal-body').html(data);
+                    },
+                error: function (data) {
+                    alert('error');
 
-        $('#home-manage-events-link').click(function () {
-            $.ajax({
-                type: "GET",
-                url: "@(Url.Action("ManageEvents", "Dashboard"))",
-                success: function (data) {
-                    $('#home-manage-area').html(data);
-                },
-            error: function (data) {
-                alert('error');
-
-            }
-        })
-    })*@
-
+                }
+            })
+            })
 
 
         });
@@ -72,7 +67,7 @@
 </div>
 
 <!-- Modal -->
-<div id="event-modal" class="modal fade" role="dialog">
+<div id="dashboard-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -80,7 +75,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Events</h4>
             </div>
-            <div id="dashboard-event-modal-body" class="modal-body">
+            <div id="dashboard-modal-body" class="modal-body">
                 <p>Some text in the modal.</p>
             </div>
             <div class="modal-footer">
@@ -108,55 +103,10 @@
                         </div>
                         <div class="col-xs-12">
                             <div class="well">
-                                <h3><span class="glyphicon glyphicon-certificate" style="color: #AD0000;"> </span> <b>3</b> Students out of Compliance</h3>
-                                <h3><span class="glyphicon glyphicon-user" style="color: #AD0000"></span> <b>40</b> Enrolled Students</h3>
-                                <h3><span class="glyphicon glyphicon-calendar" style="color: #AD0000"></span> <b>20</b> Days to Semester End</h3>           
+                                <h4><span class="glyphicon glyphicon-certificate" style="color: #AD0000;"> </span> <b>3</b> Students out of Compliance</h4>
+                                <h4><span class="glyphicon glyphicon-user" style="color: #AD0000"></span> <b>40</b> Enrolled Students</h4>
+                                <h4><span class="glyphicon glyphicon-calendar" style="color: #AD0000"></span> <b>20</b> Days to Semester End</h4>           
                             </div>
-                            <!--
-                            <div class="col-xs-6">
-                                <div class="panel-default panel">
-                                    <div class="panel-body">
-                                        <h2 class="col-xs-4">
-                                            <span class="glyphicon glyphicon-ok"></span>
-                                        </h2>
-                                        <h4 class="text-center col-sm-8"><b>42</b> Out of Compliance</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6">
-                                <div class="panel-default panel">
-                                    <div class="panel-body">
-                                        <h1 class="col-xs-4">
-                                            <span class="glyphicon glyphicon-cog"></span>
-                                        </h1>
-                                        <h4 class="text-center col-xs-8"><b>@Model.EnrolledStudents</b> Enrolled Students</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6">
-                                <div class="panel-default panel">
-                                    <div class="panel-body">
-                                        <h1 class="col-xs-4">
-                                            <span class="glyphicon glyphicon-stats"></span>
-                                        </h1>
-                                        <h4 class="text-center col-xs-8"><b>3.5</b> Average GPA</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-6">
-                                <div class="panel-default panel">
-                                    <div class="panel-body">
-                                        <h1 class="col-xs-4">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </h1>
-                                        <h4 class="text-center col-xs-8"><b>50</b> Days to Semester End</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            -->
                         </div>
                         <div class="col-xs-12">
                             <fieldset>
@@ -169,6 +119,7 @@
                                     <li><h4><a href="#">Manage Students...</a></h4></li>
                                     <li><h4><a href="#">Manage Events...</a></h4></li>
                                     <li><h4><a href="#">Manage Todos ...</a></h4></li>         
+                                    <li><h4><a href="#">Account Settings...</a></h4></li>
                                 </ul>
 
                             </fieldset>
@@ -179,10 +130,10 @@
                             <fieldset>
                                 <legend>Links</legend>
                                 <ul>
-                                    <li><h4><a href="#">School of Nursing Homepage</a></h4></li>
-                                    <li><h4><a href="#">Cardmail</a></h4></li>
-                                    <li><h4><a href="#">PeopleSoft</a></h4></li>
-                                    <li><h4><a href="#">Account Settings</a></h4></li>
+                                    <li><h4><a href="https://louisville.edu/nursing" target="_blank">School of Nursing Homepage</a></h4></li>
+                                    <li><h4><a href="https://louisville.edu/nursing">Cardmail</a></h4></li>
+                                    <li><h4><a href="https://hrprod.louisville.edu/psp/hrprod/?cmd=login" target="_blank">PeopleSoft</a></h4></li>
+
                                 </ul>
 
                             </fieldset>
@@ -205,10 +156,10 @@
                                         <th>Description</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="DashboardNotificationBody">
                                     @foreach (Notification n in Model.Notifications)
                                     {
-                                        <tr>
+                                        <tr class="DashboardNotificationRow" data-toggle="modal" data-target="#dashboard-modal">
                                             <td><H4>@n.Name</H4></td>
                                         </tr>
                                     }
@@ -228,10 +179,10 @@
                                         <th>Description</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="DashboardToDoBody">
                                     @foreach (ToDo t in Model.ToDo)
                                     {
-                                        <tr>
+                                        <tr class="DashboardToDoRow" data-toggle="modal" data-target="#dashboard-modal">
                                             <td><h4>@t.Description</h4></td>
                                         </tr>
                                     }
@@ -255,8 +206,8 @@
                                 <tbody id="home-events-body">
                                     @foreach (Event e in Model.Event)
                                     {
-                                        <tr class="home-events-row" data-toggle="modal" data-target="#event-modal">
-                                            <td><h4>@e.Date</h4></td>
+                                        <tr class="home-events-row" data-toggle="modal" data-target="#dashboard-modal">
+                                            <td><h4>@(((DateTime)e.Date).ToString("MM/dd/yyyy"))</h4></td>
                                             <td><h4>@e.Name</h4></td>
                                         </tr>
                                     }
@@ -465,6 +416,80 @@
     </div>
 </div>
 -->
+@*
+        $('#home-manage-students-link').click(function () {
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("ManageStudents", "Dashboard"))",
+                success: function (data) {
+                    $('#home-manage-area').html(data);
+                },
+            error: function (data) {
+                alert('error');
+
+            }
+          })
+        })
+
+        $('#home-manage-events-link').click(function () {
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("ManageEvents", "Dashboard"))",
+                success: function (data) {
+                    $('#home-manage-area').html(data);
+                },
+            error: function (data) {
+                alert('error');
+
+            }
+        })
+    })*@
+<!--
+<div class="col-xs-6">
+    <div class="panel-default panel">
+        <div class="panel-body">
+            <h2 class="col-xs-4">
+                <span class="glyphicon glyphicon-ok"></span>
+            </h2>
+            <h4 class="text-center col-sm-8"><b>42</b> Out of Compliance</h4>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-6">
+    <div class="panel-default panel">
+        <div class="panel-body">
+            <h1 class="col-xs-4">
+                <span class="glyphicon glyphicon-cog"></span>
+            </h1>
+            <h4 class="text-center col-xs-8"><b>Model.EnrolledStudents</b> Enrolled Students</h4>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-6">
+    <div class="panel-default panel">
+        <div class="panel-body">
+            <h1 class="col-xs-4">
+                <span class="glyphicon glyphicon-stats"></span>
+            </h1>
+            <h4 class="text-center col-xs-8"><b>3.5</b> Average GPA</h4>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-6">
+    <div class="panel-default panel">
+        <div class="panel-body">
+            <h1 class="col-xs-4">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </h1>
+            <h4 class="text-center col-xs-8"><b>50</b> Days to Semester End</h4>
+        </div>
+    </div>
+</div>
+-->
+
 
 <script>
     $(document).ready(function () {

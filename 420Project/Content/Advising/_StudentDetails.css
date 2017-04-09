@@ -1,2 +1,11 @@
 ﻿body {
 }
+
+.badge{
+    align-self: center;
+    background-color: #AD0000;
+    margin-right: 5px;
+    font-size: 0.75em;
+    padding: 5px 8px;
+}
+

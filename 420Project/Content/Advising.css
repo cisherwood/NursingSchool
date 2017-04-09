@@ -19,8 +19,6 @@
 }
 
 
-
-
 .advising-student-detail-panel > .bootstrap-table{
     max-height: 150px;
     overflow: auto;
@@ -35,5 +33,19 @@
 }
 
 .panel-main{
-    min-height: 80vh;
+    height: 80vh;
+    overflow: auto;
+}
+
+span.badge{
+    align-self: center;
+    background-color: #AD0000;
+    margin-right: 5px;
+    font-size: 0.7em;
+    padding: 5px 8px;
+}
+
+.AdvisingStudentIconLink{
+    color: #AD0000; 
+    font-size: 0.8em;
 }

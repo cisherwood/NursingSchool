@@ -12,6 +12,7 @@
 
 .panel-main{
     box-shadow: 3px 3px 10px #777;
+    overflow: auto;
 }
 
 .panel-main:hover{

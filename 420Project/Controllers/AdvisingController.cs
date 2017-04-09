@@ -59,9 +59,6 @@ namespace _420Project.Controllers
             return View(detailModel);
         }
 
-
-
-
         public ActionResult _StudentCompliance(int id)
         {
             List<StudentCompliance> compliances = new List<StudentCompliance>();
@@ -81,10 +78,27 @@ namespace _420Project.Controllers
             return View();
         }
 
-        public ActionResult StudentPetition(int id)
+        public ActionResult _StudentPetition(int id)
         {
             return View();
         }
+
+
+        public ActionResult _NotificationDetail(int id)
+        {
+            return View();
+        }
+
+        public ActionResult _ToDoDetail(int id)
+        {
+            return View();
+        }
+
+        public ActionResult _EventDetail(int id)
+        {
+            return View();
+        }
+
 
 
 

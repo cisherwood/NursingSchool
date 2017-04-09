@@ -1,0 +1,66 @@
+﻿@{ 
+    Layout = null;
+}
+<script>
+    // Advising Tabs Navigation
+    $(document).ready(function(){
+        var data = {id: @Session["AdvisingStudentId"]};
+
+        $('#advising-tab-program').click(function () {
+            $.ajax({
+                type: "GET",
+                data: data,
+                url: "@(Url.Action("_StudentProgram", "Advising"))",
+                success: function (data) {
+                    $('#advising-student-details-tabs').html(data);
+                },
+            error: function (data) {
+                alert('error');
+
+            }
+        })
+        })
+
+        $('#advising-tab-plan').click(function () {
+            $.ajax({
+                type: "GET",
+                data: data,
+                url: "@(Url.Action("_StudentPlan", "Advising"))",
+                success: function (data) {
+                    $('#advising-student-details-tabs').html(data);
+                },
+            error: function (data) {
+                alert('error');
+
+            }
+        })
+        })
+
+        $('#advising-tab-compliance').click(function () {
+            $.ajax({
+                type: "GET",
+                data: data,
+                url: "@(Url.Action("_StudentCompliance", "Advising"))",
+                success: function (data) {
+                    $('#advising-student-details-tabs').html(data);
+                },
+            error: function (data) {
+                alert('error');
+
+            }
+        })
+    })
+
+    })
+
+
+</script>
+
+<div class="col-xs-12">
+    <ul id="advising-tabs" class="nav nav-tabs">
+        <li role="presentation"><a id="advising-tab-compliance" href="#">Compliance</a></li>
+        <li role="presentation"><a id="advising-tab-program" href="#">Program</a></li>
+        <li role="presentation"><a id="advising-tab-plan" href="#">Plan</a></li>
+        <li role="presentation" class="active advising-tab-active"><a id="advising-tab-petition" href="#">Petition</a></li>
+    </ul>
+</div>

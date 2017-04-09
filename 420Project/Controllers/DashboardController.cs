@@ -82,17 +82,17 @@ namespace _420Project.Controllers
             return View();
         }
 
-        public ActionResult EventDetail()
+        public ActionResult _NotificationDetail()
         {
             return View();
         }
 
-        public ActionResult ManageStudents()
+        public ActionResult _ToDoDetail()
         {
             return View();
         }
 
-        public ActionResult ManageEvents()
+        public ActionResult _EventDetail()
         {
             return View();
         }

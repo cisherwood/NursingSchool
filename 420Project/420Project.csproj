@@ -385,9 +385,7 @@
     <Content Include="Views\Advising\Compliance.cshtml" />
     <Content Include="Views\Advising\ViewDocument.cshtml" />
     <Content Include="Views\Advising\ComplianceEdit.cshtml" />
-    <Content Include="Views\Dashboard\EventDetail.cshtml" />
-    <Content Include="Views\Dashboard\ManageStudents.cshtml" />
-    <Content Include="Views\Dashboard\ManageEvents.cshtml" />
+    <Content Include="Views\Dashboard\_EventDetail.cshtml" />
     <Content Include="Views\Reports\Compliance.cshtml" />
     <Content Include="Views\Shared\_LayoutPanel.cshtml" />
     <Content Include="Views\GroupStuff\_GroupFilters.cshtml" />
@@ -500,6 +498,14 @@
     <Content Include="Views\AdminStudents\Details.cshtml" />
     <Content Include="Views\AdminStudents\Edit.cshtml" />
     <Content Include="Views\AdminStudents\Index.cshtml" />
+    <Content Include="Views\Dashboard\_NotificationDetail.cshtml" />
+    <Content Include="Views\Dashboard\_ToDoDetail.cshtml" />
+    <Content Include="Views\Advising\_StudentProgram.cshtml" />
+    <Content Include="Views\Advising\_EventDetail.cshtml" />
+    <Content Include="Views\Advising\_NotificationDetail.cshtml" />
+    <Content Include="Views\Advising\_ToDoDetail.cshtml" />
+    <Content Include="Views\Advising\_StudentPetition.cshtml" />
+    <Content Include="Views\Advising\_StudentPlan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
