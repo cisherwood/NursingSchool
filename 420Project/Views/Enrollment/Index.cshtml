@@ -14,13 +14,30 @@
             $('.EnrollmentViewButtonCurrent').removeClass('btn-danger');
             $('.EnrollmentViewButtonCurrent').addClass('btn-default');
             $('.EnrollmentViewButtonCurrent').removeClass('EnrollmentViewButtonCurrent');
-            $(this).removeClass('btn-defaukt');
+            $(this).removeClass('btn-default');
             $(this).addClass('btn-danger');
             $(this).addClass('EnrollmentViewButtonCurrent');
 
         })
+
+        //Open student view by default
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("_Student", "Enrollment"))",
+            success: function (data) {
+
+            $('#EnrollmentView').hide();
+            $('#EnrollmentView').removeClass("hidden");
+            $('#EnrollmentView').html(data);
+            $("#EnrollmentView").show('fade', { duration: 300, easing: 'easeInCirc' });
+        },
+        error: function (data) {
+        }
+    })
     })
 </script>
+
+
 
 <div class="col-xs-12">
     <div class="panel panel-default panel-main">
