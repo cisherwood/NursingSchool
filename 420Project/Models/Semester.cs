@@ -14,6 +14,8 @@ namespace _420Project.Models
         public int SemesterId { get; set; }
         public int Year { get; set; }
         public string Season { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }

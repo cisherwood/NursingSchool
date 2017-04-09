@@ -86,6 +86,7 @@ namespace _420Project.Controllers
                             bool IsAdmin = db.Advisor.Where(x => x.Email == model.Email).SingleOrDefault().IsAdmin;
                             Session["CurrentUserId"] = db.Advisor.Where(x => x.Email == model.Email).SingleOrDefault().UserId;
                             Session["CurrentUserFirstName"] = db.Advisor.Where(x => x.Email == model.Email).SingleOrDefault().FirstName;
+                            Session["CurrentSemesterId"] = db.Semester.OrderByDescending(x => x.StartDate).FirstOrDefault().SemesterId;
 
                             if (IsAdmin)
                             {
@@ -102,6 +103,8 @@ namespace _420Project.Controllers
                         {
                             Session["CurrentUserFirstName"] = db.Student.Where(x => x.Email == model.Email).SingleOrDefault().FirstName;
                             Session["CurrentUserId"] = db.Student.Where(x => x.Email == model.Email).SingleOrDefault().UserId;
+                            Session["CurrentSemesterId"] = db.Semester.OrderByDescending(x => x.StartDate).FirstOrDefault().SemesterId;
+
                             return Redirect("/Student/Dashboard");
                         }
 

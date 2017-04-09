@@ -29,7 +29,7 @@
 <button id="enrollment-student-group-filters" type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#group-filter-modal"><span class="glyphicon glyphicon-filter"></span> Filter</button>
 
 
-<div class="col-xs-4">
+<div class="col-xs-3">
     <div class="panel panel-default panel-main">
         <div class="panel-heading"><h3>Students</h3></div>
         <div class="panel-body">
@@ -37,8 +37,6 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Program</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="enrollment-student-body">
@@ -46,8 +44,6 @@
                     {
                         <tr data-student-id="@s.StudentId" class="enrollment-student-row">
                             <td>@s.FirstName @s.LastName</td>
-                            <td>BSN - LD</td>
-                            <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
                         </tr>
                     }
                 </tbody>
@@ -57,10 +53,37 @@
     </div>
 </div>
 
-<div class="col-xs-8">
+<div class="col-xs-9">
     <div class="panel panel-default panel-main">
         <div class="panel-heading"><h3>Enrollments</h3></div>
-        <div class="panel-body"></div>
+        <div class="panel-body">
+            <div class="col-xs-5">
+                <div class="col-xs-12">
+                    <div class="well">
+                        <h3>Semester:</h3>
+                        <h3>Program:</h3>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <table id="enrollment-student-enrolled-courses" class="table table-striped" data-toggle="table" data-pagination="true" data-page-size="20" data-page-list="[20,50,100,500]">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody id="enrollment-student-enrolled-courses-body">
+                            @foreach (var s in Model)
+                            {
+                                <tr data-student-id="@s.StudentId" class="enrollment-student-enrolled-courses-row">
+                                    <td>@s.FirstName @s.LastName</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-xs-7"></div>
+        </div>
     </div>
 </div>
 

@@ -46,7 +46,7 @@ namespace _420Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SemesterId,Year,Season")] Semester semester)
+        public ActionResult Create([Bind(Include = "SemesterId,Year,Season,StartDate,EndDate")] Semester semester)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace _420Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SemesterId,Year,Season")] Semester semester)
+        public ActionResult Edit([Bind(Include = "SemesterId,Year,Season,StartDate,EndDate")] Semester semester)
         {
             if (ModelState.IsValid)
             {
