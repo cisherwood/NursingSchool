@@ -43,21 +43,22 @@ namespace _420Project.Controllers
 
         public ActionResult _StudentDetails(int id)
         {
+            Session["AdvisingStudentId"] = id;
+            Session["AdvisingStudentUserId"] = db.Student.Where(x => x.StudentId == id).FirstOrDefault().UserId;
             AdvisingStudentDetailViewModel detailModel = new AdvisingStudentDetailViewModel();
+
             string AdvisingStudentUserId = (string)Session["AdvisingStudentUserId"];
 
             List<UserToDo> UserToDoList = db.UserToDos.Where(x => x.UserId == AdvisingStudentUserId).ToList();
-            List<UserEvent> EventsList = db.UserEvents.Where(x => x.UserId == AdvisingStudentUserId).ToList();
-            List<UserNotification> NotificationList = db.UserNotifications.Where(x => x.UserId == AdvisingStudentUserId).ToList();
+            List<UserEvent> UserEventsList = db.UserEvents.Where(x => x.UserId == AdvisingStudentUserId).ToList();
+            List<UserNotification> UserNotificationList = db.UserNotifications.Where(x => x.UserId == AdvisingStudentUserId).ToList();
 
             Student student = db.Student.Where(x => x.StudentId == id).FirstOrDefault();
 
-            Session["AdvisingStudentId"] = id;
-
-            // events = db.To_Dos.Where(x => x.S)
-
             detailModel.Student = student;
-
+            detailModel.ToDos = UserToDoList;
+            detailModel.Events = UserEventsList;
+            detailModel.Notifications = UserNotificationList;
 
             return View(detailModel);
         }
