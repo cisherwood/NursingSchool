@@ -519,6 +519,10 @@
     <Content Include="Views\AdminSemesters\Details.cshtml" />
     <Content Include="Views\AdminSemesters\Edit.cshtml" />
     <Content Include="Views\AdminSemesters\Index.cshtml" />
+    <Content Include="Views\Dashboard\Student.cshtml" />
+    <Content Include="Views\Dashboard\Advisor.cshtml" />
+    <Content Include="Views\Shared\_LayoutStudent.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdvisor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,244 @@
+﻿@{
+    ViewBag.Title = "Student";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+@model _420Project.ViewModels.DashboardViewModel
+@using _420Project.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+@section css{
+    <link href="~/Content/Dashboard.css" rel="stylesheet" />
+}
+@section head{
+    <script>
+        $(document).ready(function () {
+
+            $('#home-events-body').on("click", ".home-events-row", function () {
+                $.ajax({
+                    type: "GET",
+                    url: "@(Url.Action("_EventDetail", "Dashboard"))",
+                    success: function (data) {
+                        $('#dashboard-modal-body').html(data);
+                    },
+                    error: function (data) {
+                        alert('error');
+                    }
+                 })
+            })
+
+            $('#DashboardToDoBody').on("click", ".DashboardToDoRow", function () {
+
+                $.ajax({
+                    type: "GET",
+                    url: "@(Url.Action("_ToDoDetail", "Dashboard"))",
+                    success: function (data) {
+                        $('#dashboard-modal-body').html(data);
+                    },
+                error: function (data) {
+                    alert('error');
+
+                }
+            })
+            })
+
+            $('#DashboardNotificationBody').on("click", ".DashboardNotificationRow", function () {
+                $.ajax({
+                    type: "GET",
+                    url: "@(Url.Action("_NotificationDetail", "Dashboard"))",
+                    success: function (data) {
+                        $('#dashboard-modal-body').html(data);
+                    },
+                error: function (data) {
+                    alert('error');
+
+                }
+            })
+            })
+
+
+        });
+    </script>
+}
+@section navlinkhome{
+    navigation-link-active
+}
+
+<!-- MODALS -->
+<div id="home-event-dialog" title="Event Detail" class="hidden">
+</div>
+
+<!-- Modal -->
+<div id="dashboard-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Events</h4>
+            </div>
+            <div id="dashboard-modal-body" class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Links container-->
+<div id="content-dashboard" class="row">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="panel panel-default col-xs-12 panel-main">
+                    <div class="panel-body">
+                        <div class="col-xs-12">
+                            <fieldset>
+                                <legend id="DashboardWelcomeText">
+                                    Welcome, @Session["CurrentUserFirstName"]
+                                </legend>
+                            </fieldset>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="well">
+                                <h4><span class="glyphicon glyphicon-certificate" style="color: #AD0000;"> </span> <b>3</b> Expired Compliances</h4>
+                                <h4><span class="glyphicon glyphicon-list" style="color: #AD0000"></span> <b>85</b> Enrolled Hours</h4>
+                                <h4><span class="glyphicon glyphicon-stats" style="color: #AD0000"></span> <b>3.5</b> GPA</h4>
+                                <h4><span class="glyphicon glyphicon-calendar" style="color: #AD0000"></span> <b>20</b> Days to Semester End</h4>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <fieldset>
+                                <legend>Action Items <a href="#"><span class="glyphicon glyphicon-cog"></span></a></legend>
+                                <ul>
+
+                                </ul>
+
+                            </fieldset>
+                            <br />
+                        </div>
+
+                        <div class="col-xs-12">
+                            <fieldset>
+                                <legend>Links</legend>
+                                <ul>
+                                    <li><h4><a href="https://louisville.edu/nursing" target="_blank">School of Nursing Homepage</a></h4></li>
+                                    <li><h4><a href="https://louisville.edu/nursing">Cardmail</a></h4></li>
+                                    <li><h4><a href="https://hrprod.louisville.edu/psp/hrprod/?cmd=login" target="_blank">PeopleSoft</a></h4></li>
+
+                                </ul>
+
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-xs-8">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="panel panel-default dashboard-panel panel-main">
+                            <div class="panel-heading">
+                                <h3 class="dashboard-panel-h3"><span class="badge">@Model.NotCount</span>Notifications</h3>
+                            </div>
+                            <table id="dashboard-notifications" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
+                                <thead class="hidden">
+                                    <tr>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="DashboardNotificationBody">
+                                    @foreach (Notification n in Model.Notifications)
+                                    {
+                                        <tr class="DashboardNotificationRow" data-toggle="modal" data-target="#dashboard-modal">
+                                            <td><H4>@n.Name</H4></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <div class="panel panel-default dashboard-panel panel-main">
+                            <div class="panel-heading">
+                                <h3 class="dashboard-panel-h3"><span class="badge">@Model.ToDoCount</span>To Do</h3>
+                            </div>
+                            <table id="dashboard-todo" class="panel-body table-striped" data-pagination="true" data-page-size="5" data-page-list="">
+                                <thead class="hidden">
+                                    <tr>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="DashboardToDoBody">
+                                    @foreach (ToDo t in Model.ToDo)
+                                    {
+                                        <tr class="DashboardToDoRow" data-toggle="modal" data-target="#dashboard-modal">
+                                            <td><h4>@t.Description</h4></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <div class="panel panel-default dashboard-panel panel-main">
+                            <div class="panel-heading">
+                                <h3 class="dashboard-panel-h3"><span class="badge">@Model.EventCount</span>Events</h3>
+                            </div>
+                            <table id="dashboard-event" class="panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
+                                <thead class="hidden">
+                                    <tr>
+                                        <th class="col-xs-3">Date</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="home-events-body">
+                                    @foreach (Event e in Model.Event)
+                                    {
+                                        <tr class="home-events-row" data-toggle="modal" data-target="#dashboard-modal">
+                                            <td><h4>@(((DateTime)e.Date).ToString("MM/dd/yyyy"))</h4></td>
+                                            <td><h4>@e.Name</h4></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-default panel-main">
+                            <div class="panel-heading">
+                                <h3>Advising</h3>
+                            </div>
+                            <div class="panel-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#dashboard-todo').bootstrapTable({
+
+        });
+    })
+
+</script>

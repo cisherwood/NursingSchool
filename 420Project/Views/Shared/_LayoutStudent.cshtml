@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Cardinal Development</title>>
+
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+
+    @RenderSection("css", required: false)
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+
+ 
+    @RenderSection("scripts", required: false)
+
+
+    <!-- ChartJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap table -->
+    <link href="~/Content/bootstrap-table.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap-table.min.js"></script>
+    <script src="~/Scripts/bootstrap-table-en-US.js"></script>
+    <script src="~/Scripts/bootstrap-table-toolbar.min.js"></script>
+
+    <link href="~/Content/Layout.css" rel="stylesheet" />
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Oswald|PT+Sans" rel="stylesheet">
+
+    <!-- FullCalender -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.print.css" media="print" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
+
+    
+
+    @RenderSection("head", required: false)
+
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            $('.layout-fade-in').hide();
+            $('.layout-fade-in').removeClass("hidden");
+            $('.layout-fade-in').show('fade', { duration: 300, easing: 'easeInCirc' });
+
+
+        })
+    </script>
+    <div id="container" class="container-fluid body-content">
+        <div id="navbar" class="row">
+            <div class="col-xs-2">
+                <a href="/Dashboard">
+                    <img id="logo" src="~/Content/Layout/Logo_Inverse.png" class="col-xs-12" />
+                </a>
+            </div>
+            <div id="navigation-link-container" class="col-xs-8">
+                <a id="nav-home" href="/Dashboard/Student" class="navigation-link @RenderSection("navlinkhome", required: false)">
+                    <span><span class="glyphicon glyphicon-home"></span> Home</span>
+                </a>
+            </div>
+            <div class="col-xs-2">
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                {
+                @Html.AntiForgeryToken()
+                    <input type="submit" value="Log Out" />
+
+                }
+
+            </div>
+            </div>
+        @*
+    <div id="toolbar" class="row">
+        <div id="toolbar-menu" class="col-xs-8">
+            <div id="context-row" class="row">
+                <div class="col-xs-12">
+                    @RenderSection("context", required: false)
+                </div>
+            </div>
+
+        </div>
+        <div id="breadcrumb-container" class="col-xs-4">
+            <ol id="breadcrumb" class="breadcrumb">
+                <li><a href="/Dashboard/Index">Home</a></li>
+            </ol>
+        </div>
+    </div>
+        *@
+
+<div class="row" id="content-row">
+    <div id="panel-content">
+        <div id="content" class="layout-fade-in hidden">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+ 
+        <!--
+<div class="layout-fade-in hidden">
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - University of Louisville</p>
+    </footer>
+</div>-->
+</div>
+
+
+</body>
+</html>

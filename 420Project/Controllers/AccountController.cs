@@ -94,7 +94,7 @@ namespace _420Project.Controllers
                             }
                             else
                             {
-                                return Redirect("/Advisor/Dashboard");
+                                return Redirect("/Dashboard/Advisor");
                             }
                             
                         }
@@ -105,7 +105,7 @@ namespace _420Project.Controllers
                             Session["CurrentUserId"] = db.Student.Where(x => x.Email == model.Email).SingleOrDefault().UserId;
                             Session["CurrentSemesterId"] = db.Semester.OrderByDescending(x => x.StartDate).FirstOrDefault().SemesterId;
 
-                            return Redirect("/Student/Dashboard");
+                            return Redirect("/Dashboard/Student");
                         }
 
                     }
