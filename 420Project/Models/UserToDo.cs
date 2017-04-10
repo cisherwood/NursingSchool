@@ -16,6 +16,8 @@ namespace _420Project.Models
         public string UserId { get; set; }
 
         public bool isComplete { get; set; }
+
+        public virtual ToDo ToDo { get; set; }
     }
 
     

@@ -50,6 +50,7 @@ namespace _420Project.Controllers
             Student student = db.Student.Where(x => x.StudentId == id).FirstOrDefault();
 
             Session["AdvisingStudentId"] = id;
+            Session["AdvisingStudentUserId"] = db.Student.Where(x => x.StudentId == id).FirstOrDefault().UserId;
 
             // events = db.To_Dos.Where(x => x.S)
 

@@ -1,6 +1,6 @@
 ﻿@using _420Project.ViewModels;
 @model AdvisingStudentDetailViewModel
-
+@using _420Project.Models;
 @{ 
     Layout = null;
 }
@@ -155,7 +155,7 @@
         <div class="col-xs-4">
             <div class="advising-student-detail-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3><span class="badge-holder"><span class="badge">100</span></span>Notifications</h3>
+                    <h3><span class="badge-holder"><span class="badge">@Model.Notifications.Count</span></span>Notifications</h3>
                 </div>
                 <table id="advising-student-todo" class="advising-student-detail-table panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
                     <thead class="hidden">
@@ -164,10 +164,10 @@
                         </tr>
                     </thead>
                     <tbody id="AdvisingNotificationBody">
-                        @for (int i = 1; i <= 100; i++)
+                        @foreach (UserNotification n in Model.Notifications)
                         {
                             <tr data-toggle="modal" data-target="#AdvisingModal" class="AdvisingNotificationRow">
-                                <td>Test Todo</td>
+                                <td>@n.Notification.Name</td>
                             </tr>
                         }
                     </tbody>
@@ -178,7 +178,7 @@
         <div class="col-xs-4">
             <div class="advising-student-detail-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3><span class="badge-holder"><span class="badge">100</span></span>To Dos</h3>
+                    <h3><span class="badge-holder"><span class="badge">@Model.ToDos.Count</span></span>To Dos</h3>
                 </div>
                 <table id="advising-student-todo" class="advising-student-detail-table panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
                     <thead class="hidden">
@@ -187,10 +187,10 @@
                         </tr>
                     </thead>
                     <tbody id="AdvisingToDoBody">
-                        @for (int i = 1; i <= 100; i++)
+                        @foreach (UserToDo t in Model.ToDos)
                         {
                             <tr data-toggle="modal" data-target="#AdvisingModal" class="AdvisingToDoRow">
-                                <td>Test Todo</td>
+                                <td>@t.ToDo.Description</td>
                             </tr>
                         }
                     </tbody>
@@ -201,7 +201,7 @@
         <div class="col-xs-4">
             <div class="advising-student-detail-panel panel panel-default" data-toggle="modal" data-target="#AdvisingModal">
                 <div class="panel-heading">
-                    <h3><span class="badge-holder"><span class="badge">100</span></span> Events</h3>
+                    <h3><span class="badge-holder"><span class="badge">@Model.Events.Count</span></span> Events</h3>
                 </div>
                 <table id="advising-student-todo" class="advising-student-detail-table panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">
                     <thead class="hidden">
@@ -211,10 +211,10 @@
                         </tr>
                     </thead>
                     <tbody id="AdvisingEventBody">
-                        @for (int i = 1; i <= 100; i++)
+                        @foreach (UserEvent e in Model.Events)
                         {
                             <tr data-toggle="modal" data-target="#AdvisingModal" class="AdvisingEventRow">
-                                <td>Test Todo</td>
+                                <td>@e.Event.Description</td>
                             </tr>
                         }
                     </tbody>

@@ -10,8 +10,10 @@ namespace _420Project.ViewModels
     {
         public Student Student { get; set; }
 
-        public List<ToDo> ToDos { get; set; }
+        public List<UserToDo> ToDos { get; set; }
 
-        public List<Event> Events { get; set; }
+        public List<UserEvent> Events { get; set; }
+
+        public List<UserNotification> Notifications { get; set; }
     }
 }

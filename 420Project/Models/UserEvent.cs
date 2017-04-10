@@ -15,5 +15,7 @@ namespace _420Project.Models
 
         public string UserId { get; set; }
 
+        public virtual Event Event { get; set; }
+
     }
 }
