@@ -39,6 +39,11 @@ namespace _420Project.Models
         [StringLength(3)]
         public string Grade { get; set; }
 
+        public double QPts { get; set; }
+
+        public bool IsTransferCredit { get; set; }
+
+
         public virtual Student Student { get; set; }
         public virtual Course Course { get; set; }
         public virtual Semester Semester { get; set; }

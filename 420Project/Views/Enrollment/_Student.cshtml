@@ -5,6 +5,7 @@
 }
 @model List<Student>
 
+
 <!-- Modal -->
 <div id="group-filter-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -30,7 +31,7 @@
 
 
 <div class="col-xs-3">
-    <div class="panel panel-default panel-main">
+    <div class="panel panel-default panel-main panel-full-height">
         <div class="panel-heading"><h3>Students</h3></div>
         <div class="panel-body">
             <table id="enrollment-student-student" class="table table-striped" data-toggle="table" data-pagination="true" data-page-size="20" data-page-list="[20,50,100,500]" data-search="true" data-toolbar="#enrollment-student-group-filters">
@@ -42,7 +43,10 @@
                 <tbody id="enrollment-student-body">
                     @foreach (var s in Model)
                     {
-                        <tr data-student-id="@s.StudentId" class="enrollment-student-row">
+                        <tr data-student-id="@s.StudentId" class="enrollment-student-row"
+                             @if (Convert.ToInt32(Session["EnrollmentStudentCurrentStudentId"]) == s.StudentId)
+                             { @: id="enrollment-student-student-from-url"
+                             }>
                             <td>@s.FirstName @s.LastName</td>
                         </tr>
                     }
@@ -54,16 +58,19 @@
 </div>
 
 <div class="col-xs-9">
-    <div class="panel panel-default panel-main">
+    <div class="panel panel-default panel-main panel-full-height">
         <div class="panel-heading"><h3>Enrollments</h3></div>
         <div class="panel-body" id="enrollment-student-enrollment-body">
-            
+
         </div>
     </div>
 </div>
 
 <script>
     $(document).ready(function () {
+
+
+
         $('#enrollment-student-student').bootstrapTable({
 
         });

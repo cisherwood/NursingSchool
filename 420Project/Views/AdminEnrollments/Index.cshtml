@@ -19,13 +19,19 @@
             @Html.DisplayNameFor(model => model.Semester.Season)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Student.FirstName)
+            @Html.DisplayNameFor(model => model.Student.UserId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StudentProgram.Status)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Grade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QPts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsTransferCredit)
         </th>
         <th></th>
     </tr>
@@ -39,13 +45,19 @@
             @Html.DisplayFor(modelItem => item.Semester.Season)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Student.FirstName)
+            @Html.DisplayFor(modelItem => item.Student.UserId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.StudentProgram.Status)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Grade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QPts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsTransferCredit)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.EnrollmentId }) |

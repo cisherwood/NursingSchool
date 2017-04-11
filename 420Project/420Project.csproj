@@ -258,6 +258,10 @@
     <Compile Include="Migrations\201704102320513_fixforclassss.Designer.cs">
       <DependentUpon>201704102320513_fixforclassss.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704111512251_studentupdate.cs" />
+    <Compile Include="Migrations\201704111512251_studentupdate.Designer.cs">
+      <DependentUpon>201704111512251_studentupdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advisor.cs" />
@@ -294,6 +298,7 @@
     <Compile Include="ViewModels\AdvisingStudentDetailViewModel.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\ProgressStudentAddCourseViewModel.cs" />
+    <Compile Include="ViewModels\_EnrollmentStudentEnrollViewModel.cs" />
     <Compile Include="ViewModels\_EnrollmentStudentEnrollmentViewModel.cs" />
     <Compile Include="ViewModels\_GroupFilterCompliancesViewModel.cs" />
   </ItemGroup>
@@ -303,10 +308,13 @@
     <Content Include="Content\bootstrap-table.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\chosen.min.css" />
     <Content Include="Content\Dashboard.css" />
+    <Content Include="Content\Enrollment\Index.css" />
     <Content Include="Content\Images\66.gif" />
     <Content Include="Content\Images\insurance-authorization-hipaa-consent.gif" />
     <Content Include="Content\jquery-ui.theme.min.css" />
+    <Content Include="Content\chosen-sprite.png" />
     <Content Include="Content\Layout\linedpaper.png" />
     <Content Include="Content\Layout\Logo_Inverse.png" />
     <Content Include="Content\Layout\shattered.png" />
@@ -317,6 +325,7 @@
     <Content Include="Content\Layout.css" />
     <Content Include="Content\Layout\brickwall.png" />
     <Content Include="Content\Progress.css" />
+    <Content Include="Content\spin.gif" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -334,6 +343,7 @@
     <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\spike.cis420.net - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\chosen.jquery.min.js" />
     <Content Include="Scripts\Enrollment\_Student.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -438,11 +448,6 @@
     <Content Include="Views\AdminDepartments\Details.cshtml" />
     <Content Include="Views\AdminDepartments\Edit.cshtml" />
     <Content Include="Views\AdminDepartments\Index.cshtml" />
-    <Content Include="Views\AdminEnrollments\Create.cshtml" />
-    <Content Include="Views\AdminEnrollments\Delete.cshtml" />
-    <Content Include="Views\AdminEnrollments\Details.cshtml" />
-    <Content Include="Views\AdminEnrollments\Edit.cshtml" />
-    <Content Include="Views\AdminEnrollments\Index.cshtml" />
     <Content Include="Views\AdminEvents\Create.cshtml" />
     <Content Include="Views\AdminEvents\Delete.cshtml" />
     <Content Include="Views\AdminEvents\Details.cshtml" />
@@ -538,6 +543,12 @@
     <Content Include="Views\Advising\_CreateToDo.cshtml" />
     <Content Include="Views\Advising\_ToDoUpdate.cshtml" />
     <Content Include="Views\Enrollment\_StudentEnrollment.cshtml" />
+    <Content Include="Views\AdminEnrollments\Create.cshtml" />
+    <Content Include="Views\AdminEnrollments\Delete.cshtml" />
+    <Content Include="Views\AdminEnrollments\Details.cshtml" />
+    <Content Include="Views\AdminEnrollments\Edit.cshtml" />
+    <Content Include="Views\AdminEnrollments\Index.cshtml" />
+    <Content Include="Views\Enrollment\_StudentEnroll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -573,6 +584,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704102320513_fixforclassss.resx">
       <DependentUpon>201704102320513_fixforclassss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704111512251_studentupdate.resx">
+      <DependentUpon>201704111512251_studentupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -12,9 +12,21 @@ namespace _420Project.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        SelectList grades = new SelectList(new[]{
+          new SelectListItem{ Text="A+", Value="A+"},
+          new SelectListItem{ Text="A", Value="A"},
+          new SelectListItem{ Text="A-", Value="A-"}
+        }, "...", "...", "...");
+
+
         // GET: Enrollment
-        public ActionResult Index()
+        public ActionResult Index(string EnrollmentType, int? StudentId, int? ProgramId, int? SemesterId)
         {
+            ViewBag.EnrollmentType = EnrollmentType;
+            ViewBag.StudentId = StudentId;
+            ViewBag.ProgramId = ProgramId;
+            ViewBag.SemesterId = SemesterId;
+
             return View();
         }
 
@@ -46,10 +58,10 @@ namespace _420Project.Controllers
 
             if(studentId != null)
             {
-                Session["EnrollmentCurrentStudentId"] = studentId;
+                Session["EnrollmentStudentCurrentStudentId"] = studentId;
             }
 
-            CurrentStudentId = Convert.ToInt32(Session["EnrollmentCurrentStudentId"]);
+            CurrentStudentId = Convert.ToInt32(Session["EnrollmentStudentCurrentStudentId"]);
 
             if(programId == null)
             {
@@ -58,16 +70,21 @@ namespace _420Project.Controllers
             else
             {
                 CurrentProgramId = Convert.ToInt32(programId);
+
             }
 
             if (semesterId == null)
             {
                 CurrentSemesterId = db.Semester.OrderByDescending(x => x.EndDate).FirstOrDefault().SemesterId;
+
             }
             else
             {
                 CurrentSemesterId = Convert.ToInt32(semesterId);
             }
+
+            Session["EnrollmentStudentCurrentProgramId"] = CurrentProgramId;
+            Session["EnrollmentStudentCurrentSemesterId"] = CurrentSemesterId;
 
             // Set viewmodel data
             vm.CurrentProgram = db.Program.Where(x => x.ProgramId == CurrentProgramId).FirstOrDefault();
@@ -81,14 +98,90 @@ namespace _420Project.Controllers
             }
 
             // Get all semester a student has any enrollment in
-            foreach (Enrollment s in db.Enrollment.Where(x => x.StudentId == CurrentStudentId).Where(x=>x.StudentProgramId == db.StudentProgram.Where(x=>x.StudentId == CurrentStudentId).Where(x=>x.ProgramId == CurrentProgramId).SingleOrDefault().StudentProgramId).ToList())
+            foreach (Enrollment s in db.Enrollment.Where(x => x.StudentId == CurrentStudentId).Where(x=>x.StudentProgramId == db.StudentProgram.Where(z=>z.StudentId == CurrentStudentId).Where(z=>z.ProgramId == CurrentProgramId).FirstOrDefault().StudentProgramId).ToList())
             {
                 // Add those programs to the program list
                 vm.EnrolledSemesters.Add(db.Semester.Where(x => x.SemesterId == s.SemesterId).SingleOrDefault());
             }
 
+            vm.OtherSemesters = db.Semester.ToList();
 
-            return View();
+            // Get all enrollments that equal current student, current program, and current semester
+            vm.Enrollments = db.Enrollment.Where(x => x.StudentId == CurrentStudentId).Where(x => x.SemesterId == CurrentSemesterId).Where(x => x.StudentProgramId == db.StudentProgram.Where(z => z.StudentId == CurrentStudentId).Where(z => z.ProgramId == CurrentProgramId).FirstOrDefault().StudentProgramId).ToList();
+
+            return View(vm);
+        }
+
+        public ActionResult _StudentEnroll()
+        {
+            // Instaniate viewmodel
+            _EnrollmentStudentEnrollViewModel vm = new _EnrollmentStudentEnrollViewModel();
+
+            // Get currently select student, semester, and program
+            int CurrentStudentId = Convert.ToInt32(Session["EnrollmentStudentCurrentStudentId"]);
+            int CurrentSemesterId = Convert.ToInt32(Session["EnrollmentStudentCurrentSemesterId"]);
+            int CurrentProgramId = Convert.ToInt32(Session["EnrollmentStudentCurrentProgramId"]);
+
+            /*
+            foreach (Course c in db.Course)
+            {
+                _EnrollmentStudentEnrollModel course = new _EnrollmentStudentEnrollModel();
+
+                // Initalize course data
+                course.Course = c;
+                course.HasTaken = false;
+                course.IsProgramCourse = false;
+
+                // Add course model to viewmodel
+                vm.Courses.Add(course);
+            }
+
+            ViewBag.Grades = grades;
+            */
+
+            vm.AllCourses = db.Course.ToList();
+            for (int i = 0; i < 5; i++)
+            {
+                _EnrollmentStudentEnrollModel m = new _EnrollmentStudentEnrollModel();
+                vm.Courses.Add(m);
+            }
+
+
+            return View(vm);
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult _StudentEnroll(_EnrollmentStudentEnrollViewModel vm)
+        {
+
+            // Get currently select student, semester, and program
+            int CurrentStudentId = Convert.ToInt32(Session["EnrollmentStudentCurrentStudentId"]);
+            int CurrentSemesterId = Convert.ToInt32(Session["EnrollmentStudentCurrentSemesterId"]);
+            int CurrentProgramId = Convert.ToInt32(Session["EnrollmentStudentCurrentProgramId"]);
+
+            foreach(_EnrollmentStudentEnrollModel m in vm.Courses)
+            {
+                if(m.CourseId != null)
+                {
+                    Enrollment e = new Enrollment();
+                    e.CourseId = Convert.ToInt32(m.CourseId);
+                    e.Grade = m.Grade;
+                    e.IsTransferCredit = m.IsTransferCredit;
+                    e.QPts = m.QPts;
+                    e.SemesterId = CurrentSemesterId;
+                    e.StudentId = CurrentStudentId;
+                    e.StudentProgramId = CurrentProgramId;
+
+                    db.Enrollment.Add(e);
+                }
+            }
+
+            db.SaveChanges();
+
+            return Redirect("/Enrollment/Index?EnrollmentType=Student&StudentId=" + CurrentStudentId + "&ProgramId=" + CurrentProgramId + "&SemesterId=" + CurrentSemesterId);
+
         }
 
         public ActionResult _Course()

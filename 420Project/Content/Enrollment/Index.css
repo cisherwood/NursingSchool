@@ -1,0 +1,7 @@
+﻿body {
+}
+
+.panel-full-height{
+    height: 75vh;
+    overflow: auto;
+}

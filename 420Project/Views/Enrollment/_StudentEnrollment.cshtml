@@ -1,26 +1,105 @@
-﻿@{ 
+﻿@using _420Project.ViewModels;
+@using _420Project.Models;
+
+@model _EnrollmentStudentEnrollmentViewModel
+@{ 
     Layout = null;
 }
-<div class="col-xs-5">
     <div class="col-xs-12">
         <div class="well">
-            <h3>Semester:</h3>
-            <h3>Program:</h3>
+            <div class="row">
+                <div class="col-xs-6">
+                    <label>Program:</label>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                            @Model.CurrentProgram.Name
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Student Programs</li>
+                            @foreach (Program p in Model.EnrolledPrograms)
+                            {
+                                <li><a href="#">@p.Name</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <label>Semester:</label>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                            @Model.CurrentSemester.SemesterString()
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Enrolled Semesters</li>
+                            <li><a href="#">@Model.CurrentSemester.SemesterString()</a></li>
+                            @foreach (Semester s in Model.EnrolledSemesters)
+                            {
+                                <li><a href="#">@s.SemesterString()</a></li>
+                            }
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Other Semesters</li>
+                            @foreach (Semester s in Model.OtherSemesters)
+                            {
+                                <li><a href="#">@s.SemesterString()</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
     <div class="col-xs-12">
-        <table id="enrollment-student-enrolled-courses" class="table table-striped" data-toggle="table" data-pagination="true" data-page-size="20" data-page-list="[20,50,100,500]">
+        <div class="row">
+            <fieldset><legend>Enrolled Courses</legend></fieldset>
+        </div>
+        <table id="enrollment-student-enrolled-courses" class="table table-striped col-xs-12" data-toggle="table" data-pagination="true" data-page-size="20" data-page-list="[20,50,100,500]">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Grade</th>
+                    <th>QPts</th>
+                    <th>Transfer</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody id="enrollment-student-enrolled-courses-body">
-                <tr class="enrollment-student-enrolled-courses-row">
-                    <td></td>
-                </tr>
+                @foreach (Enrollment e in Model.Enrollments)
+            {
+                    <tr class="enrollment-student-enrolled-courses-row">
+                        <td>@e.Course.CourseString</td>
+                        <td>@e.Grade</td>
+                        <td>@e.QPts</td>
+                        <td>@e.IsTransferCredit</td>
+                        <td class="text-center"><a href="#" class="glyphicon glyphicon-pencil"></a></td>
+                    </tr>
+                }
             </tbody>
         </table>
+        <div class="row">
+            <br />
+            <br />
+        </div>
     </div>
-</div>
-<div class="col-xs-7"></div>
+
+
+    <div class="col-xs-12">
+        <div class="row">
+            <fieldset><legend>Add Courses</legend></fieldset>
+        </div>
+    </div>
+
+    <div class="col-xs-12" id="enrollment-student-enroll" >
+
+
+
+    </div>
+<script>
+    $(document).ready(function () {
+        $('#enrollment-student-enrolled-courses').bootstrapTable({
+
+        });
+    })
+</script>

@@ -41,7 +41,7 @@ namespace _420Project.Controllers
         {
             ViewBag.CourseId = new SelectList(db.Course, "CourseId", "Number");
             ViewBag.SemesterId = new SelectList(db.Semester, "SemesterId", "Season");
-            ViewBag.StudentId = new SelectList(db.Student, "StudentId", "FirstName");
+            ViewBag.StudentId = new SelectList(db.Student, "StudentId", "UserId");
             ViewBag.StudentProgramId = new SelectList(db.StudentProgram, "StudentProgramId", "Status");
             return View();
         }
@@ -51,7 +51,7 @@ namespace _420Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EnrollmentId,StudentId,CourseId,SemesterId,StudentProgramId,Grade")] Enrollment enrollment)
+        public ActionResult Create([Bind(Include = "EnrollmentId,StudentId,CourseId,SemesterId,StudentProgramId,Grade,QPts,IsTransferCredit")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +62,7 @@ namespace _420Project.Controllers
 
             ViewBag.CourseId = new SelectList(db.Course, "CourseId", "Number", enrollment.CourseId);
             ViewBag.SemesterId = new SelectList(db.Semester, "SemesterId", "Season", enrollment.SemesterId);
-            ViewBag.StudentId = new SelectList(db.Student, "StudentId", "FirstName", enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Student, "StudentId", "UserId", enrollment.StudentId);
             ViewBag.StudentProgramId = new SelectList(db.StudentProgram, "StudentProgramId", "Status", enrollment.StudentProgramId);
             return View(enrollment);
         }
@@ -81,7 +81,7 @@ namespace _420Project.Controllers
             }
             ViewBag.CourseId = new SelectList(db.Course, "CourseId", "Number", enrollment.CourseId);
             ViewBag.SemesterId = new SelectList(db.Semester, "SemesterId", "Season", enrollment.SemesterId);
-            ViewBag.StudentId = new SelectList(db.Student, "StudentId", "FirstName", enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Student, "StudentId", "UserId", enrollment.StudentId);
             ViewBag.StudentProgramId = new SelectList(db.StudentProgram, "StudentProgramId", "Status", enrollment.StudentProgramId);
             return View(enrollment);
         }
@@ -91,7 +91,7 @@ namespace _420Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EnrollmentId,StudentId,CourseId,SemesterId,StudentProgramId,Grade")] Enrollment enrollment)
+        public ActionResult Edit([Bind(Include = "EnrollmentId,StudentId,CourseId,SemesterId,StudentProgramId,Grade,QPts,IsTransferCredit")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
@@ -101,7 +101,7 @@ namespace _420Project.Controllers
             }
             ViewBag.CourseId = new SelectList(db.Course, "CourseId", "Number", enrollment.CourseId);
             ViewBag.SemesterId = new SelectList(db.Semester, "SemesterId", "Season", enrollment.SemesterId);
-            ViewBag.StudentId = new SelectList(db.Student, "StudentId", "FirstName", enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Student, "StudentId", "UserId", enrollment.StudentId);
             ViewBag.StudentProgramId = new SelectList(db.StudentProgram, "StudentProgramId", "Status", enrollment.StudentProgramId);
             return View(enrollment);
         }
