@@ -108,8 +108,52 @@ namespace _420Project.Controllers
             return View();
         }
 
+        public ActionResult _ComplianceEdit(int id)
+        {
+            StudentCompliance model = new StudentCompliance();
+
+            model.ComplianceId = 1;
+            model.ExpirationDate = new DateTime(2017, 1, 1);
+            model.SCId = 1;
+            model.StudentId = 1;
+            model.SubmissionDate = new DateTime(2017, 1, 1);
+
+            return View(model);
+        }
+
+        // GET: AdminToDoes/Create
+        public ActionResult _CreateToDo()
+        {
+            return View();
+        }
+
+        // POST: AdminToDoes/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult _CreateToDo([Bind(Include = "ToDoID,Description,DueDate")] ToDo toDo)
+        {
+            toDo.CreateDate = DateTime.Now;
+            if (ModelState.IsValid)
+            {
+                db.To_Dos.Add(toDo);
+                db.SaveChanges();
+                return RedirectToAction("_ToDoUpdate");
+            }
+
+            return View(toDo);
+        }
+
+        public ActionResult _ToDoUpdate()
+        {
+            string AdvisingStudentUserId = (string)Session["AdvisingStudentUserId"];
+
+            List<UserEvent> UserEventsList = db.UserEvents.Where(x => x.UserId == AdvisingStudentUserId).ToList();
 
 
+            return View(UserEventsList);
+        }
 
 
         public ActionResult Advising()
@@ -140,19 +184,6 @@ namespace _420Project.Controllers
         public ActionResult ViewDocument()
         {
             return View();
-        }
-
-        public ActionResult ComplianceEdit()
-        {
-            StudentCompliance model = new StudentCompliance();
-
-            model.ComplianceId = 1;
-            model.ExpirationDate = new DateTime(2017, 1, 1);
-            model.SCId = 1;
-            model.StudentId = 1;
-            model.SubmissionDate = new DateTime(2017, 1, 1);
-
-            return View(model);
         }
     }
 }

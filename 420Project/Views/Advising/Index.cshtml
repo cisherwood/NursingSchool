@@ -10,6 +10,9 @@
 @section css{
     <link href="~/Content/Advising.css" rel="stylesheet" />
 }
+@section scripts{
+    <script src="~/Scripts/Advising/_ComplianceEdit.js"></script>
+}
 
 <!-- Set navbar to 'Advising' -->
 @section navlinkadv{
@@ -83,6 +86,10 @@
     </div>
 </div>
 
+<!-- Load gif-->
+<div class="hidden">
+    <img id="AdvisingLoad" class="center" src="~/Content/Images/66.gif" />
+</div>
 <!-- Modal -->
 <div id="group-filter-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -97,7 +104,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="AdvisingCloseModel" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
 

@@ -320,6 +320,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Advising\_ComplianceEdit.js" />
     <Content Include="Scripts\bootstrap-table-en-US.js" />
     <Content Include="Scripts\bootstrap-table-export.js" />
     <Content Include="Scripts\bootstrap-table-toolbar.min.js" />
@@ -531,6 +532,9 @@
     <Content Include="Views\Dashboard\Advisor.cshtml" />
     <Content Include="Views\Shared\_LayoutStudent.cshtml" />
     <Content Include="Views\Shared\_LayoutAdvisor.cshtml" />
+    <Content Include="Views\Advising\_ComplianceEdit.cshtml" />
+    <Content Include="Views\Advising\_CreateToDo.cshtml" />
+    <Content Include="Views\Advising\_ToDoUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

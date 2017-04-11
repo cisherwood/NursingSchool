@@ -1,0 +1,19 @@
+﻿@using _420Project.Models;
+@model IEnumerable<UserEvent>
+@{ 
+    Layout = null;
+}
+
+<script>
+    $(document).ready(function () {
+        alert('test');
+        $('#AdvisingCloseModel').click();
+    })
+</script>
+
+@foreach (UserEvent e in Model)
+{
+    <tr data-toggle="modal" data-target="#AdvisingModal" class="AdvisingEventRow">
+        <td>@e.Event.Description</td>
+    </tr>
+}

@@ -87,7 +87,25 @@
          }
         })
 
+        
+        $('#AdvisingStudentToDoCreate').click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/Advising/_CreateToDo/", //PROD make it go to notification clicked
+                success: function (data) {
+                    $('#AdvisingModalBody').hide();
+                    $('#AdvisingModalBody').removeClass("hidden");
+                    $('#AdvisingModalBody').html(data);
+                    $('#AdvisingModalBody').show('fade', { duration: 300, easing: 'easeInCirc' });
 
+                },
+                error: function (data) {
+                    alert('error');
+                }
+            })
+        })
+
+        
 
     })
 </script>
@@ -199,8 +217,8 @@
         </div>
 
         <div class="col-xs-4">
-            <div class="advising-student-detail-panel panel panel-default" data-toggle="modal" data-target="#AdvisingModal">
-                <div class="panel-heading">
+            <div class="advising-student-detail-panel panel panel-default">
+                <div class="panel-heading" id="AdvisingStudentToDoCreate" data-toggle="modal" data-target="#AdvisingModal">
                     <h3><span class="badge-holder"><span class="badge">@Model.Events.Count</span></span> Events</h3>
                 </div>
                 <table id="advising-student-todo" class="advising-student-detail-table panel-body table-striped" data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="">

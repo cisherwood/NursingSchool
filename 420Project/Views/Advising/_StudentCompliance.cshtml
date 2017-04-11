@@ -4,6 +4,7 @@
     Layout = null;
 }
 
+
 <script>
     // Advising Tabs Navigation
     $(document).ready(function(){
@@ -23,6 +24,8 @@
             }
         })
         })
+
+
 
         $('#advising-tab-plan').click(function () {
             $.ajax({
@@ -87,7 +90,7 @@
                     <td>@s.ExpirationDate</td>
                     <td class="text-center">@s.Status</td>
                     <td class="text-center">
-                        <span class="advising-compliance-detail glyphicon glyphicon-pencil"> </span>
+                        <span data-toggle="modal" data-target="#AdvisingModal" data-student-compliance-id="@s.SCId" class="advising-compliance-edit glyphicon glyphicon-pencil"> </span>
                         <a href="/Advising/ViewDocument" target="_blank"><span class="glyphicon glyphicon-eye-open"> </span></a>
                     </td>
                 </tr>
