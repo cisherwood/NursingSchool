@@ -110,7 +110,7 @@
                         </div>
                         <div class="col-xs-12">
                             <fieldset>
-                                <legend>Action Items <a href="#"><span class="glyphicon glyphicon-cog"></span></a></legend>
+                                <legend>Action Items <a href="#"><span class=""></span></a></legend>
                                 <ul>
                                     <li><h4><a href="#">Create New Message...</a></h4></li>
                                     <li><h4><a href="#">Create New Student...</a></h4></li>
@@ -224,33 +224,51 @@
                                 <h3>Control Panel</h3>
                             </div>
                             <div class="panel-body">
-                                <div class="col-xs-3 center">
-                                    <div class="dropdown btn-group col-xs-12">
-                                        <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
-                                            <h4><span class="glyphicon glyphicon-list"></span></h4>
-                                            <h4>To Dos <span class="caret"></span></h4>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">HTML</a></li>
-                                            <li><a href="#">CSS</a></li>
-                                            <li><a href="#">JavaScript</a></li>
-                                        </ul>
+                                <div class="row">
+
+
+                                    <div class="col-xs-6">
+                                        <div class="col-xs-10">
+                                            <fieldset><legend>To Dos</legend></fieldset>
+
+                                            <a class="btn btn-default" href="/AdminToDoes/Index"><span class="glyphicon glyphicon-cog"></span> Manage ToDos</a>
+                                            <a class="btn btn-default" href="/AdminToDoes/Create"><span class="glyphicon glyphicon-plus"></span> Add ToDo</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6">
+                                        <div class="col-xs-10">
+                                            <fieldset><legend>Event</legend></fieldset>
+
+                                            <a class="btn btn-default" href="/AdminEvents/Index"><span class="glyphicon glyphicon-cog"></span> Manage Events</a>
+                                            <a class="btn btn-default" href="/AdminEvents/Create"><span class="glyphicon glyphicon-plus"></span> Add Event</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6">
+                                        <br /><br />
+                                        <div class="col-xs-10">
+                                            <fieldset><legend>Students</legend></fieldset>
+
+                                            <a class="btn btn-default" href="/AdminStudents/Index"><span class="glyphicon glyphicon-cog"></span> Manage Students</a>
+                                            <a class="btn btn-default" href="/AdminStudents/Create"><span class="glyphicon glyphicon-plus"></span> Add Student</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6">
+                                        <br /><br />
+                                        <div class="col-xs-10">
+                                            <fieldset><legend>Message</legend></fieldset>
+                                            <a class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Create Message</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-3 text-center">
-                                    <div class="dropdown btn-group col-xs-12">
-                                        <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
-                                            <h4><span class="glyphicon glyphicon-list"></span></h4>
-                                            <h4>To Dos <span class="caret"></span></h4>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">HTML</a></li>
-                                            <li><a href="#">CSS</a></li>
-                                            <li><a href="#">JavaScript</a></li>
-                                        </ul>
-                                    </div>
+                                <div class="row col-xs-12">
+
+                                    <hr />
                                 </div>
-                                <div class="col-xs-6"></div>
+
+                                <hr />
                             </div>
                         </div>
                     </div>

@@ -27,7 +27,18 @@
                        new SelectListItem { Text="Select Grade...", Value="", Selected=true },
                        new SelectListItem { Text="A+", Value="A+"  },
                        new SelectListItem { Text="A", Value="A"  },
-                       new SelectListItem { Text="A-", Value="A-"  }
+                       new SelectListItem { Text="A-", Value="A-"  },
+                       new SelectListItem { Text="B+", Value="A+"  },
+                       new SelectListItem { Text="B", Value="B"  },
+                       new SelectListItem { Text="B-", Value="B-"  },
+                       new SelectListItem { Text="C+", Value="B+"  },
+                       new SelectListItem { Text="C", Value="C"  },
+                       new SelectListItem { Text="C-", Value="C-"  },
+                       new SelectListItem { Text="D+", Value="D+"  },
+                       new SelectListItem { Text="D", Value="D"  },
+                       new SelectListItem { Text="D", Value="D-"  },
+                       new SelectListItem { Text="F", Value="F"  },
+                       new SelectListItem { Text="NF", Value="NF"  }
                 }, htmlAttributes: new { @class = "form-control" })</td>
                 <td>@Html.EditorFor(model => model.Courses[i].QPts, new { htmlAttributes = new { @class = "form-control" } })</td>
                 <td class="text-center">@Html.EditorFor(model => model.Courses[i].IsTransferCredit)</td>
