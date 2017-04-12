@@ -20,7 +20,10 @@
 }
 <!-- JS -->
 <script>
+
+
     $(document).ready(function () {
+
 
         //Populate list of students
         $.ajax({
@@ -54,6 +57,8 @@
 
         })
 
+    
+
     })
 </script>
 
@@ -79,7 +84,15 @@
 <div class="panel panel-default panel-main">
     <div id="advising-panel" class="panel-body">
         <div class="text-center">
-            <h3 id="placeholder" class="text-center">Please Select a Student...</h3>
+            <div id="placeholder" class="text-center">
+                <!-- Loading gif -->
+                    <div class="col-xs-12 text-center">
+                        <br />
+                        <img src="~/Content/spin.gif" />
+                    </div>
+            
+            
+           </div>
         </div>
 
     </div>  
@@ -159,3 +172,32 @@
     </div>
     }
 *@
+<script>
+    $('#advising-panel').on('click', '#AdvisingAddPlan', function () {
+
+        $.ajax({
+            type: "GET",
+            url: "/Advising/_StudentPlanCreate/1", 
+            success: function (data) {
+                $('#AdvisingModalBody').html(data);
+            },
+            error: function (data) {
+                alert('error');
+            }
+        })
+    })
+
+    $('#advising-panel').on('click', '#AdvisingPetitionAdd', function () {
+
+        $.ajax({
+            type: "GET",
+            url: "/Advising/_StudentPetitionCreate/1",
+            success: function (data) {
+                $('#AdvisingModalBody').html(data);
+            },
+            error: function (data) {
+                alert('error');
+            }
+        })
+    })
+</script>

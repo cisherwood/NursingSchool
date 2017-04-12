@@ -67,7 +67,7 @@
                 <a id="nav-reports"href="/Reports/Index" class="navigation-link @RenderSection("navlinkrep", required: false)">
                     <span><span class="glyphicon glyphicon-file"></span> Reports</span>
                 </a>
-                <a id="nav-admin" href="/Admin/Index" class="navigation-link @RenderSection("navlinkadmin", required: false)">
+                <a id="nav-admin" href="/Admin/Index" class="navigation-link navigation-link-active @RenderSection("navlinkadmin", required: false)">
                     <span><span class="glyphicon glyphicon-cog"></span> Admin</span>
                 </a>
 
@@ -97,11 +97,11 @@
             
             <div class="col-sm-10 col-sm-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3>
-                            @RenderSection("panelHeading", required: false)
-                        </h3>
-                    </div>
+                    @*<div class="panel-heading">
+        <h3>
+            @RenderSection("panelHeading", required: false)
+        </h3>
+    </div>*@
                     <div class="panel-body panel-main">
 
                             @RenderBody()
@@ -115,8 +115,10 @@
 <hr />
 <footer>
     <p>&copy; @DateTime.Now.Year - University of Louisville</p>
+    @RenderSection("panelHeading", required: false)
 </footer>
 </div>
+
 
 
 </body>

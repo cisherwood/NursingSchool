@@ -19,7 +19,7 @@
                             <li class="dropdown-header">Student Programs</li>
                             @foreach (Program p in Model.EnrolledPrograms)
                             {
-                                <li><a href="#">@p.Name</a></li>
+                                <li><a class="enrollment-student-enrollment-program" href="#" data-enrollment-student-program-id="@p.ProgramId">@p.Name</a></li>
                             }
                         </ul>
                     </div>
@@ -33,16 +33,16 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li class="dropdown-header">Enrolled Semesters</li>
-                            <li><a href="#">@Model.CurrentSemester.SemesterString()</a></li>
+                            <li><a href="#" class="enrollment-student-enrollment-semester" data-enrollment-student-semester-id="@Model.CurrentSemester.SemesterId">@Model.CurrentSemester.SemesterString()</a></li>
                             @foreach (Semester s in Model.EnrolledSemesters)
                             {
-                                <li><a href="#">@s.SemesterString()</a></li>
+                                <li><a href="#" class="enrollment-student-enrollment-semester" data-enrollment-student-semester-id="@s.SemesterId">@s.SemesterString()</a></li>
                             }
                             <li class="divider"></li>
                             <li class="dropdown-header">Other Semesters</li>
                             @foreach (Semester s in Model.OtherSemesters)
                             {
-                                <li><a href="#">@s.SemesterString()</a></li>
+                                <li><a href="#" class="enrollment-student-enrollment-semester" data-enrollment-student-semester-id="@s.SemesterId">@s.SemesterString()</a></li>
                             }
                         </ul>
                     </div>

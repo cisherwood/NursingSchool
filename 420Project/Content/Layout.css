@@ -206,3 +206,8 @@ ul.pagination > li.active > a{
 ul.pagination > li > a{
   color: #AD0000;
 }
+
+
+.compliance-checkbox{
+    margin: 0px;
+}

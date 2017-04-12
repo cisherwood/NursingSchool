@@ -4,6 +4,7 @@
 <script>
     // Advising Tabs Navigation
     $(document).ready(function(){
+
         var data = {id: @Session["AdvisingStudentId"]};
 
         $('#advising-tab-program').click(function () {
@@ -63,4 +64,54 @@
         <li role="presentation" class="active advising-tab-active"><a id="advising-tab-plan" href="#">Plan</a></li>
         <li role="presentation"><a id="advising-tab-petition" href="#">Petition</a></li>
     </ul>
+</div>
+
+<div class="col-xs-12" id="advising-plan-row">
+    <br />
+    <div id="AdvisingAddPlan" class="btn btn-success" data-toggle="modal" data-target="#AdvisingModal"><span class="glyphicon glyphicon-plus"></span> Add Class</div>
+</div>
+
+<div class="col-xs-12">
+    <br />
+    <table class="table table-bordered table-hover" data-toggle="table">
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Semester</th>
+                <th>Program</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="warning">
+                <td>NURS 381</td>
+                <td>Spring 2018</td>
+                <td>RN-BSN UD</td>
+            </tr>
+            <tr class="warning">
+                <td>NURS 382</td>
+                <td>Spring 2018</td>
+                <td>RN-BSN UD</td>
+            </tr>
+            <tr class="warning">
+                <td>NURS 482</td>
+                <td>Fall 2019</td>
+                <td>RN-BSN UD</td>
+            </tr>
+            <tr class="warning">
+                <td>NURS 488</td>
+                <td>Fall 2019</td>
+                <td>RN-BSN UD</td>
+            </tr>
+            <tr class="">
+                <td>BIOL 260</td>
+                <td>Spring 2018</td>
+                <td>RN-BSN UD</td>
+            </tr>
+            <tr class="">
+                <td>BIOL 262</td>
+                <td>Fall 2019</td>
+                <td>RN-BSN UD</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

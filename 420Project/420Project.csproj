@@ -212,6 +212,7 @@
     <Compile Include="Controllers\AdminSemestersController.cs" />
     <Compile Include="Controllers\AdminStudentCompliancesController.cs" />
     <Compile Include="Controllers\AdminStudentPetitionsController.cs" />
+    <Compile Include="Controllers\AdminStudentPlansController.cs" />
     <Compile Include="Controllers\AdminStudentProgramsController.cs" />
     <Compile Include="Controllers\AdminStudentsController.cs" />
     <Compile Include="Controllers\AdminToDoesController.cs" />
@@ -262,6 +263,14 @@
     <Compile Include="Migrations\201704111512251_studentupdate.Designer.cs">
       <DependentUpon>201704111512251_studentupdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704121510245_studentplan.cs" />
+    <Compile Include="Migrations\201704121510245_studentplan.Designer.cs">
+      <DependentUpon>201704121510245_studentplan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704121511455_studentplanaddtodb.cs" />
+    <Compile Include="Migrations\201704121511455_studentplanaddtodb.Designer.cs">
+      <DependentUpon>201704121511455_studentplanaddtodb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advisor.cs" />
@@ -287,6 +296,7 @@
     <Compile Include="Models\StudentCompliance.cs" />
     <Compile Include="Models\StudentNote.cs" />
     <Compile Include="Models\StudentPetition.cs" />
+    <Compile Include="Models\StudentPlan.cs" />
     <Compile Include="Models\StudentProgram.cs" />
     <Compile Include="Models\ToDo.cs" />
     <Compile Include="Models\UserEvent.cs" />
@@ -312,6 +322,7 @@
     <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Enrollment\Index.css" />
     <Content Include="Content\Images\66.gif" />
+    <Content Include="Content\Images\IMG_3981.JPG" />
     <Content Include="Content\Images\insurance-authorization-hipaa-consent.gif" />
     <Content Include="Content\jquery-ui.theme.min.css" />
     <Content Include="Content\chosen-sprite.png" />
@@ -404,9 +415,9 @@
     <Content Include="Views\Progress\StudentGetAddCourses.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Progress\Roster.cshtml" />
-    <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Reports\Reference\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
-    <Content Include="Views\Reports\ReportCard.cshtml" />
+    <Content Include="Views\Reports\Reference\ReportCard.cshtml" />
     <Content Include="Views\Dashboard\Development.cshtml" />
     <Content Include="Views\Advising\Index.cshtml" />
     <Content Include="Views\Advising\Advising.cshtml" />
@@ -417,7 +428,7 @@
     <Content Include="Views\Advising\ViewDocument.cshtml" />
     <Content Include="Views\Advising\ComplianceEdit.cshtml" />
     <Content Include="Views\Dashboard\_EventDetail.cshtml" />
-    <Content Include="Views\Reports\Compliance.cshtml" />
+    <Content Include="Views\Reports\Reference\Compliance.cshtml" />
     <Content Include="Views\Shared\_LayoutPanel.cshtml" />
     <Content Include="Views\GroupStuff\_GroupFilters.cshtml" />
     <Content Include="Views\Advising\_Students.cshtml" />
@@ -549,6 +560,16 @@
     <Content Include="Views\AdminEnrollments\Edit.cshtml" />
     <Content Include="Views\AdminEnrollments\Index.cshtml" />
     <Content Include="Views\Enrollment\_StudentEnroll.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Advising\_ViewProgram.cshtml" />
+    <Content Include="Views\AdminStudentPlans\Create.cshtml" />
+    <Content Include="Views\AdminStudentPlans\Delete.cshtml" />
+    <Content Include="Views\AdminStudentPlans\Details.cshtml" />
+    <Content Include="Views\AdminStudentPlans\Edit.cshtml" />
+    <Content Include="Views\AdminStudentPlans\Index.cshtml" />
+    <Content Include="Views\Advising\_StudentPlanCreate.cshtml" />
+    <Content Include="Views\Advising\_StudentPetitionCreate.cshtml" />
+    <Content Include="Views\Advising\_StudentDetailsEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -587,6 +608,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704111512251_studentupdate.resx">
       <DependentUpon>201704111512251_studentupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704121510245_studentplan.resx">
+      <DependentUpon>201704121510245_studentplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704121511455_studentplanaddtodb.resx">
+      <DependentUpon>201704121511455_studentplanaddtodb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

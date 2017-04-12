@@ -63,28 +63,36 @@ namespace _420Project.Controllers
 
             CurrentStudentId = Convert.ToInt32(Session["EnrollmentStudentCurrentStudentId"]);
 
-            if(programId == null)
-            {
-                CurrentProgramId = db.StudentProgram.Where(x => x.StudentId == CurrentStudentId).Where(x => x.Status == "Enrolled").SingleOrDefault().ProgramId;
-            }
-            else
+            if(programId != null)
             {
                 CurrentProgramId = Convert.ToInt32(programId);
-
+                Session["EnrollmentStudentCurrentProgramId"] = CurrentProgramId;
+            }
+            else if(Session["EnrollmentStudentCurrentProgramId"] == null) 
+            {
+                CurrentProgramId = db.StudentProgram.Where(x => x.StudentId == CurrentStudentId).Where(x => x.Status == "Enrolled").SingleOrDefault().ProgramId;
+                Session["EnrollmentStudentCurrentProgramId"] = CurrentProgramId;
+            }
+            else
+            {
+                CurrentProgramId = Convert.ToInt32(Session["EnrollmentStudentCurrentProgramId"]);
             }
 
-            if (semesterId == null)
+            if (semesterId != null)
+            {
+                CurrentSemesterId = Convert.ToInt32(semesterId);
+                Session["EnrollmentStudentCurrentSemesterId"] = CurrentSemesterId;
+            }
+            else if (Session["EnrollmentStudentCurrentSemesterId"] == null)
             {
                 CurrentSemesterId = db.Semester.OrderByDescending(x => x.EndDate).FirstOrDefault().SemesterId;
+                Session["EnrollmentStudentCurrentSemesterId"] = CurrentSemesterId;
 
             }
             else
             {
-                CurrentSemesterId = Convert.ToInt32(semesterId);
+                CurrentSemesterId = Convert.ToInt32(Session["EnrollmentStudentCurrentSemesterId"]);
             }
-
-            Session["EnrollmentStudentCurrentProgramId"] = CurrentProgramId;
-            Session["EnrollmentStudentCurrentSemesterId"] = CurrentSemesterId;
 
             // Set viewmodel data
             vm.CurrentProgram = db.Program.Where(x => x.ProgramId == CurrentProgramId).FirstOrDefault();
@@ -100,8 +108,13 @@ namespace _420Project.Controllers
             // Get all semester a student has any enrollment in
             foreach (Enrollment s in db.Enrollment.Where(x => x.StudentId == CurrentStudentId).Where(x=>x.StudentProgramId == db.StudentProgram.Where(z=>z.StudentId == CurrentStudentId).Where(z=>z.ProgramId == CurrentProgramId).FirstOrDefault().StudentProgramId).ToList())
             {
-                // Add those programs to the program list
-                vm.EnrolledSemesters.Add(db.Semester.Where(x => x.SemesterId == s.SemesterId).SingleOrDefault());
+                // Check is the semester has already been added
+                if(vm.EnrolledSemesters.Any(x=>x.SemesterId == s.SemesterId))
+                {
+                    // Add those programs to the program list
+                    vm.EnrolledSemesters.Add(db.Semester.Where(x => x.SemesterId == s.SemesterId).SingleOrDefault());
+                }
+
             }
 
             vm.OtherSemesters = db.Semester.ToList();

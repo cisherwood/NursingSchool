@@ -3,6 +3,7 @@ using _420Project.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -63,6 +64,23 @@ namespace _420Project.Controllers
             return View(detailModel);
         }
 
+
+        public ActionResult _StudentDetailsEdit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Student student = db.Student.Find(id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.AdvisorId = new SelectList(db.Advisor, "AdvisorId", "FirstName", student.AdvisorId);
+            ViewBag.CampusId = new SelectList(db.Campus, "CampusID", "CampusName", student.CampusId);
+            return View(student);
+        }
+
         public ActionResult _StudentCompliance(int id)
         {
             List<StudentCompliance> compliances = new List<StudentCompliance>();
@@ -82,8 +100,27 @@ namespace _420Project.Controllers
             return View();
         }
 
+        public ActionResult _StudentPlanCreate(int id)
+        {
+            ViewBag.CourseId = new SelectList(db.Course, "CourseId", "Number");
+            ViewBag.ProgramId = new SelectList(db.Program, "ProgramId", "Name");
+            ViewBag.SemesterId = new SelectList(db.Semester, "SemesterId", "Season");
+            ViewBag.StudentId = new SelectList(db.Student, "StudentId", "UserId");
+
+            return View();
+        }
+
+
         public ActionResult _StudentPetition(int id)
         {
+            return View();
+        }
+
+        public ActionResult _StudentPetitionCreate(int id)
+        {
+            ViewBag.PetitionID = new SelectList(db.Petition, "PetitionID", "Name");
+            ViewBag.StudentID = new SelectList(db.Student, "StudentId", "FirstName");
+
             return View();
         }
 
@@ -154,6 +191,16 @@ namespace _420Project.Controllers
 
             return View(UserEventsList);
         }
+
+
+        public ActionResult _ViewProgram()
+        {
+            return View();
+        }
+
+
+
+
 
 
         public ActionResult Advising()
